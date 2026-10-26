@@ -1,15 +1,22 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v3-reviewed",
+  "snapshotVersion": "2026-10-26-v4-inscription-variety",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
+  "sourcePaths": [
+    "src/data/questions.js",
+    "src/data/inscriptions.js"
+  ],
+  "sourceSha256": "019969e560deb45c43099b80dbfb21756b0ad133f65b631352283d9ea652e624",
   "chapter": {
     "chapterId": "yikun",
     "number": 6,
     "title": "翊坤宮",
     "topic": "題辭辨析",
     "concepts": [
-      "題辭辨析"
+      "新生與新婚賀辭",
+      "婚嫁遷居與開業題辭",
+      "學業師恩與送行題辭",
+      "壽誕退休與追思題辭"
     ],
     "questionCount": 4,
     "questionIds": [
@@ -47,13 +54,18 @@
     },
     "sources": [
       {
-        "title": "教育部《國語辭典簡編本》：弄瓦",
+        "title": "教育部《國語辭典簡編本》：弄瓦之喜",
         "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082",
         "status": "reference-linked"
       },
       {
-        "title": "教育部《重編國語辭典修訂本》：弄璋",
-        "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=58782",
+        "title": "教育部《重編國語辭典修訂本》附錄：常用題辭表（商店開業）",
+        "url": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=11&SN=&page=9",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《重編國語辭典修訂本》：金榜題名",
+        "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=93973",
         "status": "reference-linked"
       },
       {
@@ -63,291 +75,347 @@
       }
     ],
     "sourceCoverage": {
-      "linked": 3,
+      "linked": 4,
       "total": 4
     },
-    "unlinkedQuestionIds": [
-      "inscription-wedding"
-    ],
+    "unlinkedQuestionIds": [],
     "reviewStatus": "draft-teacher-review"
   },
   "questions": [
     {
       "id": "inscription-daughter",
       "chapterId": "yikun",
-      "concept": "題辭辨析",
-      "prompt": "華妃要核對三份宮中賀禮，禮簿記著生女、生男與長輩賀壽。請把傳統題辭分送到正確場合，避免只因都是喜事就交換使用。",
+      "concept": "新生與新婚賀辭",
+      "prompt": "華妃交給妳第一批家族喜事禮單：兩家分別添女、添男，另一對新人剛成婚。新婚卡的主要用意是祝夫妻長久和睦，不是祝賀出生。請配好三張題辭。",
       "choices": [
         {
           "id": "a",
-          "text": "生女配弄瓦之喜；生男配弄璋之喜；壽誕配壽比南山"
+          "text": "祝賀添女配弄瓦之喜；祝賀添男配弄璋之喜；祝新婚夫妻長久和睦配百年好合"
         },
         {
           "id": "b",
-          "text": "生女配弄璋之喜；生男配弄瓦之喜；壽誕配壽比南山"
+          "text": "祝賀添女配弄璋之喜；祝賀添男配弄瓦之喜；祝新婚夫妻長久和睦配百年好合"
         },
         {
           "id": "c",
-          "text": "生女配壽比南山；生男配弄璋之喜；壽誕配弄瓦之喜"
+          "text": "祝賀添女配百年好合；祝賀添男配弄璋之喜；祝新婚夫妻長久和睦配弄瓦之喜"
         }
       ],
       "answerId": "a",
-      "hint": "先按出生與壽誕分組，再辨認兩種出生賀辭的傳統對象。",
-      "explanation": "傳統上，弄瓦賀生女、弄璋賀生男，壽比南山祝長壽。這裡是在辨認歷史用語，不表示男女出生有價值高低。",
-      "correction": "傳統配對：生女弄瓦、生男弄璋、祝壽壽比南山。",
-      "sourceTitle": "教育部《國語辭典簡編本》：弄瓦",
+      "hint": "兩張出生卡要辨認傳統男女賀辭；另一張的重點是夫妻長久相處。",
+      "explanation": "弄瓦之喜傳統上賀生女，弄璋之喜賀生男；百年好合祝夫妻感情長久。前兩者同為出生賀辭，仍要核對禮單對象；新婚卡談的是夫妻關係。這是辨認傳統用語，不代表男女價值有高低。",
+      "correction": "先讀卡片的主要用意，再配題辭：祝賀添女配弄瓦之喜；祝賀添男配弄璋之喜；祝新婚夫妻長久和睦配百年好合。",
+      "sourceTitle": "教育部《國語辭典簡編本》：弄瓦之喜",
       "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082",
-      "reviewStatus": "draft-teacher-review",
+      "sources": [
+        {
+          "title": "教育部《國語辭典簡編本》：弄瓦之喜",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：弄璋之喜",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=58782"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：百年好合",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=14206"
+        }
+      ],
       "difficulty": "medium",
       "skill": "應用",
+      "reviewStatus": "draft-teacher-review",
       "sourceStatus": "reference-linked",
-      "puzzle": {
-        "mode": "gift-matching",
-        "objective": "題辭送禮配對",
-        "evidence": [
-          "先確定事件是出生、婚嫁、壽誕或哀悼。",
-          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
-          "先按出生與壽誕分組，再辨認兩種出生賀辭的傳統對象。"
-        ],
-        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
-      },
       "interaction": {
         "kind": "matching",
-        "instruction": "為每份禮單配上一張最合宜的傳統題辭。",
+        "instruction": "閱讀每張禮單的主要用意，把三張題辭卡分別配回去。",
         "pairs": [
           {
             "id": "girl",
-            "left": "賀生女",
+            "left": "祝賀添女",
             "right": "弄瓦之喜"
           },
           {
             "id": "boy",
-            "left": "賀生男",
+            "left": "祝賀添男",
             "right": "弄璋之喜"
           },
           {
             "id": "birthday",
-            "left": "賀壽誕",
-            "right": "壽比南山"
+            "left": "祝新婚夫妻長久和睦",
+            "right": "百年好合"
           }
         ]
       },
       "editorialReview": {
         "date": "2026-10-26",
-        "changes": "補核對賀禮的故事目的，保留三組配對與完整摘要。",
-        "distractorPrinciple": "交換兩種出生賀辭，或把出生與長壽混用。",
+        "changes": "改為四批連續禮單之一，十二張題辭跨題不重複；明定每張卡片的主要用意。",
+        "distractorPrinciple": "兩個誘答各交換一對真實題辭；其中一組配對仍正確，必須核對完整三組。",
         "audience": "國小高年級教師引導／國中學習",
         "difficultyTarget": "medium",
         "studentCalibration": "pending",
         "teacherApproval": "pending"
+      },
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "evidence": [
+          "先辨認新生新婚、婚嫁遷居開業、學業師恩送行、壽誕退休追思四批事件。",
+          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
+          "兩張出生卡要辨認傳統男女賀辭；另一張的重點是夫妻長久相處。"
+        ],
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
       }
     },
     {
       "id": "inscription-son",
       "chapterId": "yikun",
-      "concept": "題辭辨析",
-      "prompt": "頌芝將三份賀禮送錯桌了：一桌賀生男，一桌賀女子出嫁，一桌賀長輩生日。妳要依禮簿重新配對題辭，讓收禮人收到合宜祝福。",
+      "concept": "婚嫁遷居與開業題辭",
+      "prompt": "頌芝送來第二批禮單：女子今日出嫁、一家今日遷入新居、商店今日新開。三張卡分別要點明出嫁、搬家、開業，請依事件配好題辭。",
       "choices": [
         {
           "id": "a",
-          "text": "生男配之子于歸；女子出嫁配弄璋之喜；壽誕配壽比南山"
+          "text": "點明女子出嫁之喜配喬遷之喜；點明遷入新居之喜配之子于歸；點明商店新開之喜配駿業宏開"
         },
         {
           "id": "b",
-          "text": "生男配弄璋之喜；女子出嫁配之子于歸；壽誕配壽比南山"
+          "text": "點明女子出嫁之喜配之子于歸；點明遷入新居之喜配喬遷之喜；點明商店新開之喜配駿業宏開"
         },
         {
           "id": "c",
-          "text": "生男配壽比南山；女子出嫁配之子于歸；壽誕配弄璋之喜"
+          "text": "點明女子出嫁之喜配駿業宏開；點明遷入新居之喜配喬遷之喜；點明商店新開之喜配之子于歸"
         }
       ],
       "answerId": "b",
-      "hint": "先區分新生兒、出嫁新人與賀壽長輩三種對象。",
-      "explanation": "弄璋之喜傳統上賀生男，之子于歸與女子出嫁相關，壽比南山用來祝長壽。三則都有祝賀意思，卻不是所有喜事都能互換。",
-      "correction": "題辭要同時配合事件與祝賀對象。",
-      "sourceTitle": "教育部《重編國語辭典修訂本》：弄璋",
-      "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=58782",
-      "reviewStatus": "draft-teacher-review",
+      "hint": "不要只找吉祥字；先把出嫁、遷居與開業三件事分開。",
+      "explanation": "之子于歸用來祝賀女子出嫁；喬遷之喜可賀遷居，也可賀升官，本題明定搬入新居；駿業宏開列於商店開業題辭。三者都是喜慶語，卻不能只憑好聽就交換場合。",
+      "correction": "先讀卡片的主要用意，再配題辭：點明女子出嫁之喜配之子于歸；點明遷入新居之喜配喬遷之喜；點明商店新開之喜配駿業宏開。",
+      "sourceTitle": "教育部《重編國語辭典修訂本》附錄：常用題辭表（商店開業）",
+      "sourceUrl": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=11&SN=&page=9",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》附錄：常用題辭表（商店開業）",
+          "url": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=11&SN=&page=9"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：喬遷之喜",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=99813"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》附錄：常用題辭表",
+          "url": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=11"
+        }
+      ],
       "difficulty": "medium",
       "skill": "應用",
+      "reviewStatus": "draft-teacher-review",
       "sourceStatus": "reference-linked",
-      "puzzle": {
-        "mode": "gift-matching",
-        "objective": "題辭送禮配對",
-        "evidence": [
-          "先確定事件是出生、婚嫁、壽誕或哀悼。",
-          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
-          "先區分新生兒、出嫁新人與賀壽長輩三種對象。"
-        ],
-        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
-      },
       "interaction": {
         "kind": "matching",
-        "instruction": "依三份禮物的用途，配回對應題辭。",
+        "instruction": "閱讀每張禮單的主要用意，把三張題辭卡分別配回去。",
         "pairs": [
           {
             "id": "boy",
-            "left": "賀生男",
-            "right": "弄璋之喜"
-          },
-          {
-            "id": "bride",
-            "left": "賀女子出嫁",
+            "left": "點明女子出嫁之喜",
             "right": "之子于歸"
           },
           {
+            "id": "bride",
+            "left": "點明遷入新居之喜",
+            "right": "喬遷之喜"
+          },
+          {
             "id": "birthday",
-            "left": "賀長輩壽誕",
-            "right": "壽比南山"
+            "left": "點明商店新開之喜",
+            "right": "駿業宏開"
           }
         ]
       },
       "editorialReview": {
         "date": "2026-10-26",
-        "changes": "以送錯禮桌作任務，維持真實題辭用途的比較。",
-        "distractorPrinciple": "分別交換出生與出嫁、出生與賀壽。",
+        "changes": "改為四批連續禮單之一，十二張題辭跨題不重複；明定每張卡片的主要用意。",
+        "distractorPrinciple": "兩個誘答各交換一對真實題辭；其中一組配對仍正確，必須核對完整三組。",
         "audience": "國小高年級教師引導／國中學習",
         "difficultyTarget": "medium",
         "studentCalibration": "pending",
         "teacherApproval": "pending"
+      },
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "evidence": [
+          "先辨認新生新婚、婚嫁遷居開業、學業師恩送行、壽誕退休追思四批事件。",
+          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
+          "不要只找吉祥字；先把出嫁、遷居與開業三件事分開。"
+        ],
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
       }
     },
     {
       "id": "inscription-wedding",
       "chapterId": "yikun",
-      "concept": "題辭辨析",
-      "prompt": "華妃要妳替新婚、添女、賀壽三份禮物補卡。新婚禮特別希望新人建立和睦家庭，請把三則傳統題辭完整配回去。",
+      "concept": "學業師恩與送行題辭",
+      "prompt": "第三批禮單送到宮中書房：學子已考中、老師多年教出眾多學生、另一位學子即將遠行求學。卡片依序要賀錄取、謝育才、祝未來前程，請逐一配對。",
       "choices": [
         {
           "id": "a",
-          "text": "婚嫁配弄瓦之喜；添女配宜室宜家；壽誕配壽比南山"
+          "text": "祝賀已考中錄取配桃李滿門；讚老師教出眾多學生配金榜題名；送別學子並祝前程遠大配鵬程萬里"
         },
         {
           "id": "b",
-          "text": "婚嫁配宜室宜家；添女配壽比南山；壽誕配弄瓦之喜"
+          "text": "祝賀已考中錄取配鵬程萬里；讚老師教出眾多學生配桃李滿門；送別學子並祝前程遠大配金榜題名"
         },
         {
           "id": "c",
-          "text": "婚嫁配宜室宜家；添女配弄瓦之喜；壽誕配壽比南山"
+          "text": "祝賀已考中錄取配金榜題名；讚老師教出眾多學生配桃李滿門；送別學子並祝前程遠大配鵬程萬里"
         }
       ],
       "answerId": "c",
-      "hint": "辨認家庭和睦的婚嫁祝辭，與出生、長壽的用語分開。",
-      "explanation": "宜室宜家祝婚姻與家庭和諧，弄瓦之喜傳統上賀生女，壽比南山祝長壽。可先抓家庭和睦這條線索，再區分出生與壽誕。",
-      "correction": "婚嫁、出生與壽誕題辭不可混用。",
-      "reviewStatus": "draft-teacher-review",
+      "hint": "分清已經取得的成果、老師育才的成就，以及對未來的祝願。",
+      "explanation": "金榜題名指考試被錄取；桃李滿門比喻學生眾多；鵬程萬里比喻前程遠大，常作臨別贈語。鵬程萬里也能祝福考中者，但本次卡片明定主要用意：賀已錄取用金榜題名，送行祝未來用鵬程萬里。",
+      "correction": "先讀卡片的主要用意，再配題辭：祝賀已考中錄取配金榜題名；讚老師教出眾多學生配桃李滿門；送別學子並祝前程遠大配鵬程萬里。",
+      "sourceTitle": "教育部《重編國語辭典修訂本》：金榜題名",
+      "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=93973",
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：金榜題名",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=93973"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：桃李滿門",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=50186"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：鵬程萬里",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=24221"
+        }
+      ],
       "difficulty": "medium",
       "skill": "應用",
-      "sourceStatus": "teacher-review-needed",
-      "puzzle": {
-        "mode": "gift-matching",
-        "objective": "題辭送禮配對",
-        "evidence": [
-          "先確定事件是出生、婚嫁、壽誕或哀悼。",
-          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
-          "辨認家庭和睦的婚嫁祝辭，與出生、長壽的用語分開。"
-        ],
-        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
-      },
+      "reviewStatus": "draft-teacher-review",
+      "sourceStatus": "reference-linked",
       "interaction": {
         "kind": "matching",
-        "instruction": "依事件與祝賀目標，將題辭配給三份禮物。",
+        "instruction": "閱讀每張禮單的主要用意，把三張題辭卡分別配回去。",
         "pairs": [
           {
             "id": "wedding",
-            "left": "賀婚嫁、祝家庭和睦",
-            "right": "宜室宜家"
+            "left": "祝賀已考中錄取",
+            "right": "金榜題名"
           },
           {
             "id": "girl",
-            "left": "賀添女",
-            "right": "弄瓦之喜"
+            "left": "讚老師教出眾多學生",
+            "right": "桃李滿門"
           },
           {
             "id": "birthday",
-            "left": "賀壽誕",
-            "right": "壽比南山"
+            "left": "送別學子並祝前程遠大",
+            "right": "鵬程萬里"
           }
         ]
       },
       "editorialReview": {
         "date": "2026-10-26",
-        "changes": "用家庭和睦作需整合的祝賀目標，維持一對一配對。",
-        "distractorPrinciple": "兩項各保留一組正確配對，需完成全套核對。",
+        "changes": "改為四批連續禮單之一，十二張題辭跨題不重複；明定每張卡片的主要用意。",
+        "distractorPrinciple": "兩個誘答各交換一對真實題辭；其中一組配對仍正確，必須核對完整三組。",
         "audience": "國小高年級教師引導／國中學習",
         "difficultyTarget": "medium",
         "studentCalibration": "pending",
         "teacherApproval": "pending"
+      },
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "evidence": [
+          "先辨認新生新婚、婚嫁遷居開業、學業師恩送行、壽誕退休追思四批事件。",
+          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
+          "分清已經取得的成果、老師育才的成就，以及對未來的祝願。"
+        ],
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
       }
     },
     {
       "id": "inscription-birthday",
       "chapterId": "yikun",
-      "concept": "題辭辨析",
-      "prompt": "壽宴將開始，頌芝請妳最後核對健在長輩賀壽、新婚、添男三桌的卡片。請讓每桌都得到符合事件的祝賀題辭。",
+      "concept": "壽誕退休與追思題辭",
+      "prompt": "最後一批卡片不能送錯：健在長輩過生日，要祝長壽；老臣完成職責後告老退休，要讚圓滿退任；故人已逝，要表達追思。請核對三張題辭後再封卡。",
       "choices": [
         {
           "id": "a",
-          "text": "賀壽配壽比南山；新婚配宜室宜家；添男配弄璋之喜"
+          "text": "祝健在長輩生日長壽配壽比南山；讚完成職責後告老退任配功成身退；追念已逝故人的聲音容貌配音容宛在"
         },
         {
           "id": "b",
-          "text": "賀壽配宜室宜家；新婚配壽比南山；添男配弄璋之喜"
+          "text": "祝健在長輩生日長壽配功成身退；讚完成職責後告老退任配壽比南山；追念已逝故人的聲音容貌配音容宛在"
         },
         {
           "id": "c",
-          "text": "賀壽配弄璋之喜；新婚配宜室宜家；添男配壽比南山"
+          "text": "祝健在長輩生日長壽配音容宛在；讚完成職責後告老退任配功成身退；追念已逝故人的聲音容貌配壽比南山"
         }
       ],
       "answerId": "a",
-      "hint": "先將長壽、婚姻與出生三種祝賀目標分開。",
-      "explanation": "壽比南山對應長壽，宜室宜家對應婚姻和睦，弄璋之喜傳統上對應生男。要逐桌核對，不能只看其中一張是否合適。",
-      "correction": "題辭判讀先看場合，再看語詞的傳統適用對象。",
-      "reviewStatus": "draft-teacher-review",
-      "difficulty": "medium",
-      "skill": "應用",
+      "hint": "先確認對象是否健在，再分清祝長壽、讚退任與追思的用意。",
+      "explanation": "壽比南山祝長壽；功成身退指功業成就後退休歸隱，本題特別交代老臣已完成職責；音容宛在形容聲音容貌彷彿仍在眼前，多用於追念逝者。退休不等於去世，追思語也不能當生日祝福。",
+      "correction": "先讀卡片的主要用意，再配題辭：祝健在長輩生日長壽配壽比南山；讚完成職責後告老退任配功成身退；追念已逝故人的聲音容貌配音容宛在。",
       "sourceTitle": "教育部《國語辭典簡編本》：壽比南山",
       "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34367",
+      "sources": [
+        {
+          "title": "教育部《國語辭典簡編本》：壽比南山",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34367"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：功成身退",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=74988"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：音容宛在",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=156314"
+        }
+      ],
+      "difficulty": "medium",
+      "skill": "應用",
+      "reviewStatus": "draft-teacher-review",
       "sourceStatus": "reference-linked",
-      "puzzle": {
-        "mode": "gift-matching",
-        "objective": "題辭送禮配對",
-        "evidence": [
-          "先確定事件是出生、婚嫁、壽誕或哀悼。",
-          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
-          "先將長壽、婚姻與出生三種祝賀目標分開。"
-        ],
-        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
-      },
       "interaction": {
         "kind": "matching",
-        "instruction": "辨認三種喜事，為每份禮物配上合宜題辭。",
+        "instruction": "閱讀每張禮單的主要用意，把三張題辭卡分別配回去。",
         "pairs": [
           {
             "id": "birthday",
-            "left": "健在長輩賀壽",
+            "left": "祝健在長輩生日長壽",
             "right": "壽比南山"
           },
           {
             "id": "wedding",
-            "left": "賀新婚",
-            "right": "宜室宜家"
+            "left": "讚完成職責後告老退任",
+            "right": "功成身退"
           },
           {
             "id": "boy",
-            "left": "賀添男",
-            "right": "弄璋之喜"
+            "left": "追念已逝故人的聲音容貌",
+            "right": "音容宛在"
           }
         ]
       },
       "editorialReview": {
         "date": "2026-10-26",
-        "changes": "明定長輩健在、宴前核對的目的。",
-        "distractorPrinciple": "各只交換一對場合，避免以無關詞湊數。",
+        "changes": "改為四批連續禮單之一，十二張題辭跨題不重複；明定每張卡片的主要用意。",
+        "distractorPrinciple": "兩個誘答各交換一對真實題辭；其中一組配對仍正確，必須核對完整三組。",
         "audience": "國小高年級教師引導／國中學習",
         "difficultyTarget": "medium",
         "studentCalibration": "pending",
         "teacherApproval": "pending"
+      },
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "evidence": [
+          "先辨認新生新婚、婚嫁遷居開業、學業師恩送行、壽誕退休追思四批事件。",
+          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
+          "先確認對象是否健在，再分清祝長壽、讚退任與追思的用意。"
+        ],
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
       }
     }
   ]

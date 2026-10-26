@@ -15,7 +15,7 @@
 - 執行時唯一來源：`src/data/questions.js`，遊戲不讀取本資料夾。
 - 歸檔入口：`docs/question-bank/index.json`。
 - 每關 JSON 包含完整題目與答案、解析、提示、修正概念、來源、解謎適配資訊。
-- 本輪快照：`2026-10-26-v3-reviewed`；索引記錄原始題庫 SHA-256，便於確認版本。
+- 本輪快照：`2026-10-26-v4-inscription-variety`；索引記錄原始題庫 SHA-256，便於確認版本。
 - 更新題庫後：`node scripts/archive-questions.mjs`。
 - 只檢查同步：`node scripts/archive-questions.mjs --check`。
 
@@ -28,7 +28,7 @@
 | 03 | 文淵閣 | 四部分類 | 4 | 經史子集歸架 | renderer-derived-from-choices |
 | 04 | 御花園 | 節令民俗、節令詩詞 | 4 | 節令詩詞配對與排序 | sequence |
 | 05 | 碎玉軒 | 修辭辨析 | 4 | 修辭線索辨識 | highlight |
-| 06 | 翊坤宮 | 題辭辨析 | 4 | 題辭送禮配對 | matching |
+| 06 | 翊坤宮 | 新生與新婚賀辭、婚嫁遷居與開業題辭、學業師恩與送行題辭、壽誕退休與追思題辭 | 4 | 題辭送禮配對 | matching |
 | 07 | 延禧宮 | 對聯格律 | 4 | 上下聯排序與結構修補 | couplet |
 | 08 | 太醫院 | 字形與成語 | 4 | 字形校勘與成語詞義核對 | proofread |
 | 09 | 景仁宮 | 書信稱謂 | 4 | 書信組裝 | form |
@@ -67,8 +67,9 @@
 - [國立成功大學圖書館：文淵閣四庫全書電子版介紹](https://libapp.lib.ncku.edu.tw/libref/chinese/single/oldbook2.htm)
 - [教育部《國語辭典簡編本》附錄：親屬稱謂表](https://dict.concised.moe.edu.tw/appendix.jsp?ID=32&deg=1&la=2)
 - [教育部《國語辭典簡編本》：不吝賜教](https://dict.concised.moe.edu.tw/dictView.jsp?ID=2007)
-- [教育部《國語辭典簡編本》：弄瓦](https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082)
-- [教育部《重編國語辭典修訂本》：弄璋](https://dict.revised.moe.edu.tw/dictView.jsp?ID=58782)
+- [教育部《國語辭典簡編本》：弄瓦之喜](https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082)
+- [教育部《重編國語辭典修訂本》附錄：常用題辭表（商店開業）](https://dict.revised.moe.edu.tw/appendix.jsp?ID=11&SN=&page=9)
+- [教育部《重編國語辭典修訂本》：金榜題名](https://dict.revised.moe.edu.tw/dictView.jsp?ID=93973)
 - [教育部《國語辭典簡編本》：壽比南山](https://dict.concised.moe.edu.tw/dictView.jsp?ID=34367)
 - [國立臺灣師範大學 APCS：七言對聯題本範例（平仄規則）](https://apcs.csie.ntnu.edu.tw/wp-content/uploads/2025/08/01_APCS-%E7%A8%8B%E5%BC%8F%E5%AF%A6%E4%BD%9C%E5%88%9D%E7%B4%9A%E9%A1%8C%E6%9C%AC%E7%AF%84%E4%BE%8B.pdf)
 - [教育部《國語辭典簡編本》：名列前茅](https://dict.concised.moe.edu.tw/dictView.jsp?ID=4807)

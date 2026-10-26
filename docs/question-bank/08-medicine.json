@@ -1,8 +1,12 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v3-reviewed",
+  "snapshotVersion": "2026-10-26-v4-inscription-variety",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
+  "sourcePaths": [
+    "src/data/questions.js",
+    "src/data/inscriptions.js"
+  ],
+  "sourceSha256": "019969e560deb45c43099b80dbfb21756b0ad133f65b631352283d9ea652e624",
   "chapter": {
     "chapterId": "medicine",
     "number": 8,

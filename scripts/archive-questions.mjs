@@ -11,8 +11,11 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const directory = resolve(root, 'docs/question-bank');
 const checkOnly = process.argv.includes('--check');
 const sourcePath = 'src/data/questions.js';
-const sha256 = createHash('sha256').update(await readFile(resolve(root, sourcePath))).digest('hex');
-const snapshotVersion = '2026-10-26-v3-reviewed';
+const sourcePaths = [sourcePath, 'src/data/inscriptions.js'];
+const sourceHash = createHash('sha256');
+for (const path of sourcePaths) sourceHash.update(path).update(await readFile(resolve(root, path)));
+const sha256 = sourceHash.digest('hex');
+const snapshotVersion = '2026-10-26-v4-inscription-variety';
 const serialize = value => `${JSON.stringify(value, null, 2)}\n`;
 const interactionKinds = {
   garden: 'sequence', pavilion: 'highlight', yikun: 'matching', yanxi: 'couplet',
@@ -140,7 +143,7 @@ const chapterIndex = chapters.map(chapter => {
     reviewStatus: 'draft-teacher-review',
   };
   archiveFiles.set(filename, serialize({
-    schemaVersion: 1, snapshotVersion, sourcePath, sourceSha256: sha256,
+    schemaVersion: 1, snapshotVersion, sourcePath, sourcePaths, sourceSha256: sha256,
     chapter: entry, questions: items,
   }));
   return entry;
@@ -150,6 +153,7 @@ const index = {
   schemaVersion: 1,
   snapshotVersion,
   sourcePath,
+  sourcePaths,
   sourceSha256: sha256,
   runtimeDependsOnArchive: false,
   chapterCount: chapterIndex.length,

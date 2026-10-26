@@ -1,8 +1,12 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v3-reviewed",
+  "snapshotVersion": "2026-10-26-v4-inscription-variety",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
+  "sourcePaths": [
+    "src/data/questions.js",
+    "src/data/inscriptions.js"
+  ],
+  "sourceSha256": "019969e560deb45c43099b80dbfb21756b0ad133f65b631352283d9ea652e624",
   "runtimeDependsOnArchive": false,
   "chapterCount": 12,
   "questionCount": 47,
@@ -323,7 +327,10 @@
       "title": "翊坤宮",
       "topic": "題辭辨析",
       "concepts": [
-        "題辭辨析"
+        "新生與新婚賀辭",
+        "婚嫁遷居與開業題辭",
+        "學業師恩與送行題辭",
+        "壽誕退休與追思題辭"
       ],
       "questionCount": 4,
       "questionIds": [
@@ -361,13 +368,18 @@
       },
       "sources": [
         {
-          "title": "教育部《國語辭典簡編本》：弄瓦",
+          "title": "教育部《國語辭典簡編本》：弄瓦之喜",
           "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082",
           "status": "reference-linked"
         },
         {
-          "title": "教育部《重編國語辭典修訂本》：弄璋",
-          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=58782",
+          "title": "教育部《重編國語辭典修訂本》附錄：常用題辭表（商店開業）",
+          "url": "https://dict.revised.moe.edu.tw/appendix.jsp?ID=11&SN=&page=9",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：金榜題名",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=93973",
           "status": "reference-linked"
         },
         {
@@ -377,12 +389,10 @@
         }
       ],
       "sourceCoverage": {
-        "linked": 3,
+        "linked": 4,
         "total": 4
       },
-      "unlinkedQuestionIds": [
-        "inscription-wedding"
-      ],
+      "unlinkedQuestionIds": [],
       "reviewStatus": "draft-teacher-review"
     },
     {
@@ -957,40 +967,40 @@
     "inscription-daughter": {
       "chapterId": "yikun",
       "file": "docs/question-bank/06-yikun.json",
-      "concept": "題辭辨析",
+      "concept": "新生與新婚賀辭",
       "puzzleMode": "gift-matching",
       "interactionKind": "matching",
-      "interactionInstruction": "為每份禮單配上一張最合宜的傳統題辭。",
+      "interactionInstruction": "閱讀每張禮單的主要用意，把三張題辭卡分別配回去。",
       "interactionPayloadLocation": "docs/question-bank/06-yikun.json → questions[id=inscription-daughter].interaction",
       "correctAnswerId": "a"
     },
     "inscription-son": {
       "chapterId": "yikun",
       "file": "docs/question-bank/06-yikun.json",
-      "concept": "題辭辨析",
+      "concept": "婚嫁遷居與開業題辭",
       "puzzleMode": "gift-matching",
       "interactionKind": "matching",
-      "interactionInstruction": "依三份禮物的用途，配回對應題辭。",
+      "interactionInstruction": "閱讀每張禮單的主要用意，把三張題辭卡分別配回去。",
       "interactionPayloadLocation": "docs/question-bank/06-yikun.json → questions[id=inscription-son].interaction",
       "correctAnswerId": "b"
     },
     "inscription-wedding": {
       "chapterId": "yikun",
       "file": "docs/question-bank/06-yikun.json",
-      "concept": "題辭辨析",
+      "concept": "學業師恩與送行題辭",
       "puzzleMode": "gift-matching",
       "interactionKind": "matching",
-      "interactionInstruction": "依事件與祝賀目標，將題辭配給三份禮物。",
+      "interactionInstruction": "閱讀每張禮單的主要用意，把三張題辭卡分別配回去。",
       "interactionPayloadLocation": "docs/question-bank/06-yikun.json → questions[id=inscription-wedding].interaction",
       "correctAnswerId": "c"
     },
     "inscription-birthday": {
       "chapterId": "yikun",
       "file": "docs/question-bank/06-yikun.json",
-      "concept": "題辭辨析",
+      "concept": "壽誕退休與追思題辭",
       "puzzleMode": "gift-matching",
       "interactionKind": "matching",
-      "interactionInstruction": "辨認三種喜事，為每份禮物配上合宜題辭。",
+      "interactionInstruction": "閱讀每張禮單的主要用意，把三張題辭卡分別配回去。",
       "interactionPayloadLocation": "docs/question-bank/06-yikun.json → questions[id=inscription-birthday].interaction",
       "correctAnswerId": "a"
     },
