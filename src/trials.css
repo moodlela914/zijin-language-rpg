@@ -15,3 +15,13 @@
 .hp-art{position:relative;aspect-ratio:2067/761;width:100%;margin:-7px 0 -10px}.hp-art img{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.hp-art progress{position:absolute;left:14%;top:45%;width:65%;height:15%;border-radius:20px;overflow:hidden;background:#294d3c}.hp-art progress::-webkit-progress-bar{background:#294d3c}.timer{display:flex;align-items:center;gap:7px}.incense-icon{width:34px;height:42px;object-fit:contain}.sidebar-top{background-image:linear-gradient(#f6f2e8c9,#f6f2e8d9),var(--cover-art,none);background-size:cover;background-position:center}.sidebar-top h1{font-size:28px}
 @media(max-width:720px){.hp-art{margin:-5px 0 -8px}.incense-icon{width:28px;height:34px}.timer{font-size:11px;flex-wrap:wrap}}
 .result-panel[data-passed="false"] .celebration-emblem{display:none}.certificate-report>h2{background-image:var(--certificate-art);background-size:100% 100%;background-repeat:no-repeat;padding:80px 45px;min-height:320px;display:grid;place-items:center;text-align:center;font-size:28px;line-height:1.8;color:#694e34}.certificate-report>.eyebrow{text-align:center}@media(max-width:720px){.certificate-report>h2{padding:55px 25px;min-height:240px;font-size:22px}}
+
+
+/* Keep titles centered across game, report and playtest screens. */
+h1,h2,h3,h4,h5,h6,.eyebrow{text-align:center}
+.sidebar-top,.brand>div,.player-card>strong{text-align:center}
+.section-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,auto) minmax(0,1fr);align-items:center;text-align:center}
+.section-heading>:first-child{grid-column:2;grid-row:1;min-width:0}
+.section-heading>:not(:first-child){grid-column:3;grid-row:1;justify-self:end}
+.section-heading>.small{max-width:none;text-align:center}
+.trial-heading{justify-content:center;flex-wrap:wrap;text-align:center}
