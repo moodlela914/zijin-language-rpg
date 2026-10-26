@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v2-interactions",
+  "snapshotVersion": "2026-10-26-v3-reviewed",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
   "chapter": {
     "chapterId": "cining",
     "number": 10,
@@ -76,24 +76,24 @@
       "id": "age-coming-of-age",
       "chapterId": "cining",
       "concept": "年齡與干支",
-      "prompt": "傳統禮簿以「女子及笄」標示一項古代年齡用語。請把標記移到對應歲數；本題不涉及現代法定成年規定。",
+      "prompt": "太后要將一份古代女子的禮簿放回年齡檔。書上只寫「及笄」，請標出這個傳統稱呼常指的歲數；不按今天的法律成年年齡判斷。",
       "choices": [
         {
           "id": "a",
-          "text": "標記13歲：把及笄與豆蔻混為一談"
+          "text": "標記13歲。"
         },
         {
           "id": "b",
-          "text": "標記15歲：符合古代「及笄」的常見年齡用語"
+          "text": "標記15歲。"
         },
         {
           "id": "c",
-          "text": "標記20歲：把不同古代成年禮的歲數全部混同"
+          "text": "標記20歲。"
         }
       ],
       "answerId": "b",
       "hint": "及笄與女子加笄禮相關，要與豆蔻、弱冠分開。",
-      "explanation": "傳統語文常識中，女子十五歲加笄表示成年，所以及笄通常對應十五歲。這是古代用語，不是現代法定成年歲數。",
+      "explanation": "傳統上，及笄通常指女子十五歲。十三歲常與豆蔻相關，二十歲常與男子弱冠相關，都是容易混淆的年齡線索，但不適用本題。",
       "correction": "及笄通常對應古代女子十五歲。",
       "sourceTitle": "教育部《重編國語辭典修訂本》：及笄",
       "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=87862",
@@ -113,7 +113,7 @@
       },
       "interaction": {
         "kind": "timeline",
-        "instruction": "移動年齡標記，選定符合「及笄」的歲數刻度。",
+        "instruction": "移動年齡標記，選出及笄通常對應的歲數。",
         "ticks": [
           {
             "id": "age10",
@@ -149,30 +149,39 @@
           }
         ],
         "solutionId": "age15"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "刪掉選項自帶的錯誤原因，保留年齡軸判讀。",
+        "distractorPrinciple": "十三與二十均有其他傳統稱呼，不用無關數字湊選項。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "age-standing",
       "chapterId": "cining",
       "concept": "年齡與干支",
-      "prompt": "壽宴座次記錄有人「年屆而立」。請把標記放到年齡軸上的對應歲數，並與弱冠、不惑等稱呼區分。",
+      "prompt": "壽宴席單把一位賓客的年齡寫成「而立」。太后要妳補上歲數，好讓座次資料一致；請把年齡軸標記放到合適位置。",
       "choices": [
         {
           "id": "a",
-          "text": "標記20歲：把而立誤當成弱冠"
+          "text": "標記20歲。"
         },
         {
           "id": "b",
-          "text": "標記40歲：把而立誤當成不惑"
+          "text": "標記40歲。"
         },
         {
           "id": "c",
-          "text": "標記30歲：與「而立」的年齡代稱相合"
+          "text": "標記30歲。"
         }
       ],
       "answerId": "c",
       "hint": "回想三十而立、四十而不惑的先後。",
-      "explanation": "而立通常代稱三十歲；弱冠通常指男子二十歲，不惑通常指四十歲。要按慣用代稱判讀，而非猜某個人何時能獨立。",
+      "explanation": "而立通常代稱三十歲。二十歲的弱冠、四十歲的不惑是另外的年齡稱呼，不能因都是成人就當成相同歲數。",
       "correction": "而立通常指三十歲，不惑通常指四十歲。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -190,7 +199,7 @@
       },
       "interaction": {
         "kind": "timeline",
-        "instruction": "移動年齡標記，選定符合「而立」的歲數刻度。",
+        "instruction": "移動年齡標記，補出席單上而立對應的歲數。",
         "ticks": [
           {
             "id": "age10",
@@ -226,30 +235,39 @@
           }
         ],
         "solutionId": "age30"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "將歲數回填接到席單任務，不在選項旁提示混淆原因。",
+        "distractorPrinciple": "以相鄰的常見年齡代稱作誘答。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "time-midnight",
       "chapterId": "cining",
       "concept": "年齡與干支",
-      "prompt": "值夜簿的「子時」標籤脫落。時間軸跨越夜晚到翌日晚間，請把標記移到子時的一般現代時段，並與午時、卯時區分。",
+      "prompt": "太后要妳安排夜間傳信。值夜簿寫「子時交接」，但鐘點欄空了。請在跨夜時間軸上，標出一般子時對應的兩小時時段。",
       "choices": [
         {
           "id": "a",
-          "text": "標記23:00至翌日01:00：對應一般子時時段"
+          "text": "標記23:00至翌日01:00。"
         },
         {
           "id": "b",
-          "text": "標記11:00至13:00：把子時與午時混淆"
+          "text": "標記11:00至13:00。"
         },
         {
           "id": "c",
-          "text": "標記05:00至07:00：把子時與卯時混淆"
+          "text": "標記05:00至07:00。"
         }
       ],
       "answerId": "a",
       "hint": "子時與夜半相關，一個傳統時辰約相當於兩個現代小時。",
-      "explanation": "一般時辰對照中，子時為晚上二十三時至翌日一時，午時為十一時至十三時，卯時為五時至七時。本題時間軸以子時為起點，不是以午夜零時切開。",
+      "explanation": "子時一般對應二十三時到翌日一時；十一時到十三時是午時，五時到七時是卯時。要區分夜半、中午與清晨，不能只因都長兩小時就視為相同。",
       "correction": "子時一般對應23:00至翌日01:00，須留意跨日。",
       "sourceTitle": "教育部臺灣台語常用詞辭典：子（子時）",
       "sourceUrl": "https://sutian.moe.edu.tw/zh-hant/su/192/",
@@ -321,30 +339,39 @@
           }
         ],
         "solutionId": "zi"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "補夜間交接任務，去掉選項已標明混淆的字樣。",
+        "distractorPrinciple": "以午時、卯時的真實時段測試晝夜與時辰對應。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "cycle-sexagenary",
       "chapterId": "cining",
       "concept": "年齡與干支",
-      "prompt": "十天干與十二地支每年各前進一格，目前同在甲子。請把標記移到「最少再過多少個正整數年，兩盤才一起回到原配對」的位置。0代表現在，不是再過的年數。",
+      "prompt": "太后要核對兩次同名干支紀年的間隔。十天干每10年一輪，十二地支每12年一輪；現在同在甲子。請標出最少再過幾年，兩盤會同時回到原配對。0是現在，不算再過。",
       "choices": [
         {
           "id": "a",
-          "text": "標記再過12年：只確認地支回原位，未核對天干"
+          "text": "標記再過12年。"
         },
         {
           "id": "b",
-          "text": "標記再過60年：天干與地支第一次同時回到原配對"
+          "text": "標記再過60年。"
         },
         {
           "id": "c",
-          "text": "標記再過24年：兩輪地支仍不能保證天干回原位"
+          "text": "標記再過24年。"
         }
       ],
       "answerId": "b",
-      "hint": "找十與十二兩個循環同時回到起點的最小正整數週期。",
-      "explanation": "十與十二的最小公倍數是六十，因此最少再過六十年才同時回到甲子；十二、二十四年只讓地支回到原位，不能保證天干也相同。",
+      "hint": "逐一看12的倍數，找第一個也是10的倍數的年數。",
+      "explanation": "要找10與12兩個循環共同回到起點的最少年數。12、24、36、48都還不是10的整數倍，60才同時符合兩個循環，因此最少再過六十年。",
       "correction": "干支完整循環為六十年，不能只計十二地支。",
       "sourceTitle": "教育部《重編國語辭典修訂本》：六十甲子",
       "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=63847",
@@ -358,13 +385,13 @@
         "evidence": [
           "年齡代稱屬古代語文習慣，不能當作現代法律成年規則。",
           "干支兩個轉盤要同時回原點；時辰要確認跨日與晝夜。",
-          "找十與十二兩個循環同時回到起點的最小正整數週期。"
+          "逐一看12的倍數，找第一個也是10的倍數的年數。"
         ],
         "interactionHint": "把歲數、代稱、時段配回位置，再核對干支循環。"
       },
       "interaction": {
         "kind": "timeline",
-        "instruction": "在年數軸選定兩個循環同時首次回到起點的正整數年數。",
+        "instruction": "選出最少再過多少年，兩個轉盤會一起回到原來的配對。",
         "ticks": [
           {
             "id": "year0",
@@ -396,6 +423,15 @@
           }
         ],
         "solutionId": "year60"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "以兩輪同時回原點解釋循環，解析可逐一核對倍數，不先要求會最小公倍數術語。",
+        "distractorPrinciple": "十二與二十四都讓地支回原位，卻未讓天干一起回原位。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     }
   ]

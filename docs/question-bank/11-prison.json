@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v2-interactions",
+  "snapshotVersion": "2026-10-26-v3-reviewed",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
   "chapter": {
     "chapterId": "prison",
     "number": 11,
@@ -67,24 +67,24 @@
       "id": "history-chronological",
       "chapterId": "prison",
       "concept": "文體與史書",
-      "prompt": "舊檔案每頁依年月先後記事，沒有以人物或國家分篇；旁邊的範例書是《資治通鑑》。這兩項線索應連到哪個體裁籤？",
+      "prompt": "舊卷藏著尋找下一份證據的年代線索。它像《資治通鑑》一樣，依年月先後記錄事件，而不是按人物或國家分篇。妳應把它歸到哪類？",
       "choices": [
         {
           "id": "a",
-          "text": "紀傳體——以人物傳記為組織主軸"
+          "text": "紀傳體：以人物傳記等來組織史事。"
         },
         {
           "id": "b",
-          "text": "國別體——按不同國家分述"
+          "text": "國別體：按不同國家分述史事。"
         },
         {
           "id": "c",
-          "text": "編年體——依年代先後記事"
+          "text": "編年體：按年代先後記錄史事。"
         }
       ],
       "answerId": "c",
       "hint": "題目強調按年代先後安排，而不是以人物或國家分篇。",
-      "explanation": "編年體按年代先後記事，《資治通鑑》屬此類；紀傳體以人物傳記等為組織主軸，國別體按國家分述。",
+      "explanation": "本題的關鍵是依年月先後記事，所以是編年體。紀傳體與國別體也是合理的史書分類，但組織順序不同，不能只因都記史事就混在一起。",
       "correction": "《資治通鑑》是編年體史書。",
       "sourceTitle": "教育部《重編國語辭典修訂本》：編年體",
       "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=18667",
@@ -101,30 +101,39 @@
           "題目強調按年代先後安排，而不是以人物或國家分篇。"
         ],
         "interactionHint": "查看目錄、句格與朝代線索，再整理體裁與文學卷軸。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "連結舊卷證據任務，保留三個正確體例說明供比較。",
+        "distractorPrinciple": "三項都是真實史書體例，以組織方式區辨。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "history-biographical",
       "chapterId": "prison",
       "concept": "文體與史書",
-      "prompt": "書架把《史記》與《資治通鑑》混放在同一「編年體」籤下。《史記》目錄卻列有本紀、世家、列傳等。應為它另配哪個體裁籤？",
+      "prompt": "引導者要妳找出《史記》與《資治通鑑》書籤混放的原因。史記目錄有本紀、世家、列傳等部分，許多史事隨人物敘寫。應為它補哪張籤？",
       "choices": [
         {
           "id": "a",
-          "text": "紀傳體——人物傳記等是其組織特色"
+          "text": "紀傳體：以人物傳記等組織史事。"
         },
         {
           "id": "b",
-          "text": "編年體——只要提到年代就必屬此類"
+          "text": "編年體：依年月先後連續記事。"
         },
         {
           "id": "c",
-          "text": "詩歌總集——只要文筆生動就屬詩集"
+          "text": "國別體：把不同國家的史事分開。"
         }
       ],
       "answerId": "a",
       "hint": "留意這部書以人物傳記等組織史事的特色。",
-      "explanation": "《史記》是紀傳體通史，具有本紀、表、書、世家、列傳等體例；不能因書中記事涉及年代，就直接歸為編年體。",
+      "explanation": "史記是紀傳體通史。題目所列本紀、世家、列傳，及隨人物敘寫的特色，能與按年代記事的編年體、按國家分述的國別體區別。",
       "correction": "《史記》是紀傳體通史。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -139,30 +148,39 @@
           "留意這部書以人物傳記等組織史事的特色。"
         ],
         "interactionHint": "查看目錄、句格與朝代線索，再整理體裁與文學卷軸。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "移除把史書說成詩集的明顯錯項。",
+        "distractorPrinciple": "三個誘答方向都屬史書體例，須閱讀目錄線索。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "poetry-five-regulated",
       "chapterId": "prison",
       "concept": "文體與史書",
-      "prompt": "牆上詩稿有八個完整句格，每格五字，第三四句、第五六句並排成對仗聯。若先按一般定型句數與字數歸類，它最符合？",
+      "prompt": "舊卷的詩稿要放回詩體架。它共有八句，每句五字，中間兩聯成對仗。先依句數與字數判讀，應放在哪格？",
       "choices": [
         {
           "id": "a",
-          "text": "五言絕句：四句，每句五字"
+          "text": "五言絕句：四句，每句五字。"
         },
         {
           "id": "b",
-          "text": "五言律詩：八句，每句五字"
+          "text": "五言律詩：八句，每句五字。"
         },
         {
           "id": "c",
-          "text": "七言律詩：八句，每句七字"
+          "text": "七言律詩：八句，每句七字。"
         }
       ],
       "answerId": "b",
       "hint": "「五言」說每句字數；「律詩」與四句的絕句不同。",
-      "explanation": "一般五言律詩為八句、每句五字；四句五字是五言絕句，八句七字是七言律詩。此處不把十句以上的排律混入。",
+      "explanation": "五言說每句五字，一般律詩為八句；兩條線索一起看，得到五言律詩。五言絕句只符合字數，七言律詩只符合句數。",
       "correction": "一般五言律詩八句，每句五字。",
       "sourceTitle": "教育部《重編國語辭典修訂本》：五律",
       "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=159521",
@@ -179,21 +197,30 @@
           "「五言」說每句字數；「律詩」與四句的絕句不同。"
         ],
         "interactionHint": "查看目錄、句格與朝代線索，再整理體裁與文學卷軸。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "保留兩條條件整合的任務，解釋聯為兩句而不額外考術語。",
+        "distractorPrinciple": "兩個誘答各滿足一半條件，不能只看字數或句數。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "literature-periods",
       "chapterId": "prison",
       "concept": "文體與史書",
-      "prompt": "文學卷軸三格由早至晚排列，朝代籤已排成唐、宋、元。要把代表性文學風尚卡配回去，哪一組既符合順序，也不誤稱其他文體從此消失？",
+      "prompt": "舊卷的三枚文學暗碼必須由早到晚排好，才能接上下一段線索。書架提示：唐、宋、元是這三種文學風尚的代表時期。請選順序。",
       "choices": [
         {
           "id": "a",
-          "text": "宋詞 → 唐詩 → 元曲"
+          "text": "唐詩 → 元曲 → 宋詞"
         },
         {
           "id": "b",
-          "text": "元曲 → 宋詞 → 唐詩"
+          "text": "宋詞 → 唐詩 → 元曲"
         },
         {
           "id": "c",
@@ -202,7 +229,7 @@
       ],
       "answerId": "c",
       "hint": "先判斷唐、宋、元三個朝代的時間順序。",
-      "explanation": "唐、宋、元依序在前後，常以唐詩、宋詞、元曲說明代表性文學成就。這是教學概括，不表示詩只在唐、詞只在宋、曲只在元出現。",
+      "explanation": "唐、宋、元的先後，對應唐詩、宋詞、元曲。這是代表性成就的概括，不是說詩、詞、曲只存在於一個朝代，也不是它們完全互相取代。",
       "correction": "代表性文學風尚可依序記作唐詩、宋詞、元曲，但各文體有延續。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -217,6 +244,15 @@
           "先判斷唐、宋、元三個朝代的時間順序。"
         ],
         "interactionHint": "查看目錄、句格與朝代線索，再整理體裁與文學卷軸。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "把辨析題接到文學暗碼任務；誘答只交換相鄰時期。",
+        "distractorPrinciple": "兩個誘答各錯一段朝代先後，避免完全倒序的過易排除。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     }
   ]

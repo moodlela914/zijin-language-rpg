@@ -1,6 +1,6 @@
 {
   "name": "zijin-language-rpg",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "type": "module",
   "description": "紫禁語文弈：資料驅動的國中語文對話 RPG 原型",

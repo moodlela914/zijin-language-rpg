@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v2-interactions",
+  "snapshotVersion": "2026-10-26-v3-reviewed",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
   "chapter": {
     "chapterId": "jingren",
     "number": 9,
@@ -69,24 +69,24 @@
       "id": "letter-parents",
       "chapterId": "jingren",
       "concept": "書信稱謂",
-      "prompt": "女兒要寫信向自己的父母請安。請按傳統課堂書信格式，組裝稱謂、提稱語與寫信人的署名；每張詞牌最多用一次。",
+      "prompt": "皇后要妳替一位離家的女兒完成請安信。請依本課傳統格式，放好對父母的稱呼、稱呼後的提稱語，以及女兒在信末的署名。",
       "choices": [
         {
           "id": "a",
-          "text": "稱謂用父母親大人；提稱語用膝下；署名用女兒某某敬上"
+          "text": "稱謂父母親大人；提稱語膝下；署名女兒某某敬上。"
         },
         {
           "id": "b",
-          "text": "稱謂用父母親大人；提稱語用函丈；署名用女兒某某敬上"
+          "text": "稱謂父母親大人；提稱語函丈；署名女兒某某敬上。"
         },
         {
           "id": "c",
-          "text": "稱謂用膝下；提稱語用台鑒；署名用父母親大人"
+          "text": "稱謂父母親大人；提稱語台鑒；署名女兒某某敬上。"
         }
       ],
       "answerId": "a",
       "hint": "區分對父母的稱呼、提請父母察閱的用語，以及女兒的自署。",
-      "explanation": "父母親大人是稱謂，膝下是傳統親子書信提稱語，女兒某某敬上是寫信人的署名。函丈適用師長關係，不能直接搬來代替親子提稱語。",
+      "explanation": "父母親大人表明收信對象，膝下是傳統親子書信提稱語，女兒某某敬上表明寄信人。函丈常用於師長，台鑒常用於平輩，都不如膝下符合本題親子格式。",
       "correction": "稱謂、提稱語與署名功能不同，須配合親子關係組裝。",
       "sourceTitle": "教育部《重編國語辭典修訂本》：膝下",
       "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=104596",
@@ -148,30 +148,39 @@
           "address": "knees",
           "signature": "daughter"
         }
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "說明提稱語位置，三方案只差要辨析的關係。",
+        "distractorPrinciple": "師長或平輩的真實敬語與親子關係不符。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "letter-teacher",
       "chapterId": "jingren",
       "concept": "書信稱謂",
-      "prompt": "學子要向王老師請益文章。請組裝信首稱謂、傳統提稱語與學生自署，不要混入親子書信用語。",
+      "prompt": "皇后交給妳一封學生向王老師請教文章的信。請組裝老師稱謂、提稱語與學生署名，讓收信人看得出雙方的師生關係。",
       "choices": [
         {
           "id": "a",
-          "text": "稱謂用王老師；提稱語用膝下；署名用學生某某敬上"
+          "text": "稱謂王老師；提稱語膝下；署名學生某某敬上。"
         },
         {
           "id": "b",
-          "text": "稱謂用父母親大人；提稱語用函丈；署名用王老師"
+          "text": "稱謂王老師；提稱語硯右；署名學生某某敬上。"
         },
         {
           "id": "c",
-          "text": "稱謂用王老師；提稱語用函丈；署名用學生某某敬上"
+          "text": "稱謂王老師；提稱語函丈；署名學生某某敬上。"
         }
       ],
       "answerId": "c",
       "hint": "先分清收信的老師與寄信的學生，再配合傳統師長提稱語。",
-      "explanation": "收信人是王老師，提稱語可用函丈，寫信人以學生自署。膝下用於父母或祖父母，不能只因老師也值得尊敬就直接混用。",
+      "explanation": "本課採用的師長提稱語是函丈。膝下用於父母或祖父母，硯右常用於同學；不能只因都是有禮貌的古式用語就互換。",
       "correction": "師生書信可用老師稱謂、函丈提稱語及學生自署。",
       "sourceTitle": "新竹縣內思工業高級中等學校：劉玉瑞老師應用文教學資料",
       "sourceUrl": "https://www.savs.hcc.edu.tw/ischool/publish_page/198/?cid=10325",
@@ -221,7 +230,7 @@
           },
           {
             "id": "parents",
-            "text": "父母親大人"
+            "text": "硯右"
           },
           {
             "id": "mentor",
@@ -233,30 +242,39 @@
           "address": "mentor",
           "signature": "student"
         }
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "三方案保留相同稱謂與署名，只比較提稱語。",
+        "distractorPrinciple": "父母、同學與師長的傳統用語互相混淆。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "letter-envelope",
       "chapterId": "jingren",
       "concept": "書信稱謂",
-      "prompt": "晚輩寄信給一般長輩，要分別完成「信封啟封詞」與「信末寄信人署名」。依本課採用的傳統格式，請把用語放在正確位置。",
+      "prompt": "皇后要寄信給一位一般長輩。請分清信封上請人開信的啟封詞，以及信末寄信人自己的署名，完成兩個欄位。",
       "choices": [
         {
           "id": "a",
-          "text": "長輩信封啟封詞用敬啟；信末自署用晚輩某某敬上"
+          "text": "信封用敬啟；信末用晚輩某某敬上。"
         },
         {
           "id": "b",
-          "text": "長輩信封啟封詞用鈞啟；信末自署用晚輩某某敬上"
+          "text": "信封用鈞啟；信末用晚輩某某敬上。"
         },
         {
           "id": "c",
-          "text": "長輩信封啟封詞用函丈；信末自署用膝下"
+          "text": "信封用函丈；信末用晚輩某某敬上。"
         }
       ],
       "answerId": "b",
       "hint": "啟封詞是請收信人開信，署名敬辭則是寫信人自表敬意。",
-      "explanation": "依本課傳統格式，鈞啟可尊請一般長輩開信；晚輩某某敬上放在信末署名。敬啟不宜直接當作信封啟封詞，函丈與膝下則是不同對象的提稱語。",
+      "explanation": "依本課傳統格式，鈞啟是尊請一般長輩開信的啟封詞，晚輩某某敬上放在信末。敬啟不能只因帶敬字就當成啟封詞，函丈則是師長提稱語，功能也不同。",
       "correction": "啟封詞與署名敬辭不可因都帶敬意就任意互換。",
       "sourceTitle": "新竹縣內思工業高級中等學校：劉玉瑞老師應用文教學資料",
       "sourceUrl": "https://www.savs.hcc.edu.tw/ischool/publish_page/198/?cid=10325",
@@ -313,30 +331,39 @@
           "opening": "respect-open",
           "signature": "respect-sign"
         }
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "在題幹解釋啟封詞功能，三方案只改信封用語。",
+        "distractorPrinciple": "把寄信人敬語或信內提稱語搬到啟封詞位置。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "letter-self-signature",
       "chapterId": "jingren",
       "concept": "書信稱謂",
-      "prompt": "一封給授業老師的請益信只剩三欄待組裝。妳是寫信的學生，收信人是王老師；請選能保持雙方身分的完整方案。",
+      "prompt": "皇后請妳核對學生寄給王老師的請益信。三個欄位要分別表示收信人、請老師察閱的用語，以及寄信學生的身分，請完成組裝。",
       "choices": [
         {
           "id": "a",
-          "text": "收信稱謂王老師；提稱語函丈；寄信自署學生某某敬上"
+          "text": "收信稱謂王老師；提稱語函丈；自署學生某某敬上。"
         },
         {
           "id": "b",
-          "text": "收信稱謂王老師；提稱語函丈；寄信自署家師某某敬上"
+          "text": "收信稱謂王老師；提稱語函丈；自署家師某某敬上。"
         },
         {
           "id": "c",
-          "text": "收信稱謂函丈；提稱語王老師；寄信自署令師某某敬上"
+          "text": "收信稱謂王老師；提稱語函丈；自署令師某某敬上。"
         }
       ],
       "answerId": "a",
       "hint": "家師是自己的老師、令師是對方的老師，兩者都不是學生自己的身分。",
-      "explanation": "王老師是受信人稱謂，函丈是師長提稱語，學生某某敬上才是寄信人的自署。家師與令師指老師，不能用作學生自稱。",
+      "explanation": "學生某某敬上才是寫信人的自署；家師指自己的老師，令師指對方的老師，都不是學生自己的身分。稱謂與提稱語即使放對，署名仍須另查。",
       "correction": "署名必須表示寄信人的身分，不能把家師、令師當成學生自稱。",
       "sourceTitle": "新竹縣內思工業高級中等學校：劉玉瑞老師應用文教學資料",
       "sourceUrl": "https://www.savs.hcc.edu.tw/ischool/publish_page/198/?cid=10325",
@@ -398,6 +425,15 @@
           "address": "mentor",
           "signature": "student"
         }
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "三方案保留相同稱謂與提稱語，聚焦自署。",
+        "distractorPrinciple": "分清學生、自己的老師與對方老師，不以亂換欄位作誘答。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     }
   ]

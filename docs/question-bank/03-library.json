@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v2-interactions",
+  "snapshotVersion": "2026-10-26-v3-reviewed",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
   "chapter": {
     "chapterId": "library",
     "number": 3,
@@ -62,24 +62,24 @@
       "id": "books-shiji",
       "chapterId": "library",
       "concept": "四部分類",
-      "prompt": "歸架單把《史記》放在「集部」，理由是它文筆生動；另一張書介卻說它以人物傳記等體例記載歷史。依四部分類，應改放哪一架？",
+      "prompt": "學士要妳修正書架。《史記》的書介寫「記錄歷史人物與事件」，抄手卻因它文筆生動而放到集部。按經史子集，應移去哪一部？",
       "choices": [
         {
           "id": "a",
-          "text": "史部：按史書性質歸類，不能只看文采"
+          "text": "史部：以記錄歷史為主要性質。"
         },
         {
           "id": "b",
-          "text": "子部：只要談人的行為就屬諸子著作"
+          "text": "子部：以討論各家思想為主要性質。"
         },
         {
           "id": "c",
-          "text": "集部：凡是文筆優美的書都放在此處"
+          "text": "集部：以彙集個人詩文為主要性質。"
         }
       ],
       "answerId": "a",
       "hint": "先看書籍的性質：這是史書、諸子著作，還是詩文集？",
-      "explanation": "《史記》是紀傳體史書，在經、史、子、集四部分類中屬於史部。",
+      "explanation": "分類先看書的主要性質。史記是史書，歸史部；文筆生動不能直接當成集部的判準。子部與集部在選項中的說明雖有各自依據，卻不符合這部書。",
       "correction": "《史記》是史書，歸入史部。",
       "sourceTitle": "國立成功大學圖書館：文淵閣四庫全書電子版介紹",
       "sourceUrl": "https://libapp.lib.ncku.edu.tw/libref/chinese/single/oldbook2.htm",
@@ -96,30 +96,39 @@
           "先看書籍的性質：這是史書、諸子著作，還是詩文集？"
         ],
         "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "三個選項都用正確分類概念，學生須對照書介決定。",
+        "distractorPrinciple": "誘答來自混淆思想著作、詩文集與史書，而非荒謬通則。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "books-zhuangzi",
       "chapterId": "library",
       "concept": "四部分類",
-      "prompt": "《莊子》的歸架卡上有兩條資訊：「先秦道家著作」「寓言精采」。有人只依第二條就把它放進集部。應如何更正？",
+      "prompt": "文淵閣要整理一冊「道家思想著作，常用寓言說理」的《莊子》。學士提醒，不能只因故事好看就放進詩文集。請替它選書架。",
       "choices": [
         {
           "id": "a",
-          "text": "移至經部，因為只要古老就是儒家經典"
+          "text": "經部：儒家經典書架。"
         },
         {
           "id": "b",
-          "text": "留在集部，分類只看文筆好壞"
+          "text": "集部：詩文作品彙編書架。"
         },
         {
           "id": "c",
-          "text": "移至子部，依其道家著作性質分類"
+          "text": "子部：諸子思想著作書架。"
         }
       ],
       "answerId": "c",
       "hint": "莊子屬於先秦諸子，道家著作如何分類？",
-      "explanation": "《莊子》是道家著作，歸入子部。分類要看書籍性質，不能單憑文筆優美就歸入集部。",
+      "explanation": "莊子是道家著作，四部分類歸子部。寓言精采是表達特色，不能把主要性質改成詩文集；它也不是本題所指的儒家經典。",
       "correction": "《莊子》為道家著作，歸入子部。",
       "sourceTitle": "國立成功大學圖書館：文淵閣四庫全書電子版介紹",
       "sourceUrl": "https://libapp.lib.ncku.edu.tw/libref/chinese/single/oldbook2.htm",
@@ -136,30 +145,39 @@
           "莊子屬於先秦諸子，道家著作如何分類？"
         ],
         "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "把先秦等非必要背景移開，用寓言與思想兩條線索判讀。",
+        "distractorPrinciple": "集部誘答利用故事文采，經部誘答利用古代思想經典的概括印象。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "books-analects",
       "chapterId": "library",
       "concept": "四部分類",
-      "prompt": "書架的規則是「儒家經典歸經部，諸子著作歸子部」。《論語》的書介寫著「儒家經典」，整理員卻因它談思想而放到子部。哪個修正合理？",
+      "prompt": "《論語》的書介寫著「儒家重要經典，記錄孔子與弟子的言行」。學士要妳在「經典、史事、諸子」三架中選主架，不能只憑書裡有人物對話判斷。",
       "choices": [
         {
           "id": "a",
-          "text": "移到史部，凡有古人言行都是史書"
+          "text": "史部：依古人的言行記錄來判斷。"
         },
         {
           "id": "b",
-          "text": "移到集部，凡有語句都是詩文集"
+          "text": "子部：依討論思想與做人來判斷。"
         },
         {
           "id": "c",
-          "text": "移到經部，依儒家經典的性質分類"
+          "text": "經部：依儒家經典的書籍性質判斷。"
         }
       ],
       "answerId": "c",
       "hint": "不要把所有討論思想的書都放進子部，先辨認儒家經典。",
-      "explanation": "《論語》屬於儒家經典，四部分類歸入經部；史部以史籍為主，集部以詩文集等為主。",
+      "explanation": "論語在四部分類中歸經部。記錄人物言行、討論做人都可能讓人想到史部或子部，但在此分類制度中，要以其儒家經典的性質為主。",
       "correction": "四部分類中，《論語》歸經部。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -174,30 +192,39 @@
           "不要把所有討論思想的書都放進子部，先辨認儒家經典。"
         ],
         "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "保留四部分類的實際判準，讓兩個誘答都來自真實書介特徵。",
+        "distractorPrinciple": "比較表面內容特徵與分類上的主要身分。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "books-poetry-collection",
       "chapterId": "library",
       "concept": "四部分類",
-      "prompt": "妳要替《陶淵明集》補上歸架籤。線索說「一位作者的詩文匯編」，旁邊的錯誤籤卻寫「作者是古人，所以歸史部」。哪個修補正確？",
+      "prompt": "書庫搬來《陶淵明集》，書介寫「收錄陶淵明一人的詩與文章」。學士要妳把它與史書、道家思想書分開，應放哪一架？",
       "choices": [
         {
           "id": "a",
-          "text": "集部：這是個人的詩文別集"
+          "text": "集部：同一位作者的詩文集。"
         },
         {
           "id": "b",
-          "text": "史部：凡是古人的書都屬史部"
+          "text": "史部：記錄人物事蹟的史書。"
         },
         {
           "id": "c",
-          "text": "子部：凡非儒家經典都屬子部"
+          "text": "子部：討論諸子思想的著作。"
         }
       ],
       "answerId": "a",
       "hint": "分類看書籍性質：這是個人詩文集，不是人物傳記。",
-      "explanation": "個人詩文集屬集部的別集；不能因作者是古人，就把其詩文集歸史部。",
+      "explanation": "這是一位作者的詩文集，歸集部。作者生活在古代，不表示他的作品集就是史書；文章中有想法，也不因此變成諸子著作。",
       "correction": "個人的詩文別集歸入集部。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -212,6 +239,15 @@
           "分類看書籍性質：這是個人詩文集，不是人物傳記。"
         ],
         "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "用一人詩文集代替未解釋的別集術語。",
+        "distractorPrinciple": "誘答比較作者作品、人物事蹟與思想著作三種不同書籍性質。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     }
   ]

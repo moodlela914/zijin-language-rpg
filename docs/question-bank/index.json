@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v2-interactions",
+  "snapshotVersion": "2026-10-26-v3-reviewed",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
   "runtimeDependsOnArchive": false,
   "chapterCount": 12,
   "questionCount": 47,
@@ -16,6 +16,13 @@
     "form",
     "timeline"
   ],
+  "editorialReview": {
+    "date": "2026-10-26",
+    "reviewedQuestionCount": 47,
+    "report": "docs/question-bank/REVIEW-2026-10-26.md",
+    "teacherApproval": "pending",
+    "studentCalibration": "pending"
+  },
   "intendedDifficulty": "medium",
   "difficultyValidation": "design-target-not-student-calibrated",
   "reviewStatus": "draft-teacher-review",
@@ -993,7 +1000,7 @@
       "concept": "對聯格律",
       "puzzleMode": "couplet-order",
       "interactionKind": "couplet",
-      "interactionInstruction": "先組上聯、再組下聯；每聯由四字起句接三字結尾，並符合題目指定聲類。",
+      "interactionInstruction": "每句用四字開頭接三字結尾。保留指定開頭，排成上聯在前、下聯在後。",
       "interactionPayloadLocation": "docs/question-bank/07-yanxi.json → questions[id=couplet-equal-length].interaction",
       "correctAnswerId": "b"
     },
@@ -1013,7 +1020,7 @@
       "concept": "對聯格律",
       "puzzleMode": "couplet-order",
       "interactionKind": "couplet",
-      "interactionInstruction": "依題目詩意還原片段，再按上聯、下聯的順序排列。",
+      "interactionInstruction": "先照原稿的意思接好兩句，再排成上聯在前、下聯在後。",
       "interactionPayloadLocation": "docs/question-bank/07-yanxi.json → questions[id=couplet-parts-of-speech].interaction",
       "correctAnswerId": "c"
     },
@@ -1023,7 +1030,7 @@
       "concept": "對聯格律",
       "puzzleMode": "couplet-order",
       "interactionKind": "couplet",
-      "interactionInstruction": "保留指定的上下聯起句，組成對稱結構，依上聯、下聯順序排列。",
+      "interactionInstruction": "保留花開、鳥語兩個指定開頭，檢查句尾規則，再排好兩句。",
       "interactionPayloadLocation": "docs/question-bank/07-yanxi.json → questions[id=couplet-structure].interaction",
       "correctAnswerId": "b"
     },
@@ -1113,7 +1120,7 @@
       "concept": "年齡與干支",
       "puzzleMode": "age-time-order",
       "interactionKind": "timeline",
-      "interactionInstruction": "移動年齡標記，選定符合「及笄」的歲數刻度。",
+      "interactionInstruction": "移動年齡標記，選出及笄通常對應的歲數。",
       "interactionPayloadLocation": "docs/question-bank/10-cining.json → questions[id=age-coming-of-age].interaction",
       "correctAnswerId": "b"
     },
@@ -1123,7 +1130,7 @@
       "concept": "年齡與干支",
       "puzzleMode": "age-time-order",
       "interactionKind": "timeline",
-      "interactionInstruction": "移動年齡標記，選定符合「而立」的歲數刻度。",
+      "interactionInstruction": "移動年齡標記，補出席單上而立對應的歲數。",
       "interactionPayloadLocation": "docs/question-bank/10-cining.json → questions[id=age-standing].interaction",
       "correctAnswerId": "c"
     },
@@ -1143,7 +1150,7 @@
       "concept": "年齡與干支",
       "puzzleMode": "age-time-order",
       "interactionKind": "timeline",
-      "interactionInstruction": "在年數軸選定兩個循環同時首次回到起點的正整數年數。",
+      "interactionInstruction": "選出最少再過多少年，兩個轉盤會一起回到原來的配對。",
       "interactionPayloadLocation": "docs/question-bank/10-cining.json → questions[id=cycle-sexagenary].interaction",
       "correctAnswerId": "b"
     },

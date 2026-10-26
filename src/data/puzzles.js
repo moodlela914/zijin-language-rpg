@@ -1,4 +1,4 @@
-/** 每殿一個場景機關；線索、機關、正式試題共用同一學習目標。 */
+/** 每殿探索線索；舊卡牌欄位保留供 v2 存檔相容，已不作前置檢驗。 */
 const clue = (id, label, x, y, text) => ({ id, label, x, y, text });
 const card = (id, text) => ({ id, text });
 const slot = (id, label, answer) => ({ id, label, answer });
@@ -12,7 +12,7 @@ export const puzzles = {
     explanation: '介紹自己親人與住所用謙詞；尊稱對方則用敬詞。家父與寒舍才符合這封家書的說話角度。',
   },
   hall: {
-    title:'玉冊字牌機關',kind:'classify',mission:'禮官的玉冊字牌散落了。查看造字線索，將四枚字牌放回對應的分類。',
+    title:'玉冊字牌辨析',kind:'classify',mission:'禮官請妳核對玉冊。查看三處造字線索，再依字形與意思完成玉冊判讀。',
     dialogue:['禮官指向玉冊：「不只要識字，更要看出字形如何承載意義。」','四枚字牌正等待歸位。查閱石刻、玉冊與禮官的註解。'],
     clues:[clue('stone','山形石刻',21,51,'「山」依山峰形狀描畫，是象形。'),clue('jade','刀口玉冊',53,61,'「刃」在刀上加一點指出刀口，是指事；不是聲符。'),clue('notes','禮官註解',78,43,'「清」從水、青聲，是形聲；「休」把人與木合在一起表示倚木休息，是會意。')],
     items:[card('qing','清'),card('rest','休'),card('mountain','山'),card('blade','刃')],
@@ -29,7 +29,7 @@ export const puzzles = {
   },
   garden:{
     title:'節令花籤排序',kind:'sequence',mission:'賞花宴的四枚節令籤順序全亂了。沿園尋找物候提示，依一年先後排好。',
-    dialogue:['齊妃笑問：「花信有時，佳節有序。別讓春花走到秋風後頭。」','石橋、水池與花亭各藏著線索，循時序解開花籤機關。'],
+    dialogue:['齊妃笑問：「花信有時，佳節有序。別讓春花走到秋風後頭。」','石橋、水池與花亭各藏著線索，先讀線索，再依時序安排花籤。'],
     clues:[clue('bridge','石橋燈影',24,59,'元宵在農曆正月，清明約在國曆四月，先後不可顛倒。'),clue('pond','荷池香囊',55,72,'端午在農曆五月，常見菖蒲、艾草與粽子。'),clue('pavilion','秋亭花箋',78,43,'重陽在農曆九月，有登高、賞菊等習俗。')],
     items:[card('double','重陽'),card('dragon','端午'),card('lantern','元宵'),card('qingming','清明')],solution:['lantern','qingming','dragon','double'],
     explanation:'這四個節日的先後是元宵、清明、端午、重陽。留意清明屬節氣，不把它當作固定農曆日期。',

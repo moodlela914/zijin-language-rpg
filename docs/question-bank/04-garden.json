@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v2-interactions",
+  "snapshotVersion": "2026-10-26-v3-reviewed",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
   "chapter": {
     "chapterId": "garden",
     "number": 4,
@@ -64,7 +64,7 @@
       "id": "festival-dragon-boat",
       "chapterId": "garden",
       "concept": "節令民俗",
-      "prompt": "御花園的全年節慶卷軸被打亂。請依同一年由早到晚，排出元宵、清明、端午、重陽的先後。清明採常見國曆節氣時序，其餘為農曆節日。",
+      "prompt": "齊妃要把御花園的年度活動簿重新裝訂。四張節慶牌的日期掉了，請依同一年先後排好，讓下一場活動不會提前或遲辦。",
       "choices": [
         {
           "id": "a",
@@ -76,12 +76,12 @@
         },
         {
           "id": "c",
-          "text": "元宵 → 端午 → 重陽 → 清明"
+          "text": "元宵 → 端午 → 清明 → 重陽"
         }
       ],
       "answerId": "b",
       "hint": "先辨認春季的兩個節日，再把端午與秋季重陽放回位置。",
-      "explanation": "元宵在農曆正月十五，清明一般在國曆四月初，端午在農曆五月初五，重陽在農曆九月初九，所以依序是元宵、清明、端午、重陽。清明不是固定農曆日期。",
+      "explanation": "元宵在農曆正月，清明一般在國曆四月初，端午在農曆五月，重陽在農曆九月。依一年先後是元宵、清明、端午、重陽；清明不是固定的農曆日期。",
       "correction": "四節先後：元宵、清明、端午、重陽；清明依節氣判讀。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -124,13 +124,22 @@
           "dragon",
           "double"
         ]
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "不在題幹直接列出正序；補上裝訂活動簿的目的。",
+        "distractorPrinciple": "各交換一對容易混淆的春季或春夏節日。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "festival-double-ninth",
       "chapterId": "garden",
       "concept": "節令詩詞",
-      "prompt": "三張秋季節慶卡分別記錄乞巧、八月十五賞月、九月九日登高。請把對應的七夕、中秋、重陽依同一年先後排列。",
+      "prompt": "秋宴過後，三張活動卡混在一起：登高插茱萸、乞巧、賞月。齊妃要妳將七夕、中秋、重陽依同一年先後排回園中日誌。",
       "choices": [
         {
           "id": "a",
@@ -138,7 +147,7 @@
         },
         {
           "id": "b",
-          "text": "重陽 → 中秋 → 七夕"
+          "text": "七夕 → 重陽 → 中秋"
         },
         {
           "id": "c",
@@ -147,7 +156,7 @@
       ],
       "answerId": "c",
       "hint": "依農曆七月、八月、九月的月份遞進判斷。",
-      "explanation": "七夕是農曆七月初七，中秋是八月十五，重陽是九月初九。思親不專屬於中秋，茱萸與登高則是辨認重陽的常見線索。",
+      "explanation": "七夕在農曆七月初七，中秋在八月十五，重陽在九月初九。要把活動連到月份再排序，不是只依卡片擺放順序；插茱萸、登高是重陽線索。",
       "correction": "農曆節慶順序：七夕、中秋、重陽。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -185,13 +194,22 @@
           "moon",
           "double"
         ]
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "用活動回填日誌連接故事，移除完全倒序的過易誘答。",
+        "distractorPrinciple": "各交換七夕與中秋、或中秋與重陽。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "festival-lantern",
       "chapterId": "garden",
       "concept": "節令民俗",
-      "prompt": "宮宴的跨年三張活動牌脫落了：舊年最後一天團聚、次年正月初一賀歲、次年正月十五觀燈。請還原這一段跨年的活動先後。",
+      "prompt": "御花園要準備一段從舊年年末到新年正月的慶典。請把團圓守歲、賀歲、觀燈三張牌排好；題目中的除夕屬舊年，其餘兩節屬次年。",
       "choices": [
         {
           "id": "a",
@@ -199,7 +217,7 @@
         },
         {
           "id": "b",
-          "text": "次年元宵 → 舊年除夕 → 次年春節"
+          "text": "次年春節 → 舊年除夕 → 次年元宵"
         },
         {
           "id": "c",
@@ -208,7 +226,7 @@
       ],
       "answerId": "a",
       "hint": "先找年末，再比較正月初一與正月十五。",
-      "explanation": "題目指定從舊年跨入次年，所以先是舊年除夕，接次年正月初一的春節，再到正月十五的元宵；不能把不同年份的除夕混入同一年排序。",
+      "explanation": "舊年最後一天是除夕，接次年正月初一的春節，再到正月十五的元宵。要留意跨年邊界，不能把舊年除夕當成次年年末。",
       "correction": "跨年順序須先釐清年份：舊年除夕、次年春節、次年元宵。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -230,15 +248,15 @@
         "tokens": [
           {
             "id": "lantern",
-            "text": "元宵・正月十五觀燈"
+            "text": "元宵・觀燈"
           },
           {
             "id": "eve",
-            "text": "除夕・舊年年末團聚"
+            "text": "除夕・團聚守歲"
           },
           {
             "id": "newyear",
-            "text": "春節・正月初一賀歲"
+            "text": "春節・賀歲"
           }
         ],
         "solution": [
@@ -246,13 +264,22 @@
           "newyear",
           "lantern"
         ]
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "明定跨年年份，不在牌面附日期讓玩家直接讀數字排序。",
+        "distractorPrinciple": "一項混淆除夕與春節先後，一項混淆正月內兩節順序。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "season-lotus",
       "chapterId": "garden",
       "concept": "節令詩詞",
-      "prompt": "四季詩箋要從春天開始排滿一輪。卡片分別標記春柳、夏荷、秋菊與冬梅，請依季節先後還原；本題採古典詩歌的典型意象。",
+      "prompt": "宮中畫師請妳整理御花園四季畫冊。請從春天開始，依古典詩歌常見意象排好柳枝、荷花、菊花與寒梅，讓畫冊能連成完整的一年。",
       "choices": [
         {
           "id": "a",
@@ -264,12 +291,12 @@
         },
         {
           "id": "c",
-          "text": "冬梅 → 夏荷 → 春柳 → 秋菊"
+          "text": "春柳 → 夏荷 → 冬梅 → 秋菊"
         }
       ],
       "answerId": "b",
-      "hint": "先依春夏秋冬定位置，再比對每張卡片的季節意象。",
-      "explanation": "由春季開始，一年季序是春、夏、秋、冬。春柳、夏荷、秋菊、冬梅是本題指定的典型詩歌意象，不表示各地植物實際花期完全相同。",
+      "hint": "先找回暖的新綠與寒冷的雪景，再安排其間的兩種花。",
+      "explanation": "本題採典型意象：春柳、夏荷、秋菊、冬梅，所以依春夏秋冬排列。植物花期會因地點與品種不同，不能把詩歌線索當作所有地方都一樣的自然規律。",
       "correction": "典型四季意象可依春柳、夏荷、秋菊、冬梅排列。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -281,7 +308,7 @@
         "evidence": [
           "同樣是十五日，還需要確認農曆月份與活動。",
           "思親不是某個節日專有，需合併植物、日期及節俗線索。",
-          "先依春夏秋冬定位置，再比對每張卡片的季節意象。"
+          "先找回暖的新綠與寒冷的雪景，再安排其間的兩種花。"
         ],
         "interactionHint": "把節慶與詩卡配到合適的日期或四季位置。"
       },
@@ -291,19 +318,19 @@
         "tokens": [
           {
             "id": "autumn",
-            "text": "秋・菊花傲霜"
+            "text": "菊花傲霜"
           },
           {
             "id": "summer",
-            "text": "夏・映日荷花"
+            "text": "映日荷花"
           },
           {
             "id": "winter",
-            "text": "冬・寒梅映雪"
+            "text": "寒梅映雪"
           },
           {
             "id": "spring",
-            "text": "春・柳枝新綠"
+            "text": "柳枝新綠"
           }
         ],
         "solution": [
@@ -312,6 +339,15 @@
           "autumn",
           "winter"
         ]
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "移除牌面直接標出的季節，保留物候判讀而非讀標籤排序。",
+        "distractorPrinciple": "各混淆夏秋或秋冬相鄰季節。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     }
   ]

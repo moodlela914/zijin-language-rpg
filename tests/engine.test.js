@@ -4,16 +4,13 @@ import { questions } from '../src/data/questions.js';
 import { chapters } from '../src/data/chapters.js';
 import { createGame, chapterQuestions, currentQuestion, remediationQuestion, playableChapters, enterChapter as rawEnterChapter, answer, advance, continueJourney, useHint, useItem, setStrategy, pauseGame, resumeGame, correctionAnswer, advanceCorrection, report } from '../src/game/engine.js';
 import { puzzles } from '../src/data/puzzles.js';
-import { finishIntro, discoverClue, placePuzzle, togglePuzzle, rotatePuzzle, checkPuzzle, startTrial } from '../src/game/engine.js';
+import { finishIntro, discoverClue, startTrial } from '../src/game/engine.js';
 import { isValidSave, loadGame, saveGame, SAVE_KEY, LEGACY_KEY } from '../src/game/storage.js';
 const wrong = q => q.choices.find(c => c.id !== q.answerId).id;
 function solveScene(s) {
   s=finishIntro(s);const p=puzzles[s.puzzle.chapterId];
   for(const c of p.clues)s=discoverClue(s,c.id);
-  if(p.slots)for(const slot of p.slots)s=placePuzzle(s,slot.id,slot.answer);
-  else if(p.kind==='dial'){while(String(s.puzzle.dial)!==p.solution[0])s=rotatePuzzle(s,1);}
-  else for(const id of p.solution)s=togglePuzzle(s,id);
-  s=checkPuzzle(s);assert.ok(s.puzzle.solved);assert.ok(isValidSave(s));
+  assert.ok(isValidSave(s));
   return s;
 }
 function enterChapter(s,id,now=Date.now()){
@@ -59,7 +56,7 @@ test('三種策略各有明確風險與獎勵；進關後不能換策略',()=>{
     const q=enterChapter(setStrategy(createGame(),strategy),'gate');
     assert.equal(setStrategy(q,'direct'),q);
     assert.equal(answer(q,wrong(currentQuestion(q))).hp,100-damage);
-    assert.equal(answer(q,currentQuestion(q).answerId).score,score+5);
+    assert.equal(answer(q,currentQuestion(q).answerId).score,score);
   }
 });
 test('密友共用三次，每題一次；排除不會刪掉正解，援助獎勵減半',()=>{
@@ -70,7 +67,7 @@ test('密友共用三次，每題一次；排除不會刪掉正解，援助獎�
   assert.ok(!hinted.eliminated.includes(currentQuestion(q).answerId));
   assert.equal(useHint(hinted),hinted);
   assert.equal(answer(hinted,hinted.eliminated[0]),hinted);
-  assert.equal(answer(hinted,currentQuestion(q).answerId).score,10);
+  assert.equal(answer(hinted,currentQuestion(q).answerId).score,5);
   const exhausted={...q,hints:0};assert.equal(useHint(exhausted),exhausted);
 });
 test('銀針與殘箋消耗、無可排除選項時不消耗、不能作答已排除選項',()=>{
@@ -127,7 +124,7 @@ test('氣血歸零後三道不同訂正題、錯誤歸零、回到原進度且�
     s=advanceCorrection(r);assert.ok(isValidSave(s));
   }
   assert.equal(s.hp,60);assert.equal(s.questionId,original);assert.equal(s.phase,'feedback');
-  assert.equal(s.score,5);assert.equal(s.attempts.length,1);assert.equal(s.reviews.length,5);
+  assert.equal(s.score,0);assert.equal(s.attempts.length,1);assert.equal(s.reviews.length,5);
   assert.notEqual(advance(s).questionId,original);
 });
 test('全47題通關、十二碎片、終局心防歸零、策書與所有存檔階段有效',()=>{
@@ -173,26 +170,13 @@ test('存檔讀寫錯誤容錯，無效資源、流程與題目會被拒絕',()=
 
 
 
-test('過場、探索與正式答題分離：未集齊線索或解謎不可跳關',()=>{
-  let s=rawEnterChapter(createGame(),'gate',1000);
-  assert.equal(s.phase,'intro');assert.equal(s.deadline,null);assert.ok(isValidSave(s));
-  assert.equal(answer(s,'a'),s);assert.equal(startTrial(s),s);
-  s=finishIntro(s);assert.ok(isValidSave(s));
-  assert.equal(checkPuzzle(s),s);assert.equal(placePuzzle(s,'father','father'),s);
-  s=discoverClue(s,'roster');assert.equal(discoverClue(s,'roster'),s);
-  s=discoverClue(discoverClue(s,'notice'),'letter');
-  const failed=checkPuzzle(s);assert.equal(failed.hp,100);assert.ok(!failed.puzzle.solved);
-  s=placePuzzle(placePuzzle(failed,'father','father'),'home','house');
-  s=checkPuzzle(s);assert.ok(s.puzzle.solved);assert.equal(s.score,5);
-  assert.equal(checkPuzzle(s),s);assert.equal(s.puzzleLog.length,1);
-  s=startTrial(s,2000);assert.equal(s.phase,'question');assert.ok(isValidSave(s));
-});
-test('十二種關卡機關有唯一可解資料，分類/排序/辨識/轉輪均可完成',()=>{
-  assert.equal(Object.keys(puzzles).length,12);
+test('All twelve chapters proceed from clues directly to formal trials',()=>{
   for(const c of chapters){
     const base={...createGame(),completed:chapters.slice(0,c.number-1).map(x=>x.id)};
-    const s=solveScene(rawEnterChapter(base,c.id));
-    assert.equal(s.puzzleLog[0].chapterId,c.id);
+    let state=finishIntro(rawEnterChapter(base,c.id));
+    assert.equal(startTrial(state),state);
+    for(const clue of puzzles[c.id].clues)state=discoverClue(state,clue.id);
+    state=startTrial(state);
+    assert.equal(state.phase,'question');assert.equal(state.score,0);assert.ok(isValidSave(state));
   }
 });
-

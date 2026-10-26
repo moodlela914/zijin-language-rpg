@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "snapshotVersion": "2026-10-26-v2-interactions",
+  "snapshotVersion": "2026-10-26-v3-reviewed",
   "sourcePath": "src/data/questions.js",
-  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "sourceSha256": "d9e138acbc6d53690a6ef8bc6335eb39d1537ad7d7ba49889227b59b5b98a07f",
   "chapter": {
     "chapterId": "final",
     "number": 12,
@@ -56,24 +56,24 @@
       "id": "logic-false-dilemma",
       "chapterId": "final",
       "concept": "語言邏輯",
-      "prompt": "皇帝說：「妳若不贊成我這項藏書方案，就一定是反對所有人讀書。」哪個回應最能指出問題？",
+      "prompt": "養心殿要決定藏書方案。皇帝說：「妳若不贊成這個方案，就一定反對大家讀書。」妳要保留支持讀書的目標，又指出這句話漏掉的可能，該怎麼回應？",
       "choices": [
         {
           "id": "a",
-          "text": "不同意一個方案，仍可能支持讀書，還有修改方案等選擇。"
+          "text": "可以支持大家讀書，同時要求修改這個方案。"
         },
         {
           "id": "b",
-          "text": "皇帝身分尊貴，所以推論必定正確。"
+          "text": "先調查藏書數量，再在全盤贊成與反對讀書之間選一邊。"
         },
         {
           "id": "c",
-          "text": "只要把語氣放輕，推論就會自動成立。"
+          "text": "先停止讀書活動，等新方案完成後再支持讀書。"
         }
       ],
       "answerId": "a",
       "hint": "檢查「贊成這項方案」與「支持讀書」是否真是只有兩種互斥選擇。",
-      "explanation": "原話把「贊成特定方案」與「反對所有讀書」硬分成僅有的兩端，忽略支持目標但建議其他方法的可能，是假兩難；權位與語氣不能補足推論。",
+      "explanation": "第一項指出另一種可能：支持目標，也能修改做法。第二項仍接受只有兩邊可選，第三項也把讀書與單一方案綁住；都未補回被忽略的選擇。",
       "correction": "假兩難把其實有其他可能的情況，說成只有兩種選擇。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -88,30 +88,39 @@
           "檢查「贊成這項方案」與「支持讀書」是否真是只有兩種互斥選擇。"
         ],
         "interactionHint": "把原話、缺漏前提與有效反駁連成證據鏈，再提出結論。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "把假兩難改寫成學生熟悉的目標與做法之別，移除只憑皇權或語氣的荒謬誘答。",
+        "distractorPrinciple": "誘答採看似可行的調查或暫停方案，但仍未解除錯誤二分。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "logic-causal-leap",
       "chapterId": "final",
       "concept": "語言邏輯",
-      "prompt": "皇帝說：「昨夜換了新宮燈，今晨藏書受潮，可見一定是新宮燈造成受潮。」哪個反駁最有根據？",
+      "prompt": "皇帝要找出藏書受潮的原因：「昨夜換了新宮燈，今晨書就濕了，所以一定是新燈造成的。」妳要提出可檢驗的處理方式，哪項最合理？",
       "choices": [
         {
           "id": "a",
-          "text": "先發生的事情，必然是後來事情的唯一原因。"
+          "text": "既然換燈在前，就先把新燈列為已確定的原因。"
         },
         {
           "id": "b",
-          "text": "兩件事先後發生，還不足以證明因果，應查漏雨、濕度等證據。"
+          "text": "先查漏雨、濕度等情況，再檢查是否有足夠證據連到宮燈。"
         },
         {
           "id": "c",
-          "text": "只要多說幾次，原因就能確定。"
+          "text": "先換回舊燈；只要隔天沒受潮，就能確認新燈是唯一原因。"
         }
       ],
       "answerId": "b",
       "hint": "把「在這之後」與「因為這件事」分開。",
-      "explanation": "時間先後不等於因果成立，仍需查驗漏雨、濕度等其他可能因素。這裡缺乏證據便斷言新宮燈是原因，是草率建立因果關係。",
+      "explanation": "先後發生不等於已證明因果。應查漏雨、濕度等其他因素；換回舊燈後若剛好天氣也變乾，單看一天結果仍不足以確認唯一原因。",
       "correction": "先後發生不等於因果已被證明；因果判斷需要證據。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -126,30 +135,39 @@
           "把「在這之後」與「因為這件事」分開。"
         ],
         "interactionHint": "把原話、缺漏前提與有效反駁連成證據鏈，再提出結論。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "把反駁改成調查證據任務，移除重複說話就能成立的誘答。",
+        "distractorPrinciple": "一項把先後當因果，一項忽略實驗時其他條件也可能改變。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     },
     {
       "id": "logic-equivocation",
       "chapterId": "final",
       "concept": "語言邏輯",
-      "prompt": "皇帝說：「人人都應守信。妳手裡拿的是一封信，所以妳應守著這封信整夜不睡。」哪個回應指出了關鍵？",
+      "prompt": "皇帝要用一句話決定妳是否能離開養心殿：「人人應守信；妳拿著一封信，所以應守著信件整夜不睡。」妳要檢查理由與結論是否相接，哪項抓到問題？",
       "choices": [
         {
           "id": "a",
-          "text": "同一個字的不同意思，可以不加區別地互相替換。"
+          "text": "先把守信件的時間縮成一個時辰，就能修好整段推理。"
         },
         {
           "id": "b",
-          "text": "只要兩句都含「信」，結論就必然成立。"
+          "text": "先查看信件是否重要，再決定妳是否需要遵守承諾。"
         },
         {
           "id": "c",
-          "text": "前句的「信」是信用，後句的「信」是書信，推論偷換了詞義。"
+          "text": "守信是遵守承諾，一封信是書信，兩種意思不能直接互換。"
         }
       ],
       "answerId": "c",
       "hint": "分別解釋「守信」的信與「一封信」的信。",
-      "explanation": "「守信」指遵守承諾、重信用，「一封信」指書信。將同形字的不同詞義當成同一概念推論，構成詞義偷換；不是有效的理由。",
+      "explanation": "關鍵不是守多久，也不是信件是否重要，而是信的意思被換了：守信談信用，一封信談書信。前提中的信用，不能直接推出要守著信件不睡。",
       "correction": "論證中的關鍵詞必須保持相同意義，不能偷換詞義。",
       "reviewStatus": "draft-teacher-review",
       "difficulty": "medium",
@@ -164,6 +182,15 @@
           "分別解釋「守信」的信與「一封信」的信。"
         ],
         "interactionHint": "把原話、缺漏前提與有效反駁連成證據鏈，再提出結論。"
+      },
+      "editorialReview": {
+        "date": "2026-10-26",
+        "changes": "將學術詞義偷換換成理由與結論是否相接，保留易懂的兩種詞義。",
+        "distractorPrinciple": "誘答分別修改時間與信件重要性，卻沒有處理關鍵詞換義。",
+        "audience": "國小高年級教師引導／國中學習",
+        "difficultyTarget": "medium",
+        "studentCalibration": "pending",
+        "teacherApproval": "pending"
       }
     }
   ]

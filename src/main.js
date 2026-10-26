@@ -8,19 +8,20 @@ import { immersiveMap, exploreView, introView, getMapPoints } from './views/expl
 import { mountWorld, unmountWorld, enableTilt, calibrateTilt } from './game/world.js';
 import { playCinematic, stopCinematic, animateEntrance } from './game/cinematic-player.js';
 import { playCue, audioPreferences, setAudioEnabled, setAudioVolume, sceneAmbience, musicPreferences, setMusicEnabled, setMusicVolume, setMusicContext } from './game/audio-player.js';
-import { finishIntro, discoverClue, placePuzzle, togglePuzzle, rotatePuzzle, checkPuzzle, startTrial } from './game/engine.js';
+import { finishIntro, discoverClue, startTrial } from './game/engine.js';
 import { loadGame, saveGame } from './game/storage.js';
+import { preloadAssets } from './game/asset-loader.js';
 const app = document.querySelector('#app');
 const storage = { getItem: k => localStorage.getItem(k), setItem: (k,v) => localStorage.setItem(k,v) };
 const loaded = loadGame(storage);
-let state = loaded.state, warning = loaded.warning, resetting = false, tab = 'journey', selectedTile = null, activeClue = null, viewIdentity = '', lastTick = null;
+let state = loaded.state, warning = loaded.warning, resetting = false, tab = 'journey', activeClue = null, viewIdentity = '', lastTick = null;
 const e = v => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const b = (action,label,attrs='') => '<button data-action="'+action+'" '+attrs+'>'+label+'</button>';
 const chapter = id => chapters.find(c=>c.id===id);
 const prefetched = new Set();
 function preloadScene(id){
   if(prefetched.has(id))return;prefetched.add(id);
-  for(const src of new Set([backgrounds[id],...Object.values(portraits[id]??{}),...Object.values(playerPortraits),...Object.values(noblePortraits)])){
+  for(const src of new Set([backgrounds[id],portraits[id]?.neutral,(state.completed.length>=8?noblePortraits:playerPortraits).neutral].filter(Boolean))){
     const image=new Image();image.src=src;
   }
 }
@@ -68,9 +69,8 @@ function questionView() {
   const mood=feedback?(feedback.correct?'resolved':'tense'):'neutral';
   return '<section><div class="section-heading"><div><p class="eyebrow">CHAPTER '+String(c.number).padStart(2,'0')+' · '+e(q.concept)+'</p><h2 tabindex="-1">'+(reviewing?'慎刑司 · 訂正修習':c.title)+'</h2></div><span class="seal">'+(reviewing?'修習':c.id==='final'?'論辯':'試煉')+'</span></div>'+
     '<p class="intro">'+(reviewing?'依序通過三道不同的辨析題；答錯會回到第一道，先看解析再繼續。':c.description)+'</p>'+
-    scene(c.id,mood,reviewing)+
     (c.id==='final'&&!reviewing?'<div class="boss-meter"><span>威權心防</span><progress value="'+state.bossMind+'" max="100" aria-label="威權心防">'+state.bossMind+'</progress><strong>'+state.bossMind+' / 100</strong><small>同一輪三次正確駁論，讓心防歸零。</small></div>':'')+
-    '<div class="dialogue"><span class="speaker">'+e(reviewing?'訂正辨析':c.npc)+'<small>'+(reviewing?'第 '+(state.corrections+1)+' / 3 道': '第 '+(index+1)+' / '+list.length+' 題 · '+strategies[state.strategy].label)+'</small></span><p>'+e(q.prompt)+'</p></div>'+
+    '<div class="scene-question-layout">'+scene(c.id,mood,reviewing)+'<aside class="dialogue question-card" aria-label="本題任務"><span class="speaker">'+e(reviewing?'訂正辨析':c.npc)+'<small>'+(reviewing?'第 '+(state.corrections+1)+' / 3 道': '第 '+(index+1)+' / '+list.length+' 題 · '+strategies[state.strategy].label)+'</small></span><p>'+e(q.prompt)+'</p></aside></div>'+
     (!reviewing&&state.phase==='question'?renderTrial(q,state):!reviewing&&state.feedback?.response?renderTrialFeedback(q,state):('<div class="choices">'+q.choices.map((choice,i)=>{
       const removed=!reviewing&&state.eliminated.includes(choice.id);
       const correct=feedback&&choice.id===q.answerId;
@@ -101,13 +101,13 @@ function render() {
   unmountWorld();stopCinematic();unmountTrial();
   const onMap=state.phase==='map', ending=state.phase==='ending';
   const left=state.deadline?Math.max(0,Math.ceil((state.deadline-Date.now())/1000)):null;
-  const view=tab==='record'&&onMap?reportView():onMap?mapView():ending?reportView(true):state.phase==='chapterComplete'?chapterResultView():state.phase==='intro'?introView(state):state.phase==='explore'?exploreView(state,selectedTile,activeClue):questionView();
+  const view=tab==='record'&&onMap?reportView():onMap?mapView():ending?reportView(true):state.phase==='chapterComplete'?chapterResultView():state.phase==='intro'?introView(state):state.phase==='explore'?exploreView(state,activeClue):questionView();
   app.innerHTML='<div class="shell"><header class="topbar"><a class="brand" href="/" aria-label="紫禁語文弈首頁"><span class="brand-mark">弈</span><div>紫禁語文弈<small>以文載道 · 以智破局</small></div></a><nav>'+b('toggle-music',musicPreferences().enabled?'背景音樂：開':'背景音樂：關','class="quiet"')+'<label class="volume-control">樂 <input id="music-volume" aria-label="背景音樂音量" type="range" min="0" max="100" value="'+Math.round(musicPreferences().volume*100)+'"></label>'+b('toggle-audio',audioPreferences().enabled?'音效：開':'音效：關','class="quiet"')+'<label class="volume-control">音量 <input id="audio-volume" aria-label="音效音量" type="range" min="0" max="100" value="'+Math.round(audioPreferences().volume*100)+'"></label>'+b('journey','遊戲旅程','class="quiet" '+(!onMap?'disabled':''))+b('record','學習歷程','class="quiet" '+(!onMap&&!ending?'disabled':''))+'<a class="quiet" href="/public/playtest.html" target="_blank" rel="noopener">玩法試玩台 ↗</a><a class="quiet" href="/public/assets/gallery.html" target="_blank" rel="noopener">素材畫廊 ↗</a></nav></header>'+
     '<main><aside class="sidebar"><div class="sidebar-top"><p class="eyebrow">A PALACE OF WORDS</p><h1>一字之間，<br><em>扭轉萬千局。</em></h1><p>國中語文 × 宮廷對話 RPG</p></div><div class="player-card"><span class="small">當前宮階</span><strong>'+rankOf(state)+'</strong><div class="hp-label"><label for="hp">氣血儀態</label><span>'+state.hp+' / 100</span></div><div class="hp-art"><progress id="hp" value="'+state.hp+'" max="100">'+state.hp+'</progress><img src="'+uiArt['UI-03']+'" alt=""></div><div class="fragment"><span>鳳印碎片</span><strong>'+state.completed.length+'<small> / 12</small></strong></div><div class="fragment"><span>累積文墨</span><strong>'+state.score+'</strong></div><div class="inventory-summary"><img src="'+needleIcon+'" alt=""><span>銀針 '+state.inventory.needle+' · 殘箋 '+state.inventory.paper+'<br>免死金牌 '+state.inventory.shield+' 枚</span></div></div>'+
     '<div class="settings"><label><input type="checkbox" id="timed" '+(state.timed?'checked':'')+' '+(!onMap?'disabled':'')+'> 御前燃香 · 每題 45 秒</label><p class="small">地圖調整；預設不限時。</p><div class="timer" role="timer" aria-label="剩餘作答秒數"><img class="incense-icon" src="'+uiArt['UI-02']+'" alt="">'+(state.paused?'已暫停':left!==null?'燃香尚餘 <span id="seconds">'+left+'</span> 秒':'靜心思量，從容應答')+'</div></div>'+b('reset','重新開始','class="quiet reset"')+'<p class="small">自動存檔於此瀏覽器<br>離開前可匯出學習歷程</p></aside>'+
-    '<div class="content">'+(warning?'<div class="notice error" role="alert">'+e(warning)+'</div>':'')+(resetting?'<div class="notice" role="alert"><strong>要建立新旅程嗎？</strong><p>目前進度會被取代，可先匯出歷程。</p><div class="actions">'+b('confirm-reset','清除並重新開始','class="primary"')+b('cancel-reset','保留進度','class="quiet"')+b('export','匯出歷程','class="quiet"')+'</div></div>':'')+view+'</div></main><footer>紫禁語文弈 · 探索試玩版 v0.3<span>十二關 · '+questions.length+' 題 · <a href="/public/assets/audio/audition.html" target="_blank" rel="noopener">音效來源／試聽</a></span></footer></div>';
+    '<div class="content">'+(warning?'<div class="notice error" role="alert">'+e(warning)+'</div>':'')+(resetting?'<div class="notice" role="alert"><strong>要建立新旅程嗎？</strong><p>目前進度會被取代，可先匯出歷程。</p><div class="actions">'+b('confirm-reset','清除並重新開始','class="primary"')+b('cancel-reset','保留進度','class="quiet"')+b('export','匯出歷程','class="quiet"')+'</div></div>':'')+view+'</div></main><footer>紫禁語文弈 · 探索試玩版 v0.4<span>十二關 · '+questions.length+' 題 · <a href="/public/assets/audio/audition.html" target="_blank" rel="noopener">音效來源／試聽</a></span></footer></div>';
   const world=app.querySelector('.world');
-  if(world&&onMap&&tab==='journey')mountWorld(world,{key:'palace',landmarks:getMapPoints().filter(p=>unlocked(state,p.id)&&!state.completed.includes(p.id)),onInteract:id=>{selectedTile=null;commit(enterChapter(state,id));}});
+  if(world&&onMap&&tab==='journey')mountWorld(world,{key:'palace',landmarks:getMapPoints().filter(p=>unlocked(state,p.id)&&!state.completed.includes(p.id)),onInteract:id=>{activeClue=null;commit(enterChapter(state,id));}});
   if(world&&state.phase==='explore')mountWorld(world,{key:state.puzzle.chapterId,landmarks:puzzles[state.puzzle.chapterId].clues,onInteract:id=>{activeClue=id;const next=discoverClue(state,id);if(next===state)render();else commit(next);}});
   const trialRoot=app.querySelector('#trial-interactive');
   if(trialRoot&&state.phase==='question'&&!state.paused)mountTrial(trialRoot,currentQuestion(state),state,{onSubmit:(id,response)=>commit(answer(state,id,Date.now(),response)),onOperate:()=>playCue('chineseMechanism')});
@@ -133,12 +133,7 @@ app.addEventListener('click',event=>{
     case 'calibrate':calibrateTilt();{const status=app.querySelector('#sensor-status');if(status)status.textContent='已重新校準，請輕微傾斜移動。';}break;
     case 'finish-intro':commit(finishIntro(state));break;
     case 'replay-intro':render();break;
-    case 'puzzle-item':if(puzzles[state.puzzle.chapterId].slots){selectedTile=selectedTile===id?null:id;playCue('puzzleOperate');render();}else commit(togglePuzzle(state,id));break;
-    case 'puzzle-slot':{const item=selectedTile;selectedTile=null;commit(placePuzzle(state,id,item));break;}
-    case 'puzzle-turn':commit(rotatePuzzle(state,Number(id)));break;
-    case 'check-puzzle':commit(checkPuzzle(state));break;
     case 'start-trial':commit(startTrial(state));break;
-    case 'open-puzzle':app.querySelector('.puzzle-board')?.scrollIntoView({behavior:'smooth',block:'start'});break;
     case 'enter':tab='journey';commit(enterChapter(state,id));break;
     case 'strategy':commit(setStrategy(state,id));break;
     case 'answer':commit(answer(state,id));break;
@@ -175,5 +170,11 @@ function tick(){
   if(remaining>0&&remaining<=5&&remaining!==lastTick)playCue('countdown');lastTick=remaining;
   if(remaining===0)commit(answer(state,null));
 }
+const initialChapter=currentQuestion(state)?.chapterId;
+await preloadAssets([uiArt['UI-03'],uiArt['UI-02'],needleIcon,extraArt['EX-01'],(state.completed.length>=8?noblePortraits:playerPortraits).neutral,
+  ...(state.phase==='map'?[extraArt['EX-02']]:[backgrounds[initialChapter],portraits[initialChapter]?.neutral])],{onProgress:({completed,total,percent})=>{
+    const meter=document.querySelector('#boot-progress'),detail=document.querySelector('#boot-detail');
+    if(meter)meter.value=percent;
+    if(detail)detail.textContent='正在準備必要素材 '+completed+' / '+total+' · '+percent+'%';
+  }});
 render();tick();setInterval(tick,250);document.addEventListener('visibilitychange',tick);
-

@@ -17,4 +17,4 @@
 
 ## 目前範圍
 
-v0.3 已有十二關探索、47 題、場景機關、貼紙人物移動、圖片式過場、道具及終局。優先讀 `docs/PLAYTEST.md` 掌握最新行為；早期 ROADMAP／ARCHITECTURE 保留設計沿革。正式題庫索引見 `docs/question-bank/index.json`，執行來源仍為 `src/data/questions.js`。影像製作進度見 `docs/assets/manifest-v1.json`；不要一邊有影像 agent 正在 record，一邊以舊 manifest 重寫進度。音效來源見 `docs/audio/manifest.json`。
+v0.4 已有十二關探索、47 題、場景機關、貼紙人物移動、圖片式過場、道具及終局。優先讀 `docs/PLAYTEST.md` 掌握最新行為；早期 ROADMAP／ARCHITECTURE 保留設計沿革。正式題庫索引見 `docs/question-bank/index.json`，執行來源仍為 `src/data/questions.js`。影像製作進度見 `docs/assets/manifest-v1.json`；不要一邊有影像 agent 正在 record，一邊以舊 manifest 重寫進度。音效來源見 `docs/audio/manifest.json`。

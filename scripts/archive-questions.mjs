@@ -12,7 +12,7 @@ const directory = resolve(root, 'docs/question-bank');
 const checkOnly = process.argv.includes('--check');
 const sourcePath = 'src/data/questions.js';
 const sha256 = createHash('sha256').update(await readFile(resolve(root, sourcePath))).digest('hex');
-const snapshotVersion = '2026-10-26-v2-interactions';
+const snapshotVersion = '2026-10-26-v3-reviewed';
 const serialize = value => `${JSON.stringify(value, null, 2)}\n`;
 const interactionKinds = {
   garden: 'sequence', pavilion: 'highlight', yikun: 'matching', yanxi: 'couplet',
@@ -156,6 +156,12 @@ const index = {
   questionCount: questions.length,
   interactionQuestionCount: questions.filter(q => q.interaction).length,
   interactionKinds: [...new Set(questions.filter(q => q.interaction).map(q => q.interaction.kind))],
+  editorialReview: {
+    date: '2026-10-26',
+    reviewedQuestionCount: questions.filter(q => q.editorialReview?.date === '2026-10-26').length,
+    report: 'docs/question-bank/REVIEW-2026-10-26.md',
+    teacherApproval: 'pending', studentCalibration: 'pending',
+  },
   intendedDifficulty: 'medium',
   difficultyValidation: 'design-target-not-student-calibrated',
   reviewStatus: 'draft-teacher-review',
@@ -183,9 +189,9 @@ const readme = `# 十二關題庫歸檔與調度索引
 
 ## 與場景探索機關的關係
 
-這 47 題是本機遊戲「場景探索、蒐集線索、解開機關，再進入語文試煉」流程中的正式題庫配套。每殿的探索機關資料由主 agent 維護於 \`src/data/puzzles.js\`，本資料夾保存的是後續試煉題目與可供未來調度的線索 metadata，兩者不重複計為題目數。
+這 47 題是本機遊戲「場景探索、蒐集三處線索，再進入正式互動試煉」流程中的題庫配套；探索後不再另設前置機關考試。場景線索資料由主 agent 維護於 \`src/data/puzzles.js\`，本資料夾保存正式試煉題目與未來調度的線索 metadata，兩者不重複計為題目數。
 
-探索關卡可先教會判讀規則，再讓試煉題檢查玩家是否能遷移到新情境；完整遊戲的互動是否接線完成，以主程式驗收為準。本輪未把機關線索本身當成獨立測驗分數，仍需避免讓「找到提示」等同「已證明能力掌握」。
+探索可先教會判讀規則，再讓正式互動試煉檢查玩家是否能運用到新情境；互動接線是否完成，以主程式驗收為準。找到線索本身不等同已證明掌握。全 47 題的故事、閱讀負荷與誘答審查見 \`docs/question-bank/REVIEW-2026-10-26.md\`。
 
 ## 唯一來源與再生方式
 
