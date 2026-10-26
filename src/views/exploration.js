@@ -1,7 +1,7 @@
-import { chapters } from '../data/chapters.js?v=7e7e8f105b06';
-import { puzzles } from '../data/puzzles.js?v=7e7e8f105b06';
-import { backgrounds, playerPortraits, extraArt, allArtwork } from '../data/assets.js?v=7e7e8f105b06';
-import { strategies, playableChapters, unlocked, chapterQuestions, currentQuestion } from '../game/engine.js?v=7e7e8f105b06';
+import { chapters } from '../data/chapters.js?v=624f66693177';
+import { puzzles } from '../data/puzzles.js?v=624f66693177';
+import { backgrounds, playerPortraits, extraArt, allArtwork } from '../data/assets.js?v=624f66693177';
+import { strategies, playableChapters, unlocked, chapterQuestions, currentQuestion } from '../game/engine.js?v=624f66693177';
 const e=v=>String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const mapPoints = [
   [15,83],[40,83],[64,83],[87,83],[87,53],[64,53],

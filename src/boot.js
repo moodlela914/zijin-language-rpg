@@ -1,4 +1,4 @@
-try{await import('./main.js?v=7e7e8f105b06');}
+try{await import('./main.js?v=624f66693177');}
 catch(error){
   console.error(error);
   const message=document.querySelector('#boot-detail');

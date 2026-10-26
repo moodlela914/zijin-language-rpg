@@ -1,20 +1,23 @@
-import { chapters } from './data/chapters.js?v=7e7e8f105b06';
-import { questions } from './data/questions.js?v=7e7e8f105b06';
-import { backgrounds, portraits, playerPortraits, noblePortraits, characters, needleIcon, propIcons, uiArt, extraArt, allArtwork } from './data/assets.js?v=7e7e8f105b06';
-import { createGame, currentQuestion, remediationQuestion, playableChapters, rankOf, strategies, setStrategy, unlocked, enterChapter, useHint, useItem, pauseGame, resumeGame, answer, advance, correctionAnswer, advanceCorrection, continueJourney, chapterQuestions, report } from './game/engine.js?v=7e7e8f105b06';
-import { renderTrial, renderTrialFeedback, mountTrial, unmountTrial, clearTrialDrafts } from './game/trial-interactions.js?v=7e7e8f105b06';
-import { puzzles } from './data/puzzles.js?v=7e7e8f105b06';
-import { immersiveMap, exploreView, introView, getMapPoints } from './views/exploration.js?v=7e7e8f105b06';
-import { mountWorld, unmountWorld, enableTilt, calibrateTilt } from './game/world.js?v=7e7e8f105b06';
-import { playCinematic, stopCinematic, animateEntrance } from './game/cinematic-player.js?v=7e7e8f105b06';
-import { playCue, audioPreferences, setAudioEnabled, setAudioVolume, sceneAmbience, musicPreferences, setMusicEnabled, setMusicVolume, setMusicContext } from './game/audio-player.js?v=7e7e8f105b06';
-import { finishIntro, discoverClue, startTrial } from './game/engine.js?v=7e7e8f105b06';
-import { loadGame, saveGame } from './game/storage.js?v=7e7e8f105b06';
-import { preloadAssets } from './game/asset-loader.js?v=7e7e8f105b06';
+import { chapters } from './data/chapters.js?v=624f66693177';
+import { questions } from './data/questions.js?v=624f66693177';
+import { backgrounds, portraits, playerPortraits, noblePortraits, characters, needleIcon, propIcons, uiArt, extraArt, allArtwork } from './data/assets.js?v=624f66693177';
+import { createGame, currentQuestion, remediationQuestion, playableChapters, rankOf, strategies, setStrategy, unlocked, enterChapter, useHint, useItem, pauseGame, resumeGame, answer, advance, correctionAnswer, advanceCorrection, continueJourney, chapterQuestions, report } from './game/engine.js?v=624f66693177';
+import { renderTrial, renderTrialFeedback, mountTrial, unmountTrial, clearTrialDrafts } from './game/trial-interactions.js?v=624f66693177';
+import { puzzles } from './data/puzzles.js?v=624f66693177';
+import { immersiveMap, exploreView, introView, getMapPoints } from './views/exploration.js?v=624f66693177';
+import { mountWorld, unmountWorld, enableTilt, calibrateTilt } from './game/world.js?v=624f66693177';
+import { playCinematic, stopCinematic, animateEntrance } from './game/cinematic-player.js?v=624f66693177';
+import { playCue, audioPreferences, setAudioEnabled, setAudioVolume, sceneAmbience, musicPreferences, setMusicEnabled, setMusicVolume, setMusicContext } from './game/audio-player.js?v=624f66693177';
+import { finishIntro, discoverClue, startTrial } from './game/engine.js?v=624f66693177';
+import { loadGame, saveGame, SAVE_KEY } from './game/storage.js?v=624f66693177';
+import { preloadAssets } from './game/asset-loader.js?v=624f66693177';
+import {createHistoryExport,parseHistoryImport,applyHistoryImport,readHistoryBackup,MAX_HISTORY_BYTES} from './game/history-transfer.js?v=624f66693177';
 const app = document.querySelector('#app');
 const storage = { getItem: k => localStorage.getItem(k), setItem: (k,v) => localStorage.setItem(k,v) };
 const loaded = loadGame(storage);
 let state = loaded.state, warning = loaded.warning, resetting = false, tab = 'journey', activeClue = null, viewIdentity = '', lastTick = null;
+let importOpen=false,importPreview=null,importError='',importBusy=false,importResume=false,importReadToken=0,historyNotice='';
+let importExpected=null;
 const e = v => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const b = (action,label,attrs='') => '<button data-action="'+action+'" '+attrs+'>'+label+'</button>';
 const chapter = id => chapters.find(c=>c.id===id);
@@ -28,6 +31,7 @@ function preloadScene(id){
 function commit(next) {
   if(next===state)return;
   const previous=state, oldPhase=state.phase, oldQuestion=state.questionId;
+  historyNotice='';
   state=next;
   if(state.phase==='feedback'&&oldPhase==='question')playCue(state.feedback.shielded?'itemShield':state.feedback.expired?'timeout':state.feedback.correct?(currentQuestion(state).chapterId==='final'?'bossHit':'correct'):'wrong');
   else if(state.phase==='intro')playCue('transition');
@@ -42,6 +46,7 @@ function commit(next) {
   else if(state.reviewFeedback&&!previous.reviewFeedback)playCue(state.reviewFeedback.correct?'reviewCorrect':'reviewWrong');
   if(!saveGame(storage,state))warning='此瀏覽器無法儲存進度；關閉頁面前請先匯出歷程。';
   render();
+  if(importOpen)return;
   if((state.phase==='feedback'&&oldPhase==='question') || (state.reviewFeedback&&!previous.reviewFeedback)) {
     const feedback=app.querySelector('.notice[role="status"]');
     feedback?.setAttribute('tabindex','-1');feedback?.focus({preventScroll:true});feedback?.scrollIntoView({behavior:'instant',block:'center'});
@@ -97,22 +102,42 @@ function reportView(ending=false) {
     '<div class="actions">'+b('export','匯出 JSON 歷程','class="primary"')+b('print','列印／儲存 PDF','class="quiet"')+'</div><h3 class="review-title">錯題索引 · '+r.wrongQuestions.length+' 題</h3>'+
     (r.wrongQuestions.length?r.wrongQuestions.map(q=>'<details class="wrong-question"><summary>'+chapter(q.chapterId).title+' · '+e(q.concept)+'</summary><p>'+e(q.prompt)+'</p><strong>正解：'+e(q.answer)+'</strong><p>'+e(q.explanation)+'</p></details>').join(''):'<p class="small">目前沒有錯題紀錄。</p>')+'</section>';
 }
+function historyImportView(){
+  const candidate=importPreview?.state,backup=readHistoryBackup(storage);
+  return '<div class="history-overlay"><section class="history-dialog" role="dialog" aria-modal="true" aria-labelledby="history-title" tabindex="-1"><p class="eyebrow">LEARNING JOURNEY</p><h2 id="history-title">匯入學習歷程</h2><p>選擇紫禁語文弈匯出的 JSON。可先查看內容，再決定是否取代目前旅程。</p><label for="history-file">選擇歷程檔案（最多 2 MB）</label><input id="history-file" type="file" accept=".json,application/json" '+(importBusy?'disabled':'')+'>'+
+    (importBusy?'<p role="status">正在讀取歷程…</p>':'')+(importError?'<div class="notice error" role="alert">'+e(importError)+'</div>':'')+
+    (candidate?'<div class="history-preview" role="status"><strong>'+e(importPreview.fileName)+'</strong><div class="history-summary"><span>已完成 <b>'+candidate.completed.length+' / 12 關</b></span><span>作答 <b>'+candidate.attempts.length+' 筆</b></span><span>文墨 <b>'+candidate.score+'</b></span></div><p>'+e(importPreview.message)+'</p><p>確認後會取代目前旅程；取代前的進度會自動備份，可從本視窗還原。</p></div>':'')+
+    '<div class="actions">'+b('confirm-history','確認匯入並取代目前旅程','class="primary" '+(!candidate||importBusy?'disabled':''))+b('cancel-history','取消／返回遊戲','class="quiet"')+'</div><div class="history-tools">'+b('export','先匯出目前旅程','class="quiet"')+(backup?b('restore-history','預覽上次匯入前的備份','class="quiet"'):'')+'</div></section></div>';
+}
+function closeHistoryImport(){
+  importOpen=false;importPreview=null;importError='';importBusy=false;importReadToken++;
+  let latest;
+  try{latest=storage.getItem(SAVE_KEY);}catch{latest=importExpected;}
+  if(latest&&latest!==importExpected){
+    const newer=loadGame(storage);state=newer.state;warning=newer.warning||'已讀取另一個分頁的最新進度，本次匯入已取消。';
+  }else if(importResume){
+    state=resumeGame(state);
+    if(!saveGame(storage,state))warning='無法儲存目前進度，請先匯出歷程備份。';
+  }
+  importResume=false;importExpected=null;render();
+}
 function render() {
+  document.body.classList.toggle('history-import-open',importOpen);
   unmountWorld();stopCinematic();unmountTrial();
   const onMap=state.phase==='map', ending=state.phase==='ending';
   const left=state.deadline?Math.max(0,Math.ceil((state.deadline-Date.now())/1000)):null;
   const view=tab==='record'&&onMap?reportView():onMap?mapView():ending?reportView(true):state.phase==='chapterComplete'?chapterResultView():state.phase==='intro'?introView(state):state.phase==='explore'?exploreView(state,activeClue):questionView();
-  app.innerHTML='<div class="shell"><header class="topbar"><a class="brand" href="/zijin-language-rpg/" aria-label="紫禁語文弈首頁"><span class="brand-mark">弈</span><div>紫禁語文弈<small>以文載道 · 以智破局</small></div></a><nav>'+b('toggle-music',musicPreferences().enabled?'背景音樂：開':'背景音樂：關','class="quiet"')+'<label class="volume-control">樂 <input id="music-volume" aria-label="背景音樂音量" type="range" min="0" max="100" value="'+Math.round(musicPreferences().volume*100)+'"></label>'+b('toggle-audio',audioPreferences().enabled?'音效：開':'音效：關','class="quiet"')+'<label class="volume-control">音量 <input id="audio-volume" aria-label="音效音量" type="range" min="0" max="100" value="'+Math.round(audioPreferences().volume*100)+'"></label>'+b('journey','遊戲旅程','class="quiet" '+(!onMap?'disabled':''))+b('record','學習歷程','class="quiet" '+(!onMap&&!ending?'disabled':''))+'<a class="quiet" href="/zijin-language-rpg/public/playtest.html" target="_blank" rel="noopener">玩法試玩台 ↗</a><a class="quiet" href="/zijin-language-rpg/public/assets/gallery.html" target="_blank" rel="noopener">素材畫廊 ↗</a></nav></header>'+
+  app.innerHTML='<div class="shell"><header class="topbar"><a class="brand" href="/zijin-language-rpg/" aria-label="紫禁語文弈首頁"><span class="brand-mark">弈</span><div>紫禁語文弈<small>以文載道 · 以智破局</small></div></a><nav>'+b('toggle-music',musicPreferences().enabled?'背景音樂：開':'背景音樂：關','class="quiet"')+'<label class="volume-control">樂 <input id="music-volume" aria-label="背景音樂音量" type="range" min="0" max="100" value="'+Math.round(musicPreferences().volume*100)+'"></label>'+b('toggle-audio',audioPreferences().enabled?'音效：開':'音效：關','class="quiet"')+'<label class="volume-control">音量 <input id="audio-volume" aria-label="音效音量" type="range" min="0" max="100" value="'+Math.round(audioPreferences().volume*100)+'"></label>'+b('journey','遊戲旅程','class="quiet" '+(!onMap?'disabled':''))+b('record','學習歷程','class="quiet" '+(!onMap&&!ending?'disabled':''))+b('import-history','匯入學習歷程','class="quiet"')+'<a class="quiet" href="/zijin-language-rpg/public/playtest.html" target="_blank" rel="noopener">玩法試玩台 ↗</a><a class="quiet" href="/zijin-language-rpg/public/assets/gallery.html" target="_blank" rel="noopener">素材畫廊 ↗</a></nav></header>'+
     '<main><aside class="sidebar"><div class="sidebar-top"><p class="eyebrow">A PALACE OF WORDS</p><h1>一字之間，<br><em>扭轉萬千局。</em></h1><p>國中語文 × 宮廷對話 RPG</p></div><div class="player-card"><span class="small">當前宮階</span><strong>'+rankOf(state)+'</strong><div class="hp-label"><label for="hp">氣血儀態</label><span>'+state.hp+' / 100</span></div><div class="hp-art"><progress id="hp" value="'+state.hp+'" max="100">'+state.hp+'</progress><img src="'+uiArt['UI-03']+'" alt=""></div><div class="fragment"><span>鳳印碎片</span><strong>'+state.completed.length+'<small> / 12</small></strong></div><div class="fragment"><span>累積文墨</span><strong>'+state.score+'</strong></div><div class="inventory-summary"><img src="'+needleIcon+'" alt=""><span>銀針 '+state.inventory.needle+' · 殘箋 '+state.inventory.paper+'<br>免死金牌 '+state.inventory.shield+' 枚</span></div></div>'+
     '<div class="settings"><label><input type="checkbox" id="timed" '+(state.timed?'checked':'')+' '+(!onMap?'disabled':'')+'> 御前燃香 · 每題 45 秒</label><p class="small">地圖調整；預設不限時。</p><div class="timer" role="timer" aria-label="剩餘作答秒數"><img class="incense-icon" src="'+uiArt['UI-02']+'" alt="">'+(state.paused?'已暫停':left!==null?'燃香尚餘 <span id="seconds">'+left+'</span> 秒':'靜心思量，從容應答')+'</div></div>'+b('reset','重新開始','class="quiet reset"')+'<p class="small">自動存檔於此瀏覽器<br>離開前可匯出學習歷程</p></aside>'+
-    '<div class="content">'+(warning?'<div class="notice error" role="alert">'+e(warning)+'</div>':'')+(resetting?'<div class="notice" role="alert"><strong>要建立新旅程嗎？</strong><p>目前進度會被取代，可先匯出歷程。</p><div class="actions">'+b('confirm-reset','清除並重新開始','class="primary"')+b('cancel-reset','保留進度','class="quiet"')+b('export','匯出歷程','class="quiet"')+'</div></div>':'')+view+'</div></main><footer>紫禁語文弈 · 探索試玩版 v0.4<span>十二關 · '+questions.length+' 題 · <a href="/zijin-language-rpg/public/assets/audio/audition.html" target="_blank" rel="noopener">音效來源／試聽</a></span></footer></div>';
+    '<div class="content">'+(historyNotice?'<div class="notice success" role="status">'+e(historyNotice)+'</div>':'')+(warning?'<div class="notice error" role="alert">'+e(warning)+'</div>':'')+(resetting?'<div class="notice" role="alert"><strong>要建立新旅程嗎？</strong><p>目前進度會被取代，可先匯出歷程。</p><div class="actions">'+b('confirm-reset','清除並重新開始','class="primary"')+b('cancel-reset','保留進度','class="quiet"')+b('export','匯出歷程','class="quiet"')+'</div></div>':'')+view+'</div></main><footer>紫禁語文弈 · 探索試玩版 v0.4.1<span>十二關 · '+questions.length+' 題 · <a href="/zijin-language-rpg/public/assets/audio/audition.html" target="_blank" rel="noopener">音效來源／試聽</a></span></footer></div>'+(importOpen?historyImportView():'');
   const world=app.querySelector('.world');
-  if(world&&onMap&&tab==='journey')mountWorld(world,{key:'palace',landmarks:getMapPoints().filter(p=>unlocked(state,p.id)&&!state.completed.includes(p.id)),onInteract:id=>{activeClue=null;commit(enterChapter(state,id));}});
-  if(world&&state.phase==='explore')mountWorld(world,{key:state.puzzle.chapterId,landmarks:puzzles[state.puzzle.chapterId].clues,onInteract:id=>{activeClue=id;const next=discoverClue(state,id);if(next===state)render();else commit(next);}});
+  if(world&&onMap&&tab==='journey'&&!importOpen)mountWorld(world,{key:'palace',landmarks:getMapPoints().filter(p=>unlocked(state,p.id)&&!state.completed.includes(p.id)),onInteract:id=>{activeClue=null;commit(enterChapter(state,id));}});
+  if(world&&state.phase==='explore'&&!importOpen)mountWorld(world,{key:state.puzzle.chapterId,landmarks:puzzles[state.puzzle.chapterId].clues,onInteract:id=>{activeClue=id;const next=discoverClue(state,id);if(next===state)render();else commit(next);}});
   const trialRoot=app.querySelector('#trial-interactive');
-  if(trialRoot&&state.phase==='question'&&!state.paused)mountTrial(trialRoot,currentQuestion(state),state,{onSubmit:(id,response)=>commit(answer(state,id,Date.now(),response)),onOperate:()=>playCue('chineseMechanism')});
+  if(trialRoot&&state.phase==='question'&&!state.paused&&!importOpen)mountTrial(trialRoot,currentQuestion(state),state,{onSubmit:(id,response)=>commit(answer(state,id,Date.now(),response)),onOperate:()=>playCue('chineseMechanism')});
   const frame=app.querySelector('#cinematic-frame');
-  if(frame)playCinematic(frame,()=>{if(state.phase==='intro')commit(finishIntro(state));});
+  if(frame&&!importOpen)playCinematic(frame,()=>{if(state.phase==='intro')commit(finishIntro(state));});
   const identity=state.phase+':'+state.questionId+':'+tab;
   const currentChapter=currentQuestion(state)?.chapterId;
   if(currentChapter)preloadScene(currentChapter);
@@ -120,13 +145,39 @@ function render() {
   if(identity!==viewIdentity){animateEntrance(app);viewIdentity=identity;}
   app.style.setProperty('--cover-art',extraArt['EX-01']?'url("'+extraArt['EX-01']+'")':'none');
   sceneAmbience(currentQuestion(state)?.chapterId??'gate',['intro','explore','question','feedback'].includes(state.phase)&&!state.paused);
-  setMusicContext(state.paused);
+  setMusicContext(state.paused||importOpen);
+  if(importOpen)app.querySelector('.history-dialog')?.focus({preventScroll:true});
 }
 app.addEventListener('click',event=>{
   const target=event.target.closest('button[data-action]');
   if(!target||target.disabled)return;
   const id=target.dataset.id;
   switch(target.dataset.action){
+    case 'import-history':{
+      importOpen=true;importPreview=null;importError='';importBusy=false;
+      importExpected=JSON.stringify(state);
+      importResume=state.phase==='question'&&!state.paused;
+      if(importResume)state=pauseGame(state);
+      render();break;
+    }
+    case 'cancel-history':closeHistoryImport();break;
+    case 'restore-history':{
+      importReadToken++;importBusy=false;
+      const backup=readHistoryBackup(storage);
+      if(backup){importPreview={...parseHistoryImport(JSON.stringify(backup)),fileName:'上次匯入前的旅程備份'};importError='';}
+      else importError='找不到可讀取的匯入前備份。';
+      render();break;
+    }
+    case 'confirm-history':{
+      if(!importPreview||importBusy)break;
+      const result=applyHistoryImport(storage,state,importPreview.state,{expectedSerialized:importExpected});
+      if(!result.ok){importError=result.message;render();break;}
+      const message=importPreview.message;
+      state=result.state;importOpen=false;importPreview=null;importError='';importResume=false;importExpected=null;importReadToken++;
+      clearTrialDrafts();resetting=false;tab='journey';warning='';viewIdentity='';
+      historyNotice='已匯入學習歷程。'+message;render();
+      app.querySelector('.content h2')?.scrollIntoView({behavior:'instant',block:'start'});break;
+    }
     case 'toggle-music':setMusicEnabled(!musicPreferences().enabled);target.textContent=musicPreferences().enabled?'背景音樂：開':'背景音樂：關';break;
     case 'toggle-audio':setAudioEnabled(!audioPreferences().enabled);target.textContent=audioPreferences().enabled?'音效：開':'音效：關';playCue('uiOpen');sceneAmbience(currentQuestion(state)?.chapterId??'gate',['intro','explore','question','feedback'].includes(state.phase)&&!state.paused);break;
     case 'tilt':enableTilt().then(message=>{const status=app.querySelector('#sensor-status');if(status)status.textContent=message;});break;
@@ -152,13 +203,36 @@ app.addEventListener('click',event=>{
     case 'confirm-reset':clearTrialDrafts();resetting=false;tab='journey';warning='';commit(createGame());break;
     case 'print':window.print();break;
     case 'export':{
-      const url=URL.createObjectURL(new Blob([JSON.stringify(report(state),null,2)],{type:'application/json'}));
+      const url=URL.createObjectURL(new Blob([JSON.stringify(createHistoryExport(state),null,2)],{type:'application/json'}));
       const a=document.createElement('a');a.href=url;a.download='紫禁語文弈-學習歷程.json';a.click();
       setTimeout(()=>URL.revokeObjectURL(url),1000);break;
     }
   }
 });
-app.addEventListener('change',event=>{
+app.addEventListener('keydown',event=>{
+  if(!importOpen)return;
+  if(event.key==='Escape'){event.preventDefault();closeHistoryImport();return;}
+  if(event.key==='Tab'){
+    const controls=[...app.querySelectorAll('.history-dialog button:not(:disabled),.history-dialog input:not(:disabled)')].filter(n=>n.getClientRects().length);
+    const first=controls[0],last=controls.at(-1),active=document.activeElement;
+    if(!controls.includes(active)||(event.shiftKey&&active===first)||(!event.shiftKey&&active===last)){
+      event.preventDefault();(event.shiftKey?last:first)?.focus();
+    }
+  }
+});
+app.addEventListener('change',async event=>{
+  if(event.target.id==='history-file'){
+    const file=event.target.files?.[0];if(!file)return;
+    const token=++importReadToken;importPreview=null;importError='';importBusy=true;render();
+    try{
+      if(file.size>MAX_HISTORY_BYTES)throw Error('歷程檔案過大，請選擇 2 MB 以內的 JSON。');
+      const text=await file.text();
+      if(!importOpen||token!==importReadToken)return;
+      importPreview={...parseHistoryImport(text),fileName:file.name};
+    }catch(error){if(importOpen&&token===importReadToken)importError=error.message||'無法讀取這份歷程檔案。';}
+    finally{if(importOpen&&token===importReadToken){importBusy=false;render();}}
+    return;
+  }
   if(event.target.id==='music-volume')setMusicVolume(Number(event.target.value)/100);
   if(event.target.id==='audio-volume')setAudioVolume(Number(event.target.value)/100);
   if(event.target.id==='timed'&&state.phase==='map')commit({...state,timed:event.target.checked});

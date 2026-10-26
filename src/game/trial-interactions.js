@@ -1,5 +1,5 @@
-import { kindOf,modeNames,newDraft,readyTrial,evaluateTrial } from './trial-model.js?v=7e7e8f105b06';
-import { backgrounds,playerPortraits,propIcons } from '../data/assets.js?v=7e7e8f105b06';
+import { kindOf,modeNames,newDraft,readyTrial,evaluateTrial } from './trial-model.js?v=624f66693177';
+import { backgrounds,playerPortraits,propIcons } from '../data/assets.js?v=624f66693177';
 const drafts=new Map();let dispose=null;
 const e=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const button=(action,text,id='',attrs='')=>'<button data-trial="'+action+'" data-id="'+e(id)+'" '+attrs+'>'+text+'</button>';

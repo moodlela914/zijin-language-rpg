@@ -1,6 +1,6 @@
-import { createGame, playableChapters, currentQuestion, chapterQuestions, strategies } from './engine.js?v=7e7e8f105b06';
-import { questions } from '../data/questions.js?v=7e7e8f105b06';
-import { puzzles } from '../data/puzzles.js?v=7e7e8f105b06';
+import { createGame, playableChapters, currentQuestion, chapterQuestions, strategies } from './engine.js?v=624f66693177';
+import { questions } from '../data/questions.js?v=624f66693177';
+import { puzzles } from '../data/puzzles.js?v=624f66693177';
 export const SAVE_KEY = 'zijin-language-rpg:v2';
 export const LEGACY_KEY = 'zijin-language-rpg:v1';
 const integer = (x, min, max) => Number.isInteger(x) && x >= min && x <= max;

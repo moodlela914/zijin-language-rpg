@@ -1,6 +1,6 @@
-import { chapters, ranks } from '../data/chapters.js?v=7e7e8f105b06';
-import { questions } from '../data/questions.js?v=7e7e8f105b06';
-import { puzzles } from '../data/puzzles.js?v=7e7e8f105b06';
+import { chapters, ranks } from '../data/chapters.js?v=624f66693177';
+import { questions } from '../data/questions.js?v=624f66693177';
+import { puzzles } from '../data/puzzles.js?v=624f66693177';
 export const strategies = {
   gentle: { label: '以柔克剛', damage: 15, score: 10, description: '答錯扣 15 氣血，答對得 10 文墨。' },
   direct: { label: '剛直批駁', damage: 30, score: 20, description: '答錯扣 30 氣血，答對得 20 文墨。' },

@@ -1,4 +1,4 @@
-import {fetchJsonAsset} from '../game/asset-loader.js?v=7e7e8f105b06';
+import {fetchJsonAsset} from '../game/asset-loader.js?v=624f66693177';
 // 從製作清單同步的本機目錄載入；重新整理即可套用新完成的圖，不依賴遠端服務。
 let catalog;
 if(typeof window==='undefined'){
