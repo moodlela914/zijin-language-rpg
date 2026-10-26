@@ -1,0 +1,333 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "pavilion",
+    "number": 5,
+    "title": "碎玉軒",
+    "topic": "修辭美學",
+    "concepts": [
+      "修辭辨析"
+    ],
+    "questionCount": 4,
+    "questionIds": [
+      "rhetoric-personification",
+      "rhetoric-hyperbole",
+      "rhetoric-metonymy",
+      "rhetoric-pun"
+    ],
+    "file": "docs/question-bank/05-pavilion.json",
+    "difficulty": "medium",
+    "skills": [
+      "分析"
+    ],
+    "interactionKinds": [
+      "highlight"
+    ],
+    "interactionQuestionIds": [
+      "rhetoric-personification",
+      "rhetoric-hyperbole",
+      "rhetoric-metonymy",
+      "rhetoric-pun"
+    ],
+    "interactionCount": 4,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "修辭線索辨識",
+      "能在碎玉軒的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "rhetoric-evidence",
+      "objective": "修辭線索辨識",
+      "interactionHint": "標出關鍵詞與作用，再把證據連到修辭籤。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [],
+    "sourceCoverage": {
+      "linked": 0,
+      "total": 4
+    },
+    "unlinkedQuestionIds": [
+      "rhetoric-personification",
+      "rhetoric-hyperbole",
+      "rhetoric-metonymy",
+      "rhetoric-pun"
+    ],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "rhetoric-personification",
+      "chapterId": "pavilion",
+      "concept": "修辭辨析",
+      "prompt": "槿汐要妳在短詩中圈出兩處「讓非人的事物具備人的行為或能力」的語句。請依實際文字標記擬人線索。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "只圈「晨風」「海棠」，事物名稱本身就等於擬人"
+        },
+        {
+          "id": "b",
+          "text": "圈出「催我們起床」「悄悄聽我們說話」兩處擬人語句"
+        },
+        {
+          "id": "c",
+          "text": "只圈標點，擬人不需要指出人的行為"
+        }
+      ],
+      "answerId": "b",
+      "hint": "不只找出植物或風的名稱，要找它們被賦予了什麼人的能力。",
+      "explanation": "風被寫成會催人起床，海棠被寫成能聽人說話，兩處都賦予非人事物以人的行為或能力。僅有「晨風」「海棠」兩個名稱，還不能證明使用擬人。",
+      "correction": "擬人的證據在被賦予的人的行為或能力，而不只在事物名稱。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "rhetoric-evidence",
+        "objective": "修辭線索辨識",
+        "evidence": [
+          "判讀修辭要指出語句中的實際作用，不能只憑華麗程度。",
+          "物像人、故意誇大、關聯替代、同音兼義，是不同線索。",
+          "不只找出植物或風的名稱，要找它們被賦予了什麼人的能力。"
+        ],
+        "interactionHint": "標出關鍵詞與作用，再把證據連到修辭籤。"
+      },
+      "interaction": {
+        "kind": "highlight",
+        "instruction": "圈出短詩中兩處明確的擬人語句。",
+        "segments": [
+          {
+            "id": "wind",
+            "text": "晨風"
+          },
+          {
+            "id": "wake",
+            "text": "催我們起床"
+          },
+          {
+            "id": "flower",
+            "text": "，海棠"
+          },
+          {
+            "id": "listen",
+            "text": "悄悄聽我們說話"
+          },
+          {
+            "id": "end",
+            "text": "。"
+          }
+        ],
+        "targetIds": [
+          "wake",
+          "listen"
+        ]
+      }
+    },
+    {
+      "id": "rhetoric-hyperbole",
+      "chapterId": "pavilion",
+      "concept": "修辭辨析",
+      "prompt": "漏刻證實只過一刻鐘，浣碧明知如此，仍故意把等待感受誇大。請圈出短句中超出實際時間的詞。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "圈出「一百年」：故意放大等待時間的誇飾"
+        },
+        {
+          "id": "b",
+          "text": "圈出「一刻鐘」：真實經過的時間就是誇飾"
+        },
+        {
+          "id": "c",
+          "text": "圈出「我等了」：只要主詞是我就構成誇飾"
+        }
+      ],
+      "answerId": "a",
+      "hint": "比較漏刻證明的時間，與說話者故意放大的時間。",
+      "explanation": "真實時間是一刻鐘，故意說成一百年來強化等待的漫長感，誇飾的關鍵詞是一百年。實際時間與主詞都不是此處誇大的證據。",
+      "correction": "找誇飾時，要指出故意超越實際程度的文字。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "rhetoric-evidence",
+        "objective": "修辭線索辨識",
+        "evidence": [
+          "判讀修辭要指出語句中的實際作用，不能只憑華麗程度。",
+          "物像人、故意誇大、關聯替代、同音兼義，是不同線索。",
+          "比較漏刻證明的時間，與說話者故意放大的時間。"
+        ],
+        "interactionHint": "標出關鍵詞與作用，再把證據連到修辭籤。"
+      },
+      "interaction": {
+        "kind": "highlight",
+        "instruction": "圈出一處故意誇大等待時間的詞。",
+        "segments": [
+          {
+            "id": "first",
+            "text": "我等了"
+          },
+          {
+            "id": "actual",
+            "text": "一刻鐘"
+          },
+          {
+            "id": "middle",
+            "text": "，卻覺得已經等了"
+          },
+          {
+            "id": "exaggeration",
+            "text": "一百年"
+          },
+          {
+            "id": "end",
+            "text": "。"
+          }
+        ],
+        "targetIds": [
+          "exaggeration"
+        ]
+      }
+    },
+    {
+      "id": "rhetoric-metonymy",
+      "chapterId": "pavilion",
+      "concept": "修辭辨析",
+      "prompt": "詩箋旁註說：席上沒有這位造酒者本人，只有杯中的酒。請圈出短句中以相關人名代指酒的一處詞語。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "圈出「公文」：它在此句必定代指酒"
+        },
+        {
+          "id": "b",
+          "text": "圈出「一杯」：容器數量就是造酒者的人名"
+        },
+        {
+          "id": "c",
+          "text": "圈出「杜康」：以與造酒有關的人名借代酒"
+        }
+      ],
+      "answerId": "c",
+      "hint": "先區分現場真正存在的酒，與句中使用的人名。",
+      "explanation": "「杜康」是傳說中的造酒者，此處不指本人而代指酒，是依關聯形成借代。公文是句中一般事物名稱，「一杯」也不是人名。",
+      "correction": "「杜康」借代酒，判讀依據是相關聯，而非外形相似。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "rhetoric-evidence",
+        "objective": "修辭線索辨識",
+        "evidence": [
+          "判讀修辭要指出語句中的實際作用，不能只憑華麗程度。",
+          "物像人、故意誇大、關聯替代、同音兼義，是不同線索。",
+          "先區分現場真正存在的酒，與句中使用的人名。"
+        ],
+        "interactionHint": "標出關鍵詞與作用，再把證據連到修辭籤。"
+      },
+      "interaction": {
+        "kind": "highlight",
+        "instruction": "圈出短句中以相關人名代指酒的詞。",
+        "segments": [
+          {
+            "id": "start",
+            "text": "今晚不談"
+          },
+          {
+            "id": "documents",
+            "text": "公文"
+          },
+          {
+            "id": "pour",
+            "text": "，且斟一杯"
+          },
+          {
+            "id": "wine",
+            "text": "杜康"
+          },
+          {
+            "id": "end",
+            "text": "。"
+          }
+        ],
+        "targetIds": [
+          "wine"
+        ]
+      }
+    },
+    {
+      "id": "rhetoric-pun",
+      "chapterId": "pavilion",
+      "concept": "修辭辨析",
+      "prompt": "劉禹錫詩句把天氣與情意交織，旁註提示「晴」與「情」同音。請圈出兩處兼含這兩層意思的詞組。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "只圈「東邊日出西邊雨」：位置詞本身即形成晴與情的諧音"
+        },
+        {
+          "id": "b",
+          "text": "圈出「無晴」「有晴」：兼帶「無情」「有情」的諧音雙關"
+        },
+        {
+          "id": "c",
+          "text": "只圈「卻」：轉折詞本身同時表示晴天與情意"
+        }
+      ],
+      "answerId": "b",
+      "hint": "找實際含有「晴」字的兩處詞組，而不是只找轉折詞。",
+      "explanation": "無晴、有晴藉「晴」「情」同音，兼帶無情、有情的意思。兩處詞組共同形成晴雨與情意交疊的雙關效果。",
+      "correction": "諧音雙關需要指出同音詞及其兼含的另一層意義。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "rhetoric-evidence",
+        "objective": "修辭線索辨識",
+        "evidence": [
+          "判讀修辭要指出語句中的實際作用，不能只憑華麗程度。",
+          "物像人、故意誇大、關聯替代、同音兼義，是不同線索。",
+          "找實際含有「晴」字的兩處詞組，而不是只找轉折詞。"
+        ],
+        "interactionHint": "標出關鍵詞與作用，再把證據連到修辭籤。"
+      },
+      "interaction": {
+        "kind": "highlight",
+        "instruction": "圈出兩處透過同音而兼含情意的詞組。",
+        "segments": [
+          {
+            "id": "sky",
+            "text": "東邊日出西邊雨，道是"
+          },
+          {
+            "id": "no-clear",
+            "text": "無晴"
+          },
+          {
+            "id": "turn",
+            "text": "卻"
+          },
+          {
+            "id": "clear",
+            "text": "有晴"
+          },
+          {
+            "id": "end",
+            "text": "。"
+          }
+        ],
+        "targetIds": [
+          "no-clear",
+          "clear"
+        ]
+      }
+    }
+  ]
+}

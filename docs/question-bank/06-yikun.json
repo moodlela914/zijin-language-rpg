@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "yikun",
+    "number": 6,
+    "title": "翊坤宮",
+    "topic": "題辭辨析",
+    "concepts": [
+      "題辭辨析"
+    ],
+    "questionCount": 4,
+    "questionIds": [
+      "inscription-daughter",
+      "inscription-son",
+      "inscription-wedding",
+      "inscription-birthday"
+    ],
+    "file": "docs/question-bank/06-yikun.json",
+    "difficulty": "medium",
+    "skills": [
+      "應用"
+    ],
+    "interactionKinds": [
+      "matching"
+    ],
+    "interactionQuestionIds": [
+      "inscription-daughter",
+      "inscription-son",
+      "inscription-wedding",
+      "inscription-birthday"
+    ],
+    "interactionCount": 4,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "題辭送禮配對",
+      "能在翊坤宮的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "gift-matching",
+      "objective": "題辭送禮配對",
+      "interactionHint": "對照禮物簿，將題辭卡配到正確事件。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [
+      {
+        "title": "教育部《國語辭典簡編本》：弄瓦",
+        "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《重編國語辭典修訂本》：弄璋",
+        "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=58782",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《國語辭典簡編本》：壽比南山",
+        "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34367",
+        "status": "reference-linked"
+      }
+    ],
+    "sourceCoverage": {
+      "linked": 3,
+      "total": 4
+    },
+    "unlinkedQuestionIds": [
+      "inscription-wedding"
+    ],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "inscription-daughter",
+      "chapterId": "yikun",
+      "concept": "題辭辨析",
+      "prompt": "三份禮單分別是賀生女、賀生男與賀長輩壽誕。請依傳統用語把三張題辭各送到合宜場合，每張只用一次。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "生女配弄瓦之喜；生男配弄璋之喜；壽誕配壽比南山"
+        },
+        {
+          "id": "b",
+          "text": "生女配弄璋之喜；生男配弄瓦之喜；壽誕配壽比南山"
+        },
+        {
+          "id": "c",
+          "text": "生女配壽比南山；生男配弄璋之喜；壽誕配弄瓦之喜"
+        }
+      ],
+      "answerId": "a",
+      "hint": "先按出生與壽誕分組，再辨認兩種出生賀辭的傳統對象。",
+      "explanation": "傳統用語弄瓦賀生女、弄璋賀生男，壽比南山祝人長壽。這裡辨認歷史用語，不代表現代有性別價值差別。",
+      "correction": "傳統配對：生女弄瓦、生男弄璋、祝壽壽比南山。",
+      "sourceTitle": "教育部《國語辭典簡編本》：弄瓦",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "evidence": [
+          "先確定事件是出生、婚嫁、壽誕或哀悼。",
+          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
+          "先按出生與壽誕分組，再辨認兩種出生賀辭的傳統對象。"
+        ],
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
+      },
+      "interaction": {
+        "kind": "matching",
+        "instruction": "為每份禮單配上一張最合宜的傳統題辭。",
+        "pairs": [
+          {
+            "id": "girl",
+            "left": "賀生女",
+            "right": "弄瓦之喜"
+          },
+          {
+            "id": "boy",
+            "left": "賀生男",
+            "right": "弄璋之喜"
+          },
+          {
+            "id": "birthday",
+            "left": "賀壽誕",
+            "right": "壽比南山"
+          }
+        ]
+      }
+    },
+    {
+      "id": "inscription-son",
+      "chapterId": "yikun",
+      "concept": "題辭辨析",
+      "prompt": "頌芝把賀生男、女子出嫁及祝壽三份禮物的題辭混在一起。請按禮物用途重新配對，不能只挑字面吉祥的詞。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "生男配之子于歸；女子出嫁配弄璋之喜；壽誕配壽比南山"
+        },
+        {
+          "id": "b",
+          "text": "生男配弄璋之喜；女子出嫁配之子于歸；壽誕配壽比南山"
+        },
+        {
+          "id": "c",
+          "text": "生男配壽比南山；女子出嫁配之子于歸；壽誕配弄璋之喜"
+        }
+      ],
+      "answerId": "b",
+      "hint": "先區分新生兒、出嫁新人與賀壽長輩三種對象。",
+      "explanation": "弄璋之喜是傳統賀生男用語，之子于歸與女子出嫁相關，壽比南山則用來祝長壽。三份禮物不能只依「都是喜事」互換題辭。",
+      "correction": "題辭要同時配合事件與祝賀對象。",
+      "sourceTitle": "教育部《重編國語辭典修訂本》：弄璋",
+      "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=58782",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "evidence": [
+          "先確定事件是出生、婚嫁、壽誕或哀悼。",
+          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
+          "先區分新生兒、出嫁新人與賀壽長輩三種對象。"
+        ],
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
+      },
+      "interaction": {
+        "kind": "matching",
+        "instruction": "依三份禮物的用途，配回對應題辭。",
+        "pairs": [
+          {
+            "id": "boy",
+            "left": "賀生男",
+            "right": "弄璋之喜"
+          },
+          {
+            "id": "bride",
+            "left": "賀女子出嫁",
+            "right": "之子于歸"
+          },
+          {
+            "id": "birthday",
+            "left": "賀長輩壽誕",
+            "right": "壽比南山"
+          }
+        ]
+      }
+    },
+    {
+      "id": "inscription-wedding",
+      "chapterId": "yikun",
+      "concept": "題辭辨析",
+      "prompt": "禮簿有「新人完婚，盼家庭和睦」「添女」「長輩壽誕」三條記錄。請完成題辭配對，每則題辭只能送出一次。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "婚嫁配弄瓦之喜；添女配宜室宜家；壽誕配壽比南山"
+        },
+        {
+          "id": "b",
+          "text": "婚嫁配宜室宜家；添女配壽比南山；壽誕配弄瓦之喜"
+        },
+        {
+          "id": "c",
+          "text": "婚嫁配宜室宜家；添女配弄瓦之喜；壽誕配壽比南山"
+        }
+      ],
+      "answerId": "c",
+      "hint": "辨認家庭和睦的婚嫁祝辭，與出生、長壽的用語分開。",
+      "explanation": "宜室宜家祝婚姻與家庭和諧，弄瓦之喜傳統上賀生女，壽比南山祝長壽。要同時符合事件與祝賀目標。",
+      "correction": "婚嫁、出生與壽誕題辭不可混用。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "evidence": [
+          "先確定事件是出生、婚嫁、壽誕或哀悼。",
+          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
+          "辨認家庭和睦的婚嫁祝辭，與出生、長壽的用語分開。"
+        ],
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
+      },
+      "interaction": {
+        "kind": "matching",
+        "instruction": "依事件與祝賀目標，將題辭配給三份禮物。",
+        "pairs": [
+          {
+            "id": "wedding",
+            "left": "賀婚嫁、祝家庭和睦",
+            "right": "宜室宜家"
+          },
+          {
+            "id": "girl",
+            "left": "賀添女",
+            "right": "弄瓦之喜"
+          },
+          {
+            "id": "birthday",
+            "left": "賀壽誕",
+            "right": "壽比南山"
+          }
+        ]
+      }
+    },
+    {
+      "id": "inscription-birthday",
+      "chapterId": "yikun",
+      "concept": "題辭辨析",
+      "prompt": "壽宴禮物旁又混入新婚與賀生男的題辭卡。請把「健在長輩賀壽、新婚、添男」三種場合完整配回去。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "賀壽配壽比南山；新婚配宜室宜家；添男配弄璋之喜"
+        },
+        {
+          "id": "b",
+          "text": "賀壽配宜室宜家；新婚配壽比南山；添男配弄璋之喜"
+        },
+        {
+          "id": "c",
+          "text": "賀壽配弄璋之喜；新婚配宜室宜家；添男配壽比南山"
+        }
+      ],
+      "answerId": "a",
+      "hint": "先將長壽、婚姻與出生三種祝賀目標分開。",
+      "explanation": "壽比南山祝長壽，宜室宜家賀新婚，弄璋之喜傳統上賀生男。每張題辭有特定適用場合。",
+      "correction": "題辭判讀先看場合，再看語詞的傳統適用對象。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceTitle": "教育部《國語辭典簡編本》：壽比南山",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34367",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "evidence": [
+          "先確定事件是出生、婚嫁、壽誕或哀悼。",
+          "傳統賀辭有特定適用場合，不能只看字面是否吉祥。",
+          "先將長壽、婚姻與出生三種祝賀目標分開。"
+        ],
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。"
+      },
+      "interaction": {
+        "kind": "matching",
+        "instruction": "辨認三種喜事，為每份禮物配上合宜題辭。",
+        "pairs": [
+          {
+            "id": "birthday",
+            "left": "健在長輩賀壽",
+            "right": "壽比南山"
+          },
+          {
+            "id": "wedding",
+            "left": "賀新婚",
+            "right": "宜室宜家"
+          },
+          {
+            "id": "boy",
+            "left": "賀添男",
+            "right": "弄璋之喜"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "gate",
+    "number": 1,
+    "title": "大清門外",
+    "topic": "敬詞與謙詞",
+    "concepts": [
+      "敬謙詞"
+    ],
+    "questionCount": 4,
+    "questionIds": [
+      "courtesy-father",
+      "courtesy-home",
+      "courtesy-mother",
+      "courtesy-advice"
+    ],
+    "file": "docs/question-bank/01-gate.json",
+    "difficulty": "medium",
+    "skills": [
+      "應用"
+    ],
+    "interactionKinds": [
+      "renderer-derived-from-choices"
+    ],
+    "interactionQuestionIds": [],
+    "interactionCount": 0,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "敬謙詞書札修補",
+      "能在大清門外的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "letter-repair",
+      "objective": "敬謙詞書札修補",
+      "interactionHint": "比對書札身分、錯誤稱呼與修補卡，再提交修訂。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [
+      {
+        "title": "教育部《國語辭典簡編本》：家父",
+        "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21808",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《國語辭典簡編本》：寒舍",
+        "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=19676",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《國語辭典簡編本》附錄：親屬稱謂表",
+        "url": "https://dict.concised.moe.edu.tw/appendix.jsp?ID=32&deg=1&la=2",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《國語辭典簡編本》：不吝賜教",
+        "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=2007",
+        "status": "reference-linked"
+      }
+    ],
+    "sourceCoverage": {
+      "linked": 4,
+      "total": 4
+    },
+    "unlinkedQuestionIds": [],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "courtesy-father",
+      "chapterId": "gate",
+      "concept": "敬謙詞",
+      "prompt": "名冊寫著「令尊靠教書維生，家母善於織布」，兩處都是妳向別人介紹自己的雙親。康祿海說其中一個稱呼用錯了。「令尊」應改為哪個稱呼？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "家父：因為在介紹自己的父親"
+        },
+        {
+          "id": "b",
+          "text": "令尊：介紹自己父親仍可照用"
+        },
+        {
+          "id": "c",
+          "text": "尊翁：只要語氣尊敬就適用於自己父親"
+        }
+      ],
+      "answerId": "a",
+      "hint": "先分清楚：你在稱呼自己的親人，還是在尊稱對方的親人？",
+      "explanation": "「家父」是對別人謙稱自己的父親；「令尊」及「尊翁」用來尊稱他人的父親。",
+      "correction": "向別人介紹自己的父親，應使用「家父」。",
+      "sourceTitle": "教育部《國語辭典簡編本》：家父",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21808",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "letter-repair",
+        "objective": "敬謙詞書札修補",
+        "evidence": [
+          "稱呼需先確認是自己的親人，還是對方的親人。",
+          "請益用語要分清作品歸屬、寄信人與收信人的關係。",
+          "先分清楚：你在稱呼自己的親人，還是在尊稱對方的親人？"
+        ],
+        "interactionHint": "比對書札身分、錯誤稱呼與修補卡，再提交修訂。"
+      }
+    },
+    {
+      "id": "courtesy-home",
+      "chapterId": "gate",
+      "concept": "敬謙詞",
+      "prompt": "妳要邀學士到自己家中，草稿卻寫「敬請光臨貴府」。書札旁註提醒「自己的居所用謙詞」。哪一修補符合寫信人的身分與目的？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "保留「敬請光臨貴府」，因為客人身分尊貴"
+        },
+        {
+          "id": "b",
+          "text": "改成「敬請光臨寒舍」，謙稱自己的居所"
+        },
+        {
+          "id": "c",
+          "text": "改成「敬請光臨尊府」，避免使用謙詞"
+        }
+      ],
+      "answerId": "b",
+      "hint": "自己的居所用謙詞，對方的居所用敬詞。",
+      "explanation": "「寒舍」是謙稱自己的住處；「貴府」「尊府」是尊稱他人的府邸。",
+      "correction": "邀請他人到自己家中，可說「敬請光臨寒舍」。",
+      "sourceTitle": "教育部《國語辭典簡編本》：寒舍",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=19676",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "letter-repair",
+        "objective": "敬謙詞書札修補",
+        "evidence": [
+          "稱呼需先確認是自己的親人，還是對方的親人。",
+          "請益用語要分清作品歸屬、寄信人與收信人的關係。",
+          "自己的居所用謙詞，對方的居所用敬詞。"
+        ],
+        "interactionHint": "比對書札身分、錯誤稱呼與修補卡，再提交修訂。"
+      }
+    },
+    {
+      "id": "courtesy-mother",
+      "chapterId": "gate",
+      "concept": "敬謙詞",
+      "prompt": "書札的收信人是學士，內文要問候「學士的母親」，不是自己的母親或妹妹。請挑出稱呼對象與敬謙關係都正確的修補句。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "家母近日安好嗎？——用來問對方母親"
+        },
+        {
+          "id": "b",
+          "text": "令堂近日安好嗎？——尊稱對方母親"
+        },
+        {
+          "id": "c",
+          "text": "舍妹近日安好嗎？——尊稱對方母親"
+        }
+      ],
+      "answerId": "b",
+      "hint": "要問候的是「對方的母親」，用敬稱。",
+      "explanation": "「令堂」尊稱對方母親；「家母」稱自己的母親，「舍妹」謙稱自己的妹妹，對象不同。",
+      "correction": "稱自己的母親用「家母」，尊稱對方母親用「令堂」。",
+      "sourceTitle": "教育部《國語辭典簡編本》附錄：親屬稱謂表",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/appendix.jsp?ID=32&deg=1&la=2",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "letter-repair",
+        "objective": "敬謙詞書札修補",
+        "evidence": [
+          "稱呼需先確認是自己的親人，還是對方的親人。",
+          "請益用語要分清作品歸屬、寄信人與收信人的關係。",
+          "要問候的是「對方的母親」，用敬稱。"
+        ],
+        "interactionHint": "比對書札身分、錯誤稱呼與修補卡，再提交修訂。"
+      }
+    },
+    {
+      "id": "courtesy-advice",
+      "chapterId": "gate",
+      "concept": "敬謙詞",
+      "prompt": "待修書札原寫「請指教你的拙作」，但妳真正要做的是把自己的文章交給學士，請他指出不足。哪個版本同時修正作品歸屬與請益語氣？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "此文已無可挑剔，請勿修改。"
+        },
+        {
+          "id": "b",
+          "text": "請收下你的拙作。"
+        },
+        {
+          "id": "c",
+          "text": "這是晚輩的拙作，敬請不吝賜教。"
+        }
+      ],
+      "answerId": "c",
+      "hint": "「拙作」指誰的作品？「賜教」是請誰指教？",
+      "explanation": "「拙作」是謙稱自己的作品，「不吝賜教」是請人多加指教的客套話。把他人的作品稱作「拙作」不合此處敬謙關係。",
+      "correction": "介紹自己的作品可用「拙作」，請人指導可用「不吝賜教」。",
+      "sourceTitle": "教育部《國語辭典簡編本》：不吝賜教",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=2007",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "letter-repair",
+        "objective": "敬謙詞書札修補",
+        "evidence": [
+          "稱呼需先確認是自己的親人，還是對方的親人。",
+          "請益用語要分清作品歸屬、寄信人與收信人的關係。",
+          "「拙作」指誰的作品？「賜教」是請誰指教？"
+        ],
+        "interactionHint": "比對書札身分、錯誤稱呼與修補卡，再提交修訂。"
+      }
+    }
+  ]
+}

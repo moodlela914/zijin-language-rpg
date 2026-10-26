@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "library",
+    "number": 3,
+    "title": "文淵閣",
+    "topic": "經史子集",
+    "concepts": [
+      "四部分類"
+    ],
+    "questionCount": 4,
+    "questionIds": [
+      "books-shiji",
+      "books-zhuangzi",
+      "books-analects",
+      "books-poetry-collection"
+    ],
+    "file": "docs/question-bank/03-library.json",
+    "difficulty": "medium",
+    "skills": [
+      "分析"
+    ],
+    "interactionKinds": [
+      "renderer-derived-from-choices"
+    ],
+    "interactionQuestionIds": [],
+    "interactionCount": 0,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "經史子集歸架",
+      "能在文淵閣的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "book-shelving",
+      "objective": "經史子集歸架",
+      "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [
+      {
+        "title": "國立成功大學圖書館：文淵閣四庫全書電子版介紹",
+        "url": "https://libapp.lib.ncku.edu.tw/libref/chinese/single/oldbook2.htm",
+        "status": "reference-linked"
+      }
+    ],
+    "sourceCoverage": {
+      "linked": 2,
+      "total": 4
+    },
+    "unlinkedQuestionIds": [
+      "books-analects",
+      "books-poetry-collection"
+    ],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "books-shiji",
+      "chapterId": "library",
+      "concept": "四部分類",
+      "prompt": "歸架單把《史記》放在「集部」，理由是它文筆生動；另一張書介卻說它以人物傳記等體例記載歷史。依四部分類，應改放哪一架？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "史部：按史書性質歸類，不能只看文采"
+        },
+        {
+          "id": "b",
+          "text": "子部：只要談人的行為就屬諸子著作"
+        },
+        {
+          "id": "c",
+          "text": "集部：凡是文筆優美的書都放在此處"
+        }
+      ],
+      "answerId": "a",
+      "hint": "先看書籍的性質：這是史書、諸子著作，還是詩文集？",
+      "explanation": "《史記》是紀傳體史書，在經、史、子、集四部分類中屬於史部。",
+      "correction": "《史記》是史書，歸入史部。",
+      "sourceTitle": "國立成功大學圖書館：文淵閣四庫全書電子版介紹",
+      "sourceUrl": "https://libapp.lib.ncku.edu.tw/libref/chinese/single/oldbook2.htm",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "book-shelving",
+        "objective": "經史子集歸架",
+        "evidence": [
+          "分類依書籍性質，不只依作者年代或文筆優美。",
+          "儒家經典、史書、諸子著作與詩文集，對應不同書架。",
+          "先看書籍的性質：這是史書、諸子著作，還是詩文集？"
+        ],
+        "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。"
+      }
+    },
+    {
+      "id": "books-zhuangzi",
+      "chapterId": "library",
+      "concept": "四部分類",
+      "prompt": "《莊子》的歸架卡上有兩條資訊：「先秦道家著作」「寓言精采」。有人只依第二條就把它放進集部。應如何更正？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "移至經部，因為只要古老就是儒家經典"
+        },
+        {
+          "id": "b",
+          "text": "留在集部，分類只看文筆好壞"
+        },
+        {
+          "id": "c",
+          "text": "移至子部，依其道家著作性質分類"
+        }
+      ],
+      "answerId": "c",
+      "hint": "莊子屬於先秦諸子，道家著作如何分類？",
+      "explanation": "《莊子》是道家著作，歸入子部。分類要看書籍性質，不能單憑文筆優美就歸入集部。",
+      "correction": "《莊子》為道家著作，歸入子部。",
+      "sourceTitle": "國立成功大學圖書館：文淵閣四庫全書電子版介紹",
+      "sourceUrl": "https://libapp.lib.ncku.edu.tw/libref/chinese/single/oldbook2.htm",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "book-shelving",
+        "objective": "經史子集歸架",
+        "evidence": [
+          "分類依書籍性質，不只依作者年代或文筆優美。",
+          "儒家經典、史書、諸子著作與詩文集，對應不同書架。",
+          "莊子屬於先秦諸子，道家著作如何分類？"
+        ],
+        "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。"
+      }
+    },
+    {
+      "id": "books-analects",
+      "chapterId": "library",
+      "concept": "四部分類",
+      "prompt": "書架的規則是「儒家經典歸經部，諸子著作歸子部」。《論語》的書介寫著「儒家經典」，整理員卻因它談思想而放到子部。哪個修正合理？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "移到史部，凡有古人言行都是史書"
+        },
+        {
+          "id": "b",
+          "text": "移到集部，凡有語句都是詩文集"
+        },
+        {
+          "id": "c",
+          "text": "移到經部，依儒家經典的性質分類"
+        }
+      ],
+      "answerId": "c",
+      "hint": "不要把所有討論思想的書都放進子部，先辨認儒家經典。",
+      "explanation": "《論語》屬於儒家經典，四部分類歸入經部；史部以史籍為主，集部以詩文集等為主。",
+      "correction": "四部分類中，《論語》歸經部。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "book-shelving",
+        "objective": "經史子集歸架",
+        "evidence": [
+          "分類依書籍性質，不只依作者年代或文筆優美。",
+          "儒家經典、史書、諸子著作與詩文集，對應不同書架。",
+          "不要把所有討論思想的書都放進子部，先辨認儒家經典。"
+        ],
+        "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。"
+      }
+    },
+    {
+      "id": "books-poetry-collection",
+      "chapterId": "library",
+      "concept": "四部分類",
+      "prompt": "妳要替《陶淵明集》補上歸架籤。線索說「一位作者的詩文匯編」，旁邊的錯誤籤卻寫「作者是古人，所以歸史部」。哪個修補正確？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "集部：這是個人的詩文別集"
+        },
+        {
+          "id": "b",
+          "text": "史部：凡是古人的書都屬史部"
+        },
+        {
+          "id": "c",
+          "text": "子部：凡非儒家經典都屬子部"
+        }
+      ],
+      "answerId": "a",
+      "hint": "分類看書籍性質：這是個人詩文集，不是人物傳記。",
+      "explanation": "個人詩文集屬集部的別集；不能因作者是古人，就把其詩文集歸史部。",
+      "correction": "個人的詩文別集歸入集部。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "book-shelving",
+        "objective": "經史子集歸架",
+        "evidence": [
+          "分類依書籍性質，不只依作者年代或文筆優美。",
+          "儒家經典、史書、諸子著作與詩文集，對應不同書架。",
+          "分類看書籍性質：這是個人詩文集，不是人物傳記。"
+        ],
+        "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。"
+      }
+    }
+  ]
+}

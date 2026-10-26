@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "cining",
+    "number": 10,
+    "title": "慈寧宮",
+    "topic": "年齡與干支",
+    "concepts": [
+      "年齡與干支"
+    ],
+    "questionCount": 4,
+    "questionIds": [
+      "age-coming-of-age",
+      "age-standing",
+      "time-midnight",
+      "cycle-sexagenary"
+    ],
+    "file": "docs/question-bank/10-cining.json",
+    "difficulty": "medium",
+    "skills": [
+      "應用"
+    ],
+    "interactionKinds": [
+      "timeline"
+    ],
+    "interactionQuestionIds": [
+      "age-coming-of-age",
+      "age-standing",
+      "time-midnight",
+      "cycle-sexagenary"
+    ],
+    "interactionCount": 4,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "年齡時辰排序與循環推算",
+      "能在慈寧宮的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "age-time-order",
+      "objective": "年齡時辰排序與循環推算",
+      "interactionHint": "把歲數、代稱、時段配回位置，再核對干支循環。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [
+      {
+        "title": "教育部《重編國語辭典修訂本》：及笄",
+        "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=87862",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部臺灣台語常用詞辭典：子（子時）",
+        "url": "https://sutian.moe.edu.tw/zh-hant/su/192/",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《重編國語辭典修訂本》：六十甲子",
+        "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=63847",
+        "status": "reference-linked"
+      }
+    ],
+    "sourceCoverage": {
+      "linked": 3,
+      "total": 4
+    },
+    "unlinkedQuestionIds": [
+      "age-standing"
+    ],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "age-coming-of-age",
+      "chapterId": "cining",
+      "concept": "年齡與干支",
+      "prompt": "傳統禮簿以「女子及笄」標示一項古代年齡用語。請把標記移到對應歲數；本題不涉及現代法定成年規定。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "標記13歲：把及笄與豆蔻混為一談"
+        },
+        {
+          "id": "b",
+          "text": "標記15歲：符合古代「及笄」的常見年齡用語"
+        },
+        {
+          "id": "c",
+          "text": "標記20歲：把不同古代成年禮的歲數全部混同"
+        }
+      ],
+      "answerId": "b",
+      "hint": "及笄與女子加笄禮相關，要與豆蔻、弱冠分開。",
+      "explanation": "傳統語文常識中，女子十五歲加笄表示成年，所以及笄通常對應十五歲。這是古代用語，不是現代法定成年歲數。",
+      "correction": "及笄通常對應古代女子十五歲。",
+      "sourceTitle": "教育部《重編國語辭典修訂本》：及笄",
+      "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=87862",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "age-time-order",
+        "objective": "年齡時辰排序與循環推算",
+        "evidence": [
+          "年齡代稱屬古代語文習慣，不能當作現代法律成年規則。",
+          "干支兩個轉盤要同時回原點；時辰要確認跨日與晝夜。",
+          "及笄與女子加笄禮相關，要與豆蔻、弱冠分開。"
+        ],
+        "interactionHint": "把歲數、代稱、時段配回位置，再核對干支循環。"
+      },
+      "interaction": {
+        "kind": "timeline",
+        "instruction": "移動年齡標記，選定符合「及笄」的歲數刻度。",
+        "ticks": [
+          {
+            "id": "age10",
+            "text": "10歲"
+          },
+          {
+            "id": "age13",
+            "text": "13歲"
+          },
+          {
+            "id": "age15",
+            "text": "15歲"
+          },
+          {
+            "id": "age20",
+            "text": "20歲"
+          },
+          {
+            "id": "age30",
+            "text": "30歲"
+          },
+          {
+            "id": "age40",
+            "text": "40歲"
+          },
+          {
+            "id": "age50",
+            "text": "50歲"
+          },
+          {
+            "id": "age60",
+            "text": "60歲"
+          }
+        ],
+        "solutionId": "age15"
+      }
+    },
+    {
+      "id": "age-standing",
+      "chapterId": "cining",
+      "concept": "年齡與干支",
+      "prompt": "壽宴座次記錄有人「年屆而立」。請把標記放到年齡軸上的對應歲數，並與弱冠、不惑等稱呼區分。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "標記20歲：把而立誤當成弱冠"
+        },
+        {
+          "id": "b",
+          "text": "標記40歲：把而立誤當成不惑"
+        },
+        {
+          "id": "c",
+          "text": "標記30歲：與「而立」的年齡代稱相合"
+        }
+      ],
+      "answerId": "c",
+      "hint": "回想三十而立、四十而不惑的先後。",
+      "explanation": "而立通常代稱三十歲；弱冠通常指男子二十歲，不惑通常指四十歲。要按慣用代稱判讀，而非猜某個人何時能獨立。",
+      "correction": "而立通常指三十歲，不惑通常指四十歲。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "age-time-order",
+        "objective": "年齡時辰排序與循環推算",
+        "evidence": [
+          "年齡代稱屬古代語文習慣，不能當作現代法律成年規則。",
+          "干支兩個轉盤要同時回原點；時辰要確認跨日與晝夜。",
+          "回想三十而立、四十而不惑的先後。"
+        ],
+        "interactionHint": "把歲數、代稱、時段配回位置，再核對干支循環。"
+      },
+      "interaction": {
+        "kind": "timeline",
+        "instruction": "移動年齡標記，選定符合「而立」的歲數刻度。",
+        "ticks": [
+          {
+            "id": "age10",
+            "text": "10歲"
+          },
+          {
+            "id": "age15",
+            "text": "15歲"
+          },
+          {
+            "id": "age20",
+            "text": "20歲"
+          },
+          {
+            "id": "age30",
+            "text": "30歲"
+          },
+          {
+            "id": "age40",
+            "text": "40歲"
+          },
+          {
+            "id": "age50",
+            "text": "50歲"
+          },
+          {
+            "id": "age60",
+            "text": "60歲"
+          },
+          {
+            "id": "age70",
+            "text": "70歲"
+          }
+        ],
+        "solutionId": "age30"
+      }
+    },
+    {
+      "id": "time-midnight",
+      "chapterId": "cining",
+      "concept": "年齡與干支",
+      "prompt": "值夜簿的「子時」標籤脫落。時間軸跨越夜晚到翌日晚間，請把標記移到子時的一般現代時段，並與午時、卯時區分。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "標記23:00至翌日01:00：對應一般子時時段"
+        },
+        {
+          "id": "b",
+          "text": "標記11:00至13:00：把子時與午時混淆"
+        },
+        {
+          "id": "c",
+          "text": "標記05:00至07:00：把子時與卯時混淆"
+        }
+      ],
+      "answerId": "a",
+      "hint": "子時與夜半相關，一個傳統時辰約相當於兩個現代小時。",
+      "explanation": "一般時辰對照中，子時為晚上二十三時至翌日一時，午時為十一時至十三時，卯時為五時至七時。本題時間軸以子時為起點，不是以午夜零時切開。",
+      "correction": "子時一般對應23:00至翌日01:00，須留意跨日。",
+      "sourceTitle": "教育部臺灣台語常用詞辭典：子（子時）",
+      "sourceUrl": "https://sutian.moe.edu.tw/zh-hant/su/192/",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "age-time-order",
+        "objective": "年齡時辰排序與循環推算",
+        "evidence": [
+          "年齡代稱屬古代語文習慣，不能當作現代法律成年規則。",
+          "干支兩個轉盤要同時回原點；時辰要確認跨日與晝夜。",
+          "子時與夜半相關，一個傳統時辰約相當於兩個現代小時。"
+        ],
+        "interactionHint": "把歲數、代稱、時段配回位置，再核對干支循環。"
+      },
+      "interaction": {
+        "kind": "timeline",
+        "instruction": "在十二個依序排列的時段中，標出子時所在的位置。",
+        "ticks": [
+          {
+            "id": "zi",
+            "text": "23:00–翌日01:00"
+          },
+          {
+            "id": "chou",
+            "text": "01:00–03:00"
+          },
+          {
+            "id": "yin",
+            "text": "03:00–05:00"
+          },
+          {
+            "id": "mao",
+            "text": "05:00–07:00"
+          },
+          {
+            "id": "chen",
+            "text": "07:00–09:00"
+          },
+          {
+            "id": "si",
+            "text": "09:00–11:00"
+          },
+          {
+            "id": "wu",
+            "text": "11:00–13:00"
+          },
+          {
+            "id": "wei",
+            "text": "13:00–15:00"
+          },
+          {
+            "id": "shen",
+            "text": "15:00–17:00"
+          },
+          {
+            "id": "you",
+            "text": "17:00–19:00"
+          },
+          {
+            "id": "xu",
+            "text": "19:00–21:00"
+          },
+          {
+            "id": "hai",
+            "text": "21:00–23:00"
+          }
+        ],
+        "solutionId": "zi"
+      }
+    },
+    {
+      "id": "cycle-sexagenary",
+      "chapterId": "cining",
+      "concept": "年齡與干支",
+      "prompt": "十天干與十二地支每年各前進一格，目前同在甲子。請把標記移到「最少再過多少個正整數年，兩盤才一起回到原配對」的位置。0代表現在，不是再過的年數。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "標記再過12年：只確認地支回原位，未核對天干"
+        },
+        {
+          "id": "b",
+          "text": "標記再過60年：天干與地支第一次同時回到原配對"
+        },
+        {
+          "id": "c",
+          "text": "標記再過24年：兩輪地支仍不能保證天干回原位"
+        }
+      ],
+      "answerId": "b",
+      "hint": "找十與十二兩個循環同時回到起點的最小正整數週期。",
+      "explanation": "十與十二的最小公倍數是六十，因此最少再過六十年才同時回到甲子；十二、二十四年只讓地支回到原位，不能保證天干也相同。",
+      "correction": "干支完整循環為六十年，不能只計十二地支。",
+      "sourceTitle": "教育部《重編國語辭典修訂本》：六十甲子",
+      "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=63847",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "age-time-order",
+        "objective": "年齡時辰排序與循環推算",
+        "evidence": [
+          "年齡代稱屬古代語文習慣，不能當作現代法律成年規則。",
+          "干支兩個轉盤要同時回原點；時辰要確認跨日與晝夜。",
+          "找十與十二兩個循環同時回到起點的最小正整數週期。"
+        ],
+        "interactionHint": "把歲數、代稱、時段配回位置，再核對干支循環。"
+      },
+      "interaction": {
+        "kind": "timeline",
+        "instruction": "在年數軸選定兩個循環同時首次回到起點的正整數年數。",
+        "ticks": [
+          {
+            "id": "year0",
+            "text": "現在0年"
+          },
+          {
+            "id": "year12",
+            "text": "再過12年"
+          },
+          {
+            "id": "year24",
+            "text": "再過24年"
+          },
+          {
+            "id": "year36",
+            "text": "再過36年"
+          },
+          {
+            "id": "year48",
+            "text": "再過48年"
+          },
+          {
+            "id": "year60",
+            "text": "再過60年"
+          },
+          {
+            "id": "year72",
+            "text": "再過72年"
+          }
+        ],
+        "solutionId": "year60"
+      }
+    }
+  ]
+}

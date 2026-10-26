@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "hall",
+    "number": 2,
+    "title": "太和殿前",
+    "topic": "六書造字",
+    "concepts": [
+      "六書"
+    ],
+    "questionCount": 4,
+    "questionIds": [
+      "character-blade",
+      "character-river",
+      "character-sun",
+      "character-rest"
+    ],
+    "file": "docs/question-bank/02-hall.json",
+    "difficulty": "medium",
+    "skills": [
+      "分析"
+    ],
+    "interactionKinds": [
+      "renderer-derived-from-choices"
+    ],
+    "interactionQuestionIds": [],
+    "interactionCount": 0,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "六書字牌分類",
+      "能在太和殿前的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "character-sort",
+      "objective": "六書字牌分類",
+      "interactionHint": "查看古字形與構件功能，再將字牌移入分類欄。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [
+      {
+        "title": "教育部《重編國語辭典修訂本》：指事",
+        "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=113996",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《重編國語辭典修訂本》：形聲",
+        "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=110679",
+        "status": "reference-linked"
+      }
+    ],
+    "sourceCoverage": {
+      "linked": 2,
+      "total": 4
+    },
+    "unlinkedQuestionIds": [
+      "character-sun",
+      "character-rest"
+    ],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "character-blade",
+      "chapterId": "hall",
+      "concept": "六書",
+      "prompt": "玉冊有「刀」「刃」兩張字牌。「刃」是在刀鋒位置加記號，另一張提示又說它沒有用聲符提示讀音。應把「刃」放到哪一分類？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "象形：只要字中看得到刀形就一律算象形"
+        },
+        {
+          "id": "b",
+          "text": "形聲：凡是多加一筆就算聲符"
+        },
+        {
+          "id": "c",
+          "text": "指事：新增的記號是在指出刀口位置"
+        }
+      ],
+      "answerId": "c",
+      "hint": "這一點是指示位置的記號，並不是表示讀音的聲符。",
+      "explanation": "「刃」在「刀」上加指示符號，標明刀鋒的位置，屬於指事。",
+      "correction": "「刃」以記號指出刀口位置，屬於指事。",
+      "sourceTitle": "教育部《重編國語辭典修訂本》：指事",
+      "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=113996",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "character-sort",
+        "objective": "六書字牌分類",
+        "evidence": [
+          "同樣有構件，不代表一定是形聲；應看構件功能。",
+          "描畫外形、加指示符號、合義、表義加表聲，是不同的判讀線索。",
+          "這一點是指示位置的記號，並不是表示讀音的聲符。"
+        ],
+        "interactionHint": "查看古字形與構件功能，再將字牌移入分類欄。"
+      }
+    },
+    {
+      "id": "character-river",
+      "chapterId": "hall",
+      "concept": "六書",
+      "prompt": "字牌「江」旁有兩份線索：左邊的水指出義類，右邊的工提示造字時的聲音；現代兩字的讀音卻不完全相同。哪個歸類理由正確？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "會意：工一定表示工人在河邊工作"
+        },
+        {
+          "id": "b",
+          "text": "形聲：以水取義、以工表聲，聲符不保證與現代讀音完全相同"
+        },
+        {
+          "id": "c",
+          "text": "指事：現代讀音不同就不能算形聲"
+        }
+      ],
+      "answerId": "b",
+      "hint": "一部分表示意義，一部分提示聲音。",
+      "explanation": "「江」以水為形符、工為聲符，是形聲字。聲符反映造字時的語音，不一定與現代讀音完全相同。",
+      "correction": "「江」有形符「水」與聲符「工」，屬於形聲。",
+      "sourceTitle": "教育部《重編國語辭典修訂本》：形聲",
+      "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=110679",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "character-sort",
+        "objective": "六書字牌分類",
+        "evidence": [
+          "同樣有構件，不代表一定是形聲；應看構件功能。",
+          "描畫外形、加指示符號、合義、表義加表聲，是不同的判讀線索。",
+          "一部分表示意義，一部分提示聲音。"
+        ],
+        "interactionHint": "查看古字形與構件功能，再將字牌移入分類欄。"
+      }
+    },
+    {
+      "id": "character-sun",
+      "chapterId": "hall",
+      "concept": "六書",
+      "prompt": "禮官要妳為「日」選分類籤。線索一是古字像太陽輪廓；線索二是它沒有另一個部件專門提示讀音。哪張分類籤的理由最完整？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "象形：古字依太陽的外形描畫"
+        },
+        {
+          "id": "b",
+          "text": "形聲：字中每一筆都可當成聲符"
+        },
+        {
+          "id": "c",
+          "text": "假借：只要字形古老，就是借別字來用"
+        }
+      ],
+      "answerId": "a",
+      "hint": "觀察字形與事物外形的關係，不需要尋找聲符。",
+      "explanation": "「日」的古字形描繪太陽形象，傳統上歸為象形；形聲須有表示義類與聲音的部分，假借則是借已有字記錄其他詞。",
+      "correction": "依物體外形描畫而造字，稱為象形。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "character-sort",
+        "objective": "六書字牌分類",
+        "evidence": [
+          "同樣有構件，不代表一定是形聲；應看構件功能。",
+          "描畫外形、加指示符號、合義、表義加表聲，是不同的判讀線索。",
+          "觀察字形與事物外形的關係，不需要尋找聲符。"
+        ],
+        "interactionHint": "查看古字形與構件功能，再將字牌移入分類欄。"
+      }
+    },
+    {
+      "id": "character-rest",
+      "chapterId": "hall",
+      "concept": "六書",
+      "prompt": "兩張字牌都由構件組成：「江」是一部分表義、一部分表聲；「休」依傳統解釋是人倚樹休息。要把「休」從「江」所在的分類移出，哪個理由正確？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "指事：兩個構件都只是位置記號"
+        },
+        {
+          "id": "b",
+          "text": "會意：人與木在這個解釋中合起來表達休息之意"
+        },
+        {
+          "id": "c",
+          "text": "形聲：凡是有兩個構件就一定和江同類"
+        }
+      ],
+      "answerId": "b",
+      "hint": "兩個部分合起來表達一個意思，並非其中一個只提示讀音。",
+      "explanation": "依題目指定的傳統解釋，「人」與「木」合義表達休息，屬於會意；不能只因有兩個部分就判為形聲。",
+      "correction": "將不同構件的意義組合成新義，是會意造字的常見方式。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "character-sort",
+        "objective": "六書字牌分類",
+        "evidence": [
+          "同樣有構件，不代表一定是形聲；應看構件功能。",
+          "描畫外形、加指示符號、合義、表義加表聲，是不同的判讀線索。",
+          "兩個部分合起來表達一個意思，並非其中一個只提示讀音。"
+        ],
+        "interactionHint": "查看古字形與構件功能，再將字牌移入分類欄。"
+      }
+    }
+  ]
+}

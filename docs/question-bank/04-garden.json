@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "garden",
+    "number": 4,
+    "title": "御花園",
+    "topic": "節令與詩詞",
+    "concepts": [
+      "節令民俗",
+      "節令詩詞"
+    ],
+    "questionCount": 4,
+    "questionIds": [
+      "festival-dragon-boat",
+      "festival-double-ninth",
+      "festival-lantern",
+      "season-lotus"
+    ],
+    "file": "docs/question-bank/04-garden.json",
+    "difficulty": "medium",
+    "skills": [
+      "應用"
+    ],
+    "interactionKinds": [
+      "sequence"
+    ],
+    "interactionQuestionIds": [
+      "festival-dragon-boat",
+      "festival-double-ninth",
+      "festival-lantern",
+      "season-lotus"
+    ],
+    "interactionCount": 4,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "節令詩詞配對與排序",
+      "能在御花園的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "season-order",
+      "objective": "節令詩詞配對與排序",
+      "interactionHint": "把節慶與詩卡配到合適的日期或四季位置。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [],
+    "sourceCoverage": {
+      "linked": 0,
+      "total": 4
+    },
+    "unlinkedQuestionIds": [
+      "festival-dragon-boat",
+      "festival-double-ninth",
+      "festival-lantern",
+      "season-lotus"
+    ],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "festival-dragon-boat",
+      "chapterId": "garden",
+      "concept": "節令民俗",
+      "prompt": "御花園的全年節慶卷軸被打亂。請依同一年由早到晚，排出元宵、清明、端午、重陽的先後。清明採常見國曆節氣時序，其餘為農曆節日。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "清明 → 元宵 → 端午 → 重陽"
+        },
+        {
+          "id": "b",
+          "text": "元宵 → 清明 → 端午 → 重陽"
+        },
+        {
+          "id": "c",
+          "text": "元宵 → 端午 → 重陽 → 清明"
+        }
+      ],
+      "answerId": "b",
+      "hint": "先辨認春季的兩個節日，再把端午與秋季重陽放回位置。",
+      "explanation": "元宵在農曆正月十五，清明一般在國曆四月初，端午在農曆五月初五，重陽在農曆九月初九，所以依序是元宵、清明、端午、重陽。清明不是固定農曆日期。",
+      "correction": "四節先後：元宵、清明、端午、重陽；清明依節氣判讀。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "season-order",
+        "objective": "節令詩詞配對與排序",
+        "evidence": [
+          "同樣是十五日，還需要確認農曆月份與活動。",
+          "思親不是某個節日專有，需合併植物、日期及節俗線索。",
+          "先辨認春季的兩個節日，再把端午與秋季重陽放回位置。"
+        ],
+        "interactionHint": "把節慶與詩卡配到合適的日期或四季位置。"
+      },
+      "interaction": {
+        "kind": "sequence",
+        "instruction": "將四張節慶牌依一年先後排列，排好後提交。",
+        "tokens": [
+          {
+            "id": "double",
+            "text": "重陽・登高賞菊"
+          },
+          {
+            "id": "dragon",
+            "text": "端午・艾草龍舟"
+          },
+          {
+            "id": "lantern",
+            "text": "元宵・花燈"
+          },
+          {
+            "id": "qingming",
+            "text": "清明・掃墓踏青"
+          }
+        ],
+        "solution": [
+          "lantern",
+          "qingming",
+          "dragon",
+          "double"
+        ]
+      }
+    },
+    {
+      "id": "festival-double-ninth",
+      "chapterId": "garden",
+      "concept": "節令詩詞",
+      "prompt": "三張秋季節慶卡分別記錄乞巧、八月十五賞月、九月九日登高。請把對應的七夕、中秋、重陽依同一年先後排列。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "中秋 → 七夕 → 重陽"
+        },
+        {
+          "id": "b",
+          "text": "重陽 → 中秋 → 七夕"
+        },
+        {
+          "id": "c",
+          "text": "七夕 → 中秋 → 重陽"
+        }
+      ],
+      "answerId": "c",
+      "hint": "依農曆七月、八月、九月的月份遞進判斷。",
+      "explanation": "七夕是農曆七月初七，中秋是八月十五，重陽是九月初九。思親不專屬於中秋，茱萸與登高則是辨認重陽的常見線索。",
+      "correction": "農曆節慶順序：七夕、中秋、重陽。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "season-order",
+        "objective": "節令詩詞配對與排序",
+        "evidence": [
+          "同樣是十五日，還需要確認農曆月份與活動。",
+          "思親不是某個節日專有，需合併植物、日期及節俗線索。",
+          "依農曆七月、八月、九月的月份遞進判斷。"
+        ],
+        "interactionHint": "把節慶與詩卡配到合適的日期或四季位置。"
+      },
+      "interaction": {
+        "kind": "sequence",
+        "instruction": "依節慶在同一年中的先後排列三張活動卡。",
+        "tokens": [
+          {
+            "id": "double",
+            "text": "重陽・登高插茱萸"
+          },
+          {
+            "id": "qixi",
+            "text": "七夕・乞巧"
+          },
+          {
+            "id": "moon",
+            "text": "中秋・賞月"
+          }
+        ],
+        "solution": [
+          "qixi",
+          "moon",
+          "double"
+        ]
+      }
+    },
+    {
+      "id": "festival-lantern",
+      "chapterId": "garden",
+      "concept": "節令民俗",
+      "prompt": "宮宴的跨年三張活動牌脫落了：舊年最後一天團聚、次年正月初一賀歲、次年正月十五觀燈。請還原這一段跨年的活動先後。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "舊年除夕 → 次年春節 → 次年元宵"
+        },
+        {
+          "id": "b",
+          "text": "次年元宵 → 舊年除夕 → 次年春節"
+        },
+        {
+          "id": "c",
+          "text": "舊年除夕 → 次年元宵 → 次年春節"
+        }
+      ],
+      "answerId": "a",
+      "hint": "先找年末，再比較正月初一與正月十五。",
+      "explanation": "題目指定從舊年跨入次年，所以先是舊年除夕，接次年正月初一的春節，再到正月十五的元宵；不能把不同年份的除夕混入同一年排序。",
+      "correction": "跨年順序須先釐清年份：舊年除夕、次年春節、次年元宵。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "season-order",
+        "objective": "節令詩詞配對與排序",
+        "evidence": [
+          "同樣是十五日，還需要確認農曆月份與活動。",
+          "思親不是某個節日專有，需合併植物、日期及節俗線索。",
+          "先找年末，再比較正月初一與正月十五。"
+        ],
+        "interactionHint": "把節慶與詩卡配到合適的日期或四季位置。"
+      },
+      "interaction": {
+        "kind": "sequence",
+        "instruction": "從舊年年末排到次年正月，還原三張節慶牌。",
+        "tokens": [
+          {
+            "id": "lantern",
+            "text": "元宵・正月十五觀燈"
+          },
+          {
+            "id": "eve",
+            "text": "除夕・舊年年末團聚"
+          },
+          {
+            "id": "newyear",
+            "text": "春節・正月初一賀歲"
+          }
+        ],
+        "solution": [
+          "eve",
+          "newyear",
+          "lantern"
+        ]
+      }
+    },
+    {
+      "id": "season-lotus",
+      "chapterId": "garden",
+      "concept": "節令詩詞",
+      "prompt": "四季詩箋要從春天開始排滿一輪。卡片分別標記春柳、夏荷、秋菊與冬梅，請依季節先後還原；本題採古典詩歌的典型意象。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "春柳 → 秋菊 → 夏荷 → 冬梅"
+        },
+        {
+          "id": "b",
+          "text": "春柳 → 夏荷 → 秋菊 → 冬梅"
+        },
+        {
+          "id": "c",
+          "text": "冬梅 → 夏荷 → 春柳 → 秋菊"
+        }
+      ],
+      "answerId": "b",
+      "hint": "先依春夏秋冬定位置，再比對每張卡片的季節意象。",
+      "explanation": "由春季開始，一年季序是春、夏、秋、冬。春柳、夏荷、秋菊、冬梅是本題指定的典型詩歌意象，不表示各地植物實際花期完全相同。",
+      "correction": "典型四季意象可依春柳、夏荷、秋菊、冬梅排列。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "應用",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "season-order",
+        "objective": "節令詩詞配對與排序",
+        "evidence": [
+          "同樣是十五日，還需要確認農曆月份與活動。",
+          "思親不是某個節日專有，需合併植物、日期及節俗線索。",
+          "先依春夏秋冬定位置，再比對每張卡片的季節意象。"
+        ],
+        "interactionHint": "把節慶與詩卡配到合適的日期或四季位置。"
+      },
+      "interaction": {
+        "kind": "sequence",
+        "instruction": "從春季開始，把四張物候牌排成一年的季節順序。",
+        "tokens": [
+          {
+            "id": "autumn",
+            "text": "秋・菊花傲霜"
+          },
+          {
+            "id": "summer",
+            "text": "夏・映日荷花"
+          },
+          {
+            "id": "winter",
+            "text": "冬・寒梅映雪"
+          },
+          {
+            "id": "spring",
+            "text": "春・柳枝新綠"
+          }
+        ],
+        "solution": [
+          "spring",
+          "summer",
+          "autumn",
+          "winter"
+        ]
+      }
+    }
+  ]
+}

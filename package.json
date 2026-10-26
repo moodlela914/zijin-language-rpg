@@ -1,0 +1,15 @@
+{
+  "name": "zijin-language-rpg",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "紫禁語文弈：資料驅動的國中語文對話 RPG 原型",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "dev": "node --watch scripts/serve.mjs",
+    "test": "node --test",
+    "check": "node scripts/check-content.mjs",
+    "build:pages": "node scripts/build-pages.mjs"
+  }
+}

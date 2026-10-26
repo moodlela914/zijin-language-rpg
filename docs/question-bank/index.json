@@ -1,0 +1,1221 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "runtimeDependsOnArchive": false,
+  "chapterCount": 12,
+  "questionCount": 47,
+  "interactionQuestionCount": 28,
+  "interactionKinds": [
+    "sequence",
+    "highlight",
+    "matching",
+    "couplet",
+    "proofread",
+    "form",
+    "timeline"
+  ],
+  "intendedDifficulty": "medium",
+  "difficultyValidation": "design-target-not-student-calibrated",
+  "reviewStatus": "draft-teacher-review",
+  "chapters": [
+    {
+      "chapterId": "gate",
+      "number": 1,
+      "title": "大清門外",
+      "topic": "敬詞與謙詞",
+      "concepts": [
+        "敬謙詞"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "courtesy-father",
+        "courtesy-home",
+        "courtesy-mother",
+        "courtesy-advice"
+      ],
+      "file": "docs/question-bank/01-gate.json",
+      "difficulty": "medium",
+      "skills": [
+        "應用"
+      ],
+      "interactionKinds": [
+        "renderer-derived-from-choices"
+      ],
+      "interactionQuestionIds": [],
+      "interactionCount": 0,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "敬謙詞書札修補",
+        "能在大清門外的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "letter-repair",
+        "objective": "敬謙詞書札修補",
+        "interactionHint": "比對書札身分、錯誤稱呼與修補卡，再提交修訂。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "教育部《國語辭典簡編本》：家父",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=21808",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《國語辭典簡編本》：寒舍",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=19676",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《國語辭典簡編本》附錄：親屬稱謂表",
+          "url": "https://dict.concised.moe.edu.tw/appendix.jsp?ID=32&deg=1&la=2",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《國語辭典簡編本》：不吝賜教",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=2007",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 4,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "hall",
+      "number": 2,
+      "title": "太和殿前",
+      "topic": "六書造字",
+      "concepts": [
+        "六書"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "character-blade",
+        "character-river",
+        "character-sun",
+        "character-rest"
+      ],
+      "file": "docs/question-bank/02-hall.json",
+      "difficulty": "medium",
+      "skills": [
+        "分析"
+      ],
+      "interactionKinds": [
+        "renderer-derived-from-choices"
+      ],
+      "interactionQuestionIds": [],
+      "interactionCount": 0,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "六書字牌分類",
+        "能在太和殿前的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "character-sort",
+        "objective": "六書字牌分類",
+        "interactionHint": "查看古字形與構件功能，再將字牌移入分類欄。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：指事",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=113996",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：形聲",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=110679",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 2,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [
+        "character-sun",
+        "character-rest"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "library",
+      "number": 3,
+      "title": "文淵閣",
+      "topic": "經史子集",
+      "concepts": [
+        "四部分類"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "books-shiji",
+        "books-zhuangzi",
+        "books-analects",
+        "books-poetry-collection"
+      ],
+      "file": "docs/question-bank/03-library.json",
+      "difficulty": "medium",
+      "skills": [
+        "分析"
+      ],
+      "interactionKinds": [
+        "renderer-derived-from-choices"
+      ],
+      "interactionQuestionIds": [],
+      "interactionCount": 0,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "經史子集歸架",
+        "能在文淵閣的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "book-shelving",
+        "objective": "經史子集歸架",
+        "interactionHint": "先讀書介卡與書架規則，再修正歸架位置。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "國立成功大學圖書館：文淵閣四庫全書電子版介紹",
+          "url": "https://libapp.lib.ncku.edu.tw/libref/chinese/single/oldbook2.htm",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 2,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [
+        "books-analects",
+        "books-poetry-collection"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "garden",
+      "number": 4,
+      "title": "御花園",
+      "topic": "節令與詩詞",
+      "concepts": [
+        "節令民俗",
+        "節令詩詞"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "festival-dragon-boat",
+        "festival-double-ninth",
+        "festival-lantern",
+        "season-lotus"
+      ],
+      "file": "docs/question-bank/04-garden.json",
+      "difficulty": "medium",
+      "skills": [
+        "應用"
+      ],
+      "interactionKinds": [
+        "sequence"
+      ],
+      "interactionQuestionIds": [
+        "festival-dragon-boat",
+        "festival-double-ninth",
+        "festival-lantern",
+        "season-lotus"
+      ],
+      "interactionCount": 4,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "節令詩詞配對與排序",
+        "能在御花園的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "season-order",
+        "objective": "節令詩詞配對與排序",
+        "interactionHint": "把節慶與詩卡配到合適的日期或四季位置。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [],
+      "sourceCoverage": {
+        "linked": 0,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [
+        "festival-dragon-boat",
+        "festival-double-ninth",
+        "festival-lantern",
+        "season-lotus"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "pavilion",
+      "number": 5,
+      "title": "碎玉軒",
+      "topic": "修辭美學",
+      "concepts": [
+        "修辭辨析"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "rhetoric-personification",
+        "rhetoric-hyperbole",
+        "rhetoric-metonymy",
+        "rhetoric-pun"
+      ],
+      "file": "docs/question-bank/05-pavilion.json",
+      "difficulty": "medium",
+      "skills": [
+        "分析"
+      ],
+      "interactionKinds": [
+        "highlight"
+      ],
+      "interactionQuestionIds": [
+        "rhetoric-personification",
+        "rhetoric-hyperbole",
+        "rhetoric-metonymy",
+        "rhetoric-pun"
+      ],
+      "interactionCount": 4,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "修辭線索辨識",
+        "能在碎玉軒的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "rhetoric-evidence",
+        "objective": "修辭線索辨識",
+        "interactionHint": "標出關鍵詞與作用，再把證據連到修辭籤。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [],
+      "sourceCoverage": {
+        "linked": 0,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [
+        "rhetoric-personification",
+        "rhetoric-hyperbole",
+        "rhetoric-metonymy",
+        "rhetoric-pun"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "yikun",
+      "number": 6,
+      "title": "翊坤宮",
+      "topic": "題辭辨析",
+      "concepts": [
+        "題辭辨析"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "inscription-daughter",
+        "inscription-son",
+        "inscription-wedding",
+        "inscription-birthday"
+      ],
+      "file": "docs/question-bank/06-yikun.json",
+      "difficulty": "medium",
+      "skills": [
+        "應用"
+      ],
+      "interactionKinds": [
+        "matching"
+      ],
+      "interactionQuestionIds": [
+        "inscription-daughter",
+        "inscription-son",
+        "inscription-wedding",
+        "inscription-birthday"
+      ],
+      "interactionCount": 4,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "題辭送禮配對",
+        "能在翊坤宮的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "gift-matching",
+        "objective": "題辭送禮配對",
+        "interactionHint": "對照禮物簿，將題辭卡配到正確事件。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "教育部《國語辭典簡編本》：弄瓦",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=13082",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：弄璋",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=58782",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《國語辭典簡編本》：壽比南山",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34367",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 3,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [
+        "inscription-wedding"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "yanxi",
+      "number": 7,
+      "title": "延禧宮",
+      "topic": "對聯格律",
+      "concepts": [
+        "對聯格律"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "couplet-equal-length",
+        "couplet-ending-tones",
+        "couplet-parts-of-speech",
+        "couplet-structure"
+      ],
+      "file": "docs/question-bank/07-yanxi.json",
+      "difficulty": "medium",
+      "skills": [
+        "分析"
+      ],
+      "interactionKinds": [
+        "couplet"
+      ],
+      "interactionQuestionIds": [
+        "couplet-equal-length",
+        "couplet-ending-tones",
+        "couplet-parts-of-speech",
+        "couplet-structure"
+      ],
+      "interactionCount": 4,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "上下聯排序與結構修補",
+        "能在延禧宮的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "couplet-order",
+        "objective": "上下聯排序與結構修補",
+        "interactionHint": "先查字數和相對結構，再依已給的平仄還原上下聯。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "國立臺灣師範大學 APCS：七言對聯題本範例（平仄規則）",
+          "url": "https://apcs.csie.ntnu.edu.tw/wp-content/uploads/2025/08/01_APCS-%E7%A8%8B%E5%BC%8F%E5%AF%A6%E4%BD%9C%E5%88%9D%E7%B4%9A%E9%A1%8C%E6%9C%AC%E7%AF%84%E4%BE%8B.pdf",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 1,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [
+        "couplet-equal-length",
+        "couplet-parts-of-speech",
+        "couplet-structure"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "medicine",
+      "number": 8,
+      "title": "太醫院",
+      "topic": "成語與字形",
+      "concepts": [
+        "字形與成語"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "idiom-rank",
+        "idiom-satisfactory",
+        "idiom-first-hit",
+        "idiom-many-books"
+      ],
+      "file": "docs/question-bank/08-medicine.json",
+      "difficulty": "medium",
+      "skills": [
+        "分析"
+      ],
+      "interactionKinds": [
+        "proofread"
+      ],
+      "interactionQuestionIds": [
+        "idiom-rank",
+        "idiom-satisfactory",
+        "idiom-first-hit",
+        "idiom-many-books"
+      ],
+      "interactionCount": 4,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "字形校勘與成語詞義核對",
+        "能在太醫院的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "text-proofreading",
+        "objective": "字形校勘與成語詞義核對",
+        "interactionHint": "對照原稿、詞義籤與抄手註解，再留下正確版本。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "教育部《國語辭典簡編本》：名列前茅",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=4807",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：差強人意",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=121497",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《國語辭典簡編本》：首當其衝",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34266",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《國語辭典簡編本》：汗牛充棟",
+          "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=19701",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 4,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "jingren",
+      "number": 9,
+      "title": "景仁宮",
+      "topic": "書信稱謂",
+      "concepts": [
+        "書信稱謂"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "letter-parents",
+        "letter-teacher",
+        "letter-envelope",
+        "letter-self-signature"
+      ],
+      "file": "docs/question-bank/09-jingren.json",
+      "difficulty": "medium",
+      "skills": [
+        "應用"
+      ],
+      "interactionKinds": [
+        "form"
+      ],
+      "interactionQuestionIds": [
+        "letter-parents",
+        "letter-teacher",
+        "letter-envelope",
+        "letter-self-signature"
+      ],
+      "interactionCount": 4,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "書信組裝",
+        "能在景仁宮的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "letter-assembly",
+        "objective": "書信組裝",
+        "interactionHint": "按對象與位置組裝信封和信箋，避免把署名敬辭搬到啟封詞。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：膝下",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=104596",
+          "status": "reference-linked"
+        },
+        {
+          "title": "新竹縣內思工業高級中等學校：劉玉瑞老師應用文教學資料",
+          "url": "https://www.savs.hcc.edu.tw/ischool/publish_page/198/?cid=10325",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 4,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "cining",
+      "number": 10,
+      "title": "慈寧宮",
+      "topic": "年齡與干支",
+      "concepts": [
+        "年齡與干支"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "age-coming-of-age",
+        "age-standing",
+        "time-midnight",
+        "cycle-sexagenary"
+      ],
+      "file": "docs/question-bank/10-cining.json",
+      "difficulty": "medium",
+      "skills": [
+        "應用"
+      ],
+      "interactionKinds": [
+        "timeline"
+      ],
+      "interactionQuestionIds": [
+        "age-coming-of-age",
+        "age-standing",
+        "time-midnight",
+        "cycle-sexagenary"
+      ],
+      "interactionCount": 4,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "年齡時辰排序與循環推算",
+        "能在慈寧宮的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "age-time-order",
+        "objective": "年齡時辰排序與循環推算",
+        "interactionHint": "把歲數、代稱、時段配回位置，再核對干支循環。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：及笄",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=87862",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部臺灣台語常用詞辭典：子（子時）",
+          "url": "https://sutian.moe.edu.tw/zh-hant/su/192/",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：六十甲子",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=63847",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 3,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [
+        "age-standing"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "prison",
+      "number": 11,
+      "title": "慎刑司",
+      "topic": "文體與史書",
+      "concepts": [
+        "文體與史書"
+      ],
+      "questionCount": 4,
+      "questionIds": [
+        "history-chronological",
+        "history-biographical",
+        "poetry-five-regulated",
+        "literature-periods"
+      ],
+      "file": "docs/question-bank/11-prison.json",
+      "difficulty": "medium",
+      "skills": [
+        "分析"
+      ],
+      "interactionKinds": [
+        "renderer-derived-from-choices"
+      ],
+      "interactionQuestionIds": [],
+      "interactionCount": 0,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "文體史書整理",
+        "能在慎刑司的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "literature-sort",
+        "objective": "文體史書整理",
+        "interactionHint": "查看目錄、句格與朝代線索，再整理體裁與文學卷軸。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [
+        {
+          "title": "教育部《重編國語辭典修訂本》：編年體",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=18667",
+          "status": "reference-linked"
+        },
+        {
+          "title": "教育部《重編國語辭典修訂本》：五律",
+          "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=159521",
+          "status": "reference-linked"
+        }
+      ],
+      "sourceCoverage": {
+        "linked": 2,
+        "total": 4
+      },
+      "unlinkedQuestionIds": [
+        "history-biographical",
+        "literature-periods"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    },
+    {
+      "chapterId": "final",
+      "number": 12,
+      "title": "養心殿",
+      "topic": "語言與邏輯",
+      "concepts": [
+        "語言邏輯"
+      ],
+      "questionCount": 3,
+      "questionIds": [
+        "logic-false-dilemma",
+        "logic-causal-leap",
+        "logic-equivocation"
+      ],
+      "file": "docs/question-bank/12-final.json",
+      "difficulty": "medium",
+      "skills": [
+        "分析"
+      ],
+      "interactionKinds": [
+        "renderer-derived-from-choices"
+      ],
+      "interactionQuestionIds": [],
+      "interactionCount": 0,
+      "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+      "learningObjectives": [
+        "論證謬誤證據鏈",
+        "能在養心殿的語境中整合線索、比較誘答，並說明選擇理由。"
+      ],
+      "puzzle": {
+        "mode": "argument-chain",
+        "objective": "論證謬誤證據鏈",
+        "interactionHint": "把原話、缺漏前提與有效反駁連成證據鏈，再提出結論。",
+        "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+        "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+      },
+      "sources": [],
+      "sourceCoverage": {
+        "linked": 0,
+        "total": 3
+      },
+      "unlinkedQuestionIds": [
+        "logic-false-dilemma",
+        "logic-causal-leap",
+        "logic-equivocation"
+      ],
+      "reviewStatus": "draft-teacher-review"
+    }
+  ],
+  "byQuestionId": {
+    "courtesy-father": {
+      "chapterId": "gate",
+      "file": "docs/question-bank/01-gate.json",
+      "concept": "敬謙詞",
+      "puzzleMode": "letter-repair",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/01-gate.json → questions[id=courtesy-father].interaction",
+      "correctAnswerId": "a"
+    },
+    "courtesy-home": {
+      "chapterId": "gate",
+      "file": "docs/question-bank/01-gate.json",
+      "concept": "敬謙詞",
+      "puzzleMode": "letter-repair",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/01-gate.json → questions[id=courtesy-home].interaction",
+      "correctAnswerId": "b"
+    },
+    "courtesy-mother": {
+      "chapterId": "gate",
+      "file": "docs/question-bank/01-gate.json",
+      "concept": "敬謙詞",
+      "puzzleMode": "letter-repair",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/01-gate.json → questions[id=courtesy-mother].interaction",
+      "correctAnswerId": "b"
+    },
+    "courtesy-advice": {
+      "chapterId": "gate",
+      "file": "docs/question-bank/01-gate.json",
+      "concept": "敬謙詞",
+      "puzzleMode": "letter-repair",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/01-gate.json → questions[id=courtesy-advice].interaction",
+      "correctAnswerId": "c"
+    },
+    "character-blade": {
+      "chapterId": "hall",
+      "file": "docs/question-bank/02-hall.json",
+      "concept": "六書",
+      "puzzleMode": "character-sort",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/02-hall.json → questions[id=character-blade].interaction",
+      "correctAnswerId": "c"
+    },
+    "character-river": {
+      "chapterId": "hall",
+      "file": "docs/question-bank/02-hall.json",
+      "concept": "六書",
+      "puzzleMode": "character-sort",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/02-hall.json → questions[id=character-river].interaction",
+      "correctAnswerId": "b"
+    },
+    "character-sun": {
+      "chapterId": "hall",
+      "file": "docs/question-bank/02-hall.json",
+      "concept": "六書",
+      "puzzleMode": "character-sort",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/02-hall.json → questions[id=character-sun].interaction",
+      "correctAnswerId": "a"
+    },
+    "character-rest": {
+      "chapterId": "hall",
+      "file": "docs/question-bank/02-hall.json",
+      "concept": "六書",
+      "puzzleMode": "character-sort",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/02-hall.json → questions[id=character-rest].interaction",
+      "correctAnswerId": "b"
+    },
+    "books-shiji": {
+      "chapterId": "library",
+      "file": "docs/question-bank/03-library.json",
+      "concept": "四部分類",
+      "puzzleMode": "book-shelving",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/03-library.json → questions[id=books-shiji].interaction",
+      "correctAnswerId": "a"
+    },
+    "books-zhuangzi": {
+      "chapterId": "library",
+      "file": "docs/question-bank/03-library.json",
+      "concept": "四部分類",
+      "puzzleMode": "book-shelving",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/03-library.json → questions[id=books-zhuangzi].interaction",
+      "correctAnswerId": "c"
+    },
+    "books-analects": {
+      "chapterId": "library",
+      "file": "docs/question-bank/03-library.json",
+      "concept": "四部分類",
+      "puzzleMode": "book-shelving",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/03-library.json → questions[id=books-analects].interaction",
+      "correctAnswerId": "c"
+    },
+    "books-poetry-collection": {
+      "chapterId": "library",
+      "file": "docs/question-bank/03-library.json",
+      "concept": "四部分類",
+      "puzzleMode": "book-shelving",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/03-library.json → questions[id=books-poetry-collection].interaction",
+      "correctAnswerId": "a"
+    },
+    "festival-dragon-boat": {
+      "chapterId": "garden",
+      "file": "docs/question-bank/04-garden.json",
+      "concept": "節令民俗",
+      "puzzleMode": "season-order",
+      "interactionKind": "sequence",
+      "interactionInstruction": "將四張節慶牌依一年先後排列，排好後提交。",
+      "interactionPayloadLocation": "docs/question-bank/04-garden.json → questions[id=festival-dragon-boat].interaction",
+      "correctAnswerId": "b"
+    },
+    "festival-double-ninth": {
+      "chapterId": "garden",
+      "file": "docs/question-bank/04-garden.json",
+      "concept": "節令詩詞",
+      "puzzleMode": "season-order",
+      "interactionKind": "sequence",
+      "interactionInstruction": "依節慶在同一年中的先後排列三張活動卡。",
+      "interactionPayloadLocation": "docs/question-bank/04-garden.json → questions[id=festival-double-ninth].interaction",
+      "correctAnswerId": "c"
+    },
+    "festival-lantern": {
+      "chapterId": "garden",
+      "file": "docs/question-bank/04-garden.json",
+      "concept": "節令民俗",
+      "puzzleMode": "season-order",
+      "interactionKind": "sequence",
+      "interactionInstruction": "從舊年年末排到次年正月，還原三張節慶牌。",
+      "interactionPayloadLocation": "docs/question-bank/04-garden.json → questions[id=festival-lantern].interaction",
+      "correctAnswerId": "a"
+    },
+    "season-lotus": {
+      "chapterId": "garden",
+      "file": "docs/question-bank/04-garden.json",
+      "concept": "節令詩詞",
+      "puzzleMode": "season-order",
+      "interactionKind": "sequence",
+      "interactionInstruction": "從春季開始，把四張物候牌排成一年的季節順序。",
+      "interactionPayloadLocation": "docs/question-bank/04-garden.json → questions[id=season-lotus].interaction",
+      "correctAnswerId": "b"
+    },
+    "rhetoric-personification": {
+      "chapterId": "pavilion",
+      "file": "docs/question-bank/05-pavilion.json",
+      "concept": "修辭辨析",
+      "puzzleMode": "rhetoric-evidence",
+      "interactionKind": "highlight",
+      "interactionInstruction": "圈出短詩中兩處明確的擬人語句。",
+      "interactionPayloadLocation": "docs/question-bank/05-pavilion.json → questions[id=rhetoric-personification].interaction",
+      "correctAnswerId": "b"
+    },
+    "rhetoric-hyperbole": {
+      "chapterId": "pavilion",
+      "file": "docs/question-bank/05-pavilion.json",
+      "concept": "修辭辨析",
+      "puzzleMode": "rhetoric-evidence",
+      "interactionKind": "highlight",
+      "interactionInstruction": "圈出一處故意誇大等待時間的詞。",
+      "interactionPayloadLocation": "docs/question-bank/05-pavilion.json → questions[id=rhetoric-hyperbole].interaction",
+      "correctAnswerId": "a"
+    },
+    "rhetoric-metonymy": {
+      "chapterId": "pavilion",
+      "file": "docs/question-bank/05-pavilion.json",
+      "concept": "修辭辨析",
+      "puzzleMode": "rhetoric-evidence",
+      "interactionKind": "highlight",
+      "interactionInstruction": "圈出短句中以相關人名代指酒的詞。",
+      "interactionPayloadLocation": "docs/question-bank/05-pavilion.json → questions[id=rhetoric-metonymy].interaction",
+      "correctAnswerId": "c"
+    },
+    "rhetoric-pun": {
+      "chapterId": "pavilion",
+      "file": "docs/question-bank/05-pavilion.json",
+      "concept": "修辭辨析",
+      "puzzleMode": "rhetoric-evidence",
+      "interactionKind": "highlight",
+      "interactionInstruction": "圈出兩處透過同音而兼含情意的詞組。",
+      "interactionPayloadLocation": "docs/question-bank/05-pavilion.json → questions[id=rhetoric-pun].interaction",
+      "correctAnswerId": "b"
+    },
+    "inscription-daughter": {
+      "chapterId": "yikun",
+      "file": "docs/question-bank/06-yikun.json",
+      "concept": "題辭辨析",
+      "puzzleMode": "gift-matching",
+      "interactionKind": "matching",
+      "interactionInstruction": "為每份禮單配上一張最合宜的傳統題辭。",
+      "interactionPayloadLocation": "docs/question-bank/06-yikun.json → questions[id=inscription-daughter].interaction",
+      "correctAnswerId": "a"
+    },
+    "inscription-son": {
+      "chapterId": "yikun",
+      "file": "docs/question-bank/06-yikun.json",
+      "concept": "題辭辨析",
+      "puzzleMode": "gift-matching",
+      "interactionKind": "matching",
+      "interactionInstruction": "依三份禮物的用途，配回對應題辭。",
+      "interactionPayloadLocation": "docs/question-bank/06-yikun.json → questions[id=inscription-son].interaction",
+      "correctAnswerId": "b"
+    },
+    "inscription-wedding": {
+      "chapterId": "yikun",
+      "file": "docs/question-bank/06-yikun.json",
+      "concept": "題辭辨析",
+      "puzzleMode": "gift-matching",
+      "interactionKind": "matching",
+      "interactionInstruction": "依事件與祝賀目標，將題辭配給三份禮物。",
+      "interactionPayloadLocation": "docs/question-bank/06-yikun.json → questions[id=inscription-wedding].interaction",
+      "correctAnswerId": "c"
+    },
+    "inscription-birthday": {
+      "chapterId": "yikun",
+      "file": "docs/question-bank/06-yikun.json",
+      "concept": "題辭辨析",
+      "puzzleMode": "gift-matching",
+      "interactionKind": "matching",
+      "interactionInstruction": "辨認三種喜事，為每份禮物配上合宜題辭。",
+      "interactionPayloadLocation": "docs/question-bank/06-yikun.json → questions[id=inscription-birthday].interaction",
+      "correctAnswerId": "a"
+    },
+    "couplet-equal-length": {
+      "chapterId": "yanxi",
+      "file": "docs/question-bank/07-yanxi.json",
+      "concept": "對聯格律",
+      "puzzleMode": "couplet-order",
+      "interactionKind": "couplet",
+      "interactionInstruction": "先組上聯、再組下聯；每聯由四字起句接三字結尾，並符合題目指定聲類。",
+      "interactionPayloadLocation": "docs/question-bank/07-yanxi.json → questions[id=couplet-equal-length].interaction",
+      "correctAnswerId": "b"
+    },
+    "couplet-ending-tones": {
+      "chapterId": "yanxi",
+      "file": "docs/question-bank/07-yanxi.json",
+      "concept": "對聯格律",
+      "puzzleMode": "couplet-order",
+      "interactionKind": "couplet",
+      "interactionInstruction": "依已給的末字平仄，排成「上聯 → 下聯」。",
+      "interactionPayloadLocation": "docs/question-bank/07-yanxi.json → questions[id=couplet-ending-tones].interaction",
+      "correctAnswerId": "a"
+    },
+    "couplet-parts-of-speech": {
+      "chapterId": "yanxi",
+      "file": "docs/question-bank/07-yanxi.json",
+      "concept": "對聯格律",
+      "puzzleMode": "couplet-order",
+      "interactionKind": "couplet",
+      "interactionInstruction": "依題目詩意還原片段，再按上聯、下聯的順序排列。",
+      "interactionPayloadLocation": "docs/question-bank/07-yanxi.json → questions[id=couplet-parts-of-speech].interaction",
+      "correctAnswerId": "c"
+    },
+    "couplet-structure": {
+      "chapterId": "yanxi",
+      "file": "docs/question-bank/07-yanxi.json",
+      "concept": "對聯格律",
+      "puzzleMode": "couplet-order",
+      "interactionKind": "couplet",
+      "interactionInstruction": "保留指定的上下聯起句，組成對稱結構，依上聯、下聯順序排列。",
+      "interactionPayloadLocation": "docs/question-bank/07-yanxi.json → questions[id=couplet-structure].interaction",
+      "correctAnswerId": "b"
+    },
+    "idiom-rank": {
+      "chapterId": "medicine",
+      "file": "docs/question-bank/08-medicine.json",
+      "concept": "字形與成語",
+      "puzzleMode": "text-proofreading",
+      "interactionKind": "proofread",
+      "interactionInstruction": "圈出一處誤寫，再從修補方案中選擇正確版本。",
+      "interactionPayloadLocation": "docs/question-bank/08-medicine.json → questions[id=idiom-rank].interaction",
+      "correctAnswerId": "b"
+    },
+    "idiom-satisfactory": {
+      "chapterId": "medicine",
+      "file": "docs/question-bank/08-medicine.json",
+      "concept": "字形與成語",
+      "puzzleMode": "text-proofreading",
+      "interactionKind": "proofread",
+      "interactionInstruction": "圈出抄手誤解的詞義註解，再選正確修補。",
+      "interactionPayloadLocation": "docs/question-bank/08-medicine.json → questions[id=idiom-satisfactory].interaction",
+      "correctAnswerId": "a"
+    },
+    "idiom-first-hit": {
+      "chapterId": "medicine",
+      "file": "docs/question-bank/08-medicine.json",
+      "concept": "字形與成語",
+      "puzzleMode": "text-proofreading",
+      "interactionKind": "proofread",
+      "interactionInstruction": "圈出一處與工作進度語境不合的成語，再選正確修補。",
+      "interactionPayloadLocation": "docs/question-bank/08-medicine.json → questions[id=idiom-first-hit].interaction",
+      "correctAnswerId": "c"
+    },
+    "idiom-many-books": {
+      "chapterId": "medicine",
+      "file": "docs/question-bank/08-medicine.json",
+      "concept": "字形與成語",
+      "puzzleMode": "text-proofreading",
+      "interactionKind": "proofread",
+      "interactionInstruction": "圈出一處成語適用對象錯誤的語句，再選正確修補。",
+      "interactionPayloadLocation": "docs/question-bank/08-medicine.json → questions[id=idiom-many-books].interaction",
+      "correctAnswerId": "b"
+    },
+    "letter-parents": {
+      "chapterId": "jingren",
+      "file": "docs/question-bank/09-jingren.json",
+      "concept": "書信稱謂",
+      "puzzleMode": "letter-assembly",
+      "interactionKind": "form",
+      "interactionInstruction": "依親子關係，將詞牌放入三個書信欄位。",
+      "interactionPayloadLocation": "docs/question-bank/09-jingren.json → questions[id=letter-parents].interaction",
+      "correctAnswerId": "a"
+    },
+    "letter-teacher": {
+      "chapterId": "jingren",
+      "file": "docs/question-bank/09-jingren.json",
+      "concept": "書信稱謂",
+      "puzzleMode": "letter-assembly",
+      "interactionKind": "form",
+      "interactionInstruction": "依師生關係，把詞牌放進三個合宜的書信欄位。",
+      "interactionPayloadLocation": "docs/question-bank/09-jingren.json → questions[id=letter-teacher].interaction",
+      "correctAnswerId": "c"
+    },
+    "letter-envelope": {
+      "chapterId": "jingren",
+      "file": "docs/question-bank/09-jingren.json",
+      "concept": "書信稱謂",
+      "puzzleMode": "letter-assembly",
+      "interactionKind": "form",
+      "interactionInstruction": "分清信封與信箋功能，將兩張合宜詞牌放入欄位。",
+      "interactionPayloadLocation": "docs/question-bank/09-jingren.json → questions[id=letter-envelope].interaction",
+      "correctAnswerId": "b"
+    },
+    "letter-self-signature": {
+      "chapterId": "jingren",
+      "file": "docs/question-bank/09-jingren.json",
+      "concept": "書信稱謂",
+      "puzzleMode": "letter-assembly",
+      "interactionKind": "form",
+      "interactionInstruction": "依寄信人與收信人身分，組裝稱謂、提稱語與署名。",
+      "interactionPayloadLocation": "docs/question-bank/09-jingren.json → questions[id=letter-self-signature].interaction",
+      "correctAnswerId": "a"
+    },
+    "age-coming-of-age": {
+      "chapterId": "cining",
+      "file": "docs/question-bank/10-cining.json",
+      "concept": "年齡與干支",
+      "puzzleMode": "age-time-order",
+      "interactionKind": "timeline",
+      "interactionInstruction": "移動年齡標記，選定符合「及笄」的歲數刻度。",
+      "interactionPayloadLocation": "docs/question-bank/10-cining.json → questions[id=age-coming-of-age].interaction",
+      "correctAnswerId": "b"
+    },
+    "age-standing": {
+      "chapterId": "cining",
+      "file": "docs/question-bank/10-cining.json",
+      "concept": "年齡與干支",
+      "puzzleMode": "age-time-order",
+      "interactionKind": "timeline",
+      "interactionInstruction": "移動年齡標記，選定符合「而立」的歲數刻度。",
+      "interactionPayloadLocation": "docs/question-bank/10-cining.json → questions[id=age-standing].interaction",
+      "correctAnswerId": "c"
+    },
+    "time-midnight": {
+      "chapterId": "cining",
+      "file": "docs/question-bank/10-cining.json",
+      "concept": "年齡與干支",
+      "puzzleMode": "age-time-order",
+      "interactionKind": "timeline",
+      "interactionInstruction": "在十二個依序排列的時段中，標出子時所在的位置。",
+      "interactionPayloadLocation": "docs/question-bank/10-cining.json → questions[id=time-midnight].interaction",
+      "correctAnswerId": "a"
+    },
+    "cycle-sexagenary": {
+      "chapterId": "cining",
+      "file": "docs/question-bank/10-cining.json",
+      "concept": "年齡與干支",
+      "puzzleMode": "age-time-order",
+      "interactionKind": "timeline",
+      "interactionInstruction": "在年數軸選定兩個循環同時首次回到起點的正整數年數。",
+      "interactionPayloadLocation": "docs/question-bank/10-cining.json → questions[id=cycle-sexagenary].interaction",
+      "correctAnswerId": "b"
+    },
+    "history-chronological": {
+      "chapterId": "prison",
+      "file": "docs/question-bank/11-prison.json",
+      "concept": "文體與史書",
+      "puzzleMode": "literature-sort",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/11-prison.json → questions[id=history-chronological].interaction",
+      "correctAnswerId": "c"
+    },
+    "history-biographical": {
+      "chapterId": "prison",
+      "file": "docs/question-bank/11-prison.json",
+      "concept": "文體與史書",
+      "puzzleMode": "literature-sort",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/11-prison.json → questions[id=history-biographical].interaction",
+      "correctAnswerId": "a"
+    },
+    "poetry-five-regulated": {
+      "chapterId": "prison",
+      "file": "docs/question-bank/11-prison.json",
+      "concept": "文體與史書",
+      "puzzleMode": "literature-sort",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/11-prison.json → questions[id=poetry-five-regulated].interaction",
+      "correctAnswerId": "b"
+    },
+    "literature-periods": {
+      "chapterId": "prison",
+      "file": "docs/question-bank/11-prison.json",
+      "concept": "文體與史書",
+      "puzzleMode": "literature-sort",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/11-prison.json → questions[id=literature-periods].interaction",
+      "correctAnswerId": "c"
+    },
+    "logic-false-dilemma": {
+      "chapterId": "final",
+      "file": "docs/question-bank/12-final.json",
+      "concept": "語言邏輯",
+      "puzzleMode": "argument-chain",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/12-final.json → questions[id=logic-false-dilemma].interaction",
+      "correctAnswerId": "a"
+    },
+    "logic-causal-leap": {
+      "chapterId": "final",
+      "file": "docs/question-bank/12-final.json",
+      "concept": "語言邏輯",
+      "puzzleMode": "argument-chain",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/12-final.json → questions[id=logic-causal-leap].interaction",
+      "correctAnswerId": "b"
+    },
+    "logic-equivocation": {
+      "chapterId": "final",
+      "file": "docs/question-bank/12-final.json",
+      "concept": "語言邏輯",
+      "puzzleMode": "argument-chain",
+      "interactionKind": "renderer-derived-from-choices",
+      "interactionInstruction": null,
+      "interactionPayloadLocation": "docs/question-bank/12-final.json → questions[id=logic-equivocation].interaction",
+      "correctAnswerId": "c"
+    }
+  }
+}

@@ -1,0 +1,315 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "medicine",
+    "number": 8,
+    "title": "太醫院",
+    "topic": "成語與字形",
+    "concepts": [
+      "字形與成語"
+    ],
+    "questionCount": 4,
+    "questionIds": [
+      "idiom-rank",
+      "idiom-satisfactory",
+      "idiom-first-hit",
+      "idiom-many-books"
+    ],
+    "file": "docs/question-bank/08-medicine.json",
+    "difficulty": "medium",
+    "skills": [
+      "分析"
+    ],
+    "interactionKinds": [
+      "proofread"
+    ],
+    "interactionQuestionIds": [
+      "idiom-rank",
+      "idiom-satisfactory",
+      "idiom-first-hit",
+      "idiom-many-books"
+    ],
+    "interactionCount": 4,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "字形校勘與成語詞義核對",
+      "能在太醫院的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "text-proofreading",
+      "objective": "字形校勘與成語詞義核對",
+      "interactionHint": "對照原稿、詞義籤與抄手註解，再留下正確版本。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [
+      {
+        "title": "教育部《國語辭典簡編本》：名列前茅",
+        "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=4807",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《重編國語辭典修訂本》：差強人意",
+        "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=121497",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《國語辭典簡編本》：首當其衝",
+        "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34266",
+        "status": "reference-linked"
+      },
+      {
+        "title": "教育部《國語辭典簡編本》：汗牛充棟",
+        "url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=19701",
+        "status": "reference-linked"
+      }
+    ],
+    "sourceCoverage": {
+      "linked": 4,
+      "total": 4
+    },
+    "unlinkedQuestionIds": [],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "idiom-rank",
+      "chapterId": "medicine",
+      "concept": "字形與成語",
+      "prompt": "先圈出考核脈案中唯一需要校正的用字，再選擇能保留「成績居前」原意的修補方式。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "保留「名列前矛」，只要同音就可替換固定用字"
+        },
+        {
+          "id": "b",
+          "text": "把「名列前矛」改為「名列前茅」，保留成績居前的意思"
+        },
+        {
+          "id": "c",
+          "text": "改為「名列前毛」，以常見字替代成語用字"
+        }
+      ],
+      "answerId": "b",
+      "hint": "要核對整個成語的固定寫法，不能只依同音字猜。",
+      "explanation": "應圈出名列前矛，將矛改為茅。正確成語名列前茅表示名次居前；矛與毛都不能因音近而任意替換。",
+      "correction": "成績居前的固定寫法是「名列前茅」。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceTitle": "教育部《國語辭典簡編本》：名列前茅",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=4807",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "text-proofreading",
+        "objective": "字形校勘與成語詞義核對",
+        "evidence": [
+          "成語固定用字與適用對象都要核對。",
+          "詞義不能只由單一字猜測；需與醫案的上下文一致。",
+          "要核對整個成語的固定寫法，不能只依同音字猜。"
+        ],
+        "interactionHint": "對照原稿、詞義籤與抄手註解，再留下正確版本。"
+      },
+      "interaction": {
+        "kind": "proofread",
+        "instruction": "圈出一處誤寫，再從修補方案中選擇正確版本。",
+        "segments": [
+          {
+            "id": "start",
+            "text": "醫官考核記：此人讀書勤勉，"
+          },
+          {
+            "id": "typo",
+            "text": "名列前矛"
+          },
+          {
+            "id": "end",
+            "text": "，其餘記錄另附。"
+          }
+        ],
+        "targetId": "typo"
+      }
+    },
+    {
+      "id": "idiom-satisfactory",
+      "chapterId": "medicine",
+      "concept": "字形與成語",
+      "prompt": "原評語是「差強人意」，抄手卻在脈案裡另加錯誤註解。請圈出那一處註解，再選符合成語現代常見義的修補。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "把「完全不能接受」改為「大體上尚能令人勉強滿意」"
+        },
+        {
+          "id": "b",
+          "text": "保留「完全不能接受」，因為「差」一定代表極差"
+        },
+        {
+          "id": "c",
+          "text": "把註解改為「所有細節都完美無缺」"
+        }
+      ],
+      "answerId": "a",
+      "hint": "不要把差強人意理解成極差，也不要把尚可滿意理解成完美。",
+      "explanation": "錯誤在抄手的完全不能接受。差強人意的現代常見義是大體上尚能令人勉強滿意，並非全盤否定，也不是毫無缺點。",
+      "correction": "「差強人意」的現代常見義是大體上尚能勉強滿意。",
+      "sourceTitle": "教育部《重編國語辭典修訂本》：差強人意",
+      "sourceUrl": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=121497",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "text-proofreading",
+        "objective": "字形校勘與成語詞義核對",
+        "evidence": [
+          "成語固定用字與適用對象都要核對。",
+          "詞義不能只由單一字猜測；需與醫案的上下文一致。",
+          "不要把差強人意理解成極差，也不要把尚可滿意理解成完美。"
+        ],
+        "interactionHint": "對照原稿、詞義籤與抄手註解，再留下正確版本。"
+      },
+      "interaction": {
+        "kind": "proofread",
+        "instruction": "圈出抄手誤解的詞義註解，再選正確修補。",
+        "segments": [
+          {
+            "id": "start",
+            "text": "整理評語：差強人意。抄手註：意思是"
+          },
+          {
+            "id": "gloss",
+            "text": "完全不能接受"
+          },
+          {
+            "id": "end",
+            "text": "。"
+          }
+        ],
+        "targetId": "gloss"
+      }
+    },
+    {
+      "id": "idiom-first-hit",
+      "chapterId": "medicine",
+      "concept": "字形與成語",
+      "prompt": "這份脈案要表達「文書整理比各房早完工」，並沒有攻擊或災害。先圈出不合語境的成語，再選修補方式。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "不必修改，首當其衝適用於所有一般的第一名"
+        },
+        {
+          "id": "b",
+          "text": "改成「汗牛充棟」，用來表示工作完成得快"
+        },
+        {
+          "id": "c",
+          "text": "把「首當其衝」改為「率先完成」，符合一般工作領先完工的語境"
+        }
+      ],
+      "answerId": "c",
+      "hint": "先檢查句子有沒有受攻擊或遇災害，再判斷成語是否適用。",
+      "explanation": "首當其衝指首先受到攻擊或遭遇災難，不能泛指一般工作領先；這裡應改為率先完成。汗牛充棟形容書籍極多，與完工速度無關。",
+      "correction": "「首當其衝」不等於一般的率先做完。",
+      "sourceTitle": "教育部《國語辭典簡編本》：首當其衝",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34266",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "text-proofreading",
+        "objective": "字形校勘與成語詞義核對",
+        "evidence": [
+          "成語固定用字與適用對象都要核對。",
+          "詞義不能只由單一字猜測；需與醫案的上下文一致。",
+          "先檢查句子有沒有受攻擊或遇災害，再判斷成語是否適用。"
+        ],
+        "interactionHint": "對照原稿、詞義籤與抄手註解，再留下正確版本。"
+      },
+      "interaction": {
+        "kind": "proofread",
+        "instruction": "圈出一處與工作進度語境不合的成語，再選正確修補。",
+        "segments": [
+          {
+            "id": "start",
+            "text": "本房本月文書整理"
+          },
+          {
+            "id": "misuse",
+            "text": "首當其衝"
+          },
+          {
+            "id": "end",
+            "text": "，比各房都早完工，且未遇任何災損。"
+          }
+        ],
+        "targetId": "misuse"
+      }
+    },
+    {
+      "id": "idiom-many-books",
+      "chapterId": "medicine",
+      "concept": "字形與成語",
+      "prompt": "庫存脈案把形容大量書籍的成語用在藥材上。請圈出唯一誤用處，再選能保留「藥材很多」原意的修補。",
+      "choices": [
+        {
+          "id": "a",
+          "text": "保留原句，汗牛充棟可以形容任何東西多"
+        },
+        {
+          "id": "b",
+          "text": "把「藥材汗牛充棟」改為「藥材堆積如山」；汗牛充棟應形容書籍"
+        },
+        {
+          "id": "c",
+          "text": "改成「藥材首當其衝」，用來表示庫存充足"
+        }
+      ],
+      "answerId": "b",
+      "hint": "除了詞義，也要核對成語慣用的對象。",
+      "explanation": "汗牛充棟形容書籍極多，不能直接套用藥材。改為藥材堆積如山可保留數量很多的意思；首當其衝則涉及攻擊或災害。",
+      "correction": "成語使用須核對適用對象：「汗牛充棟」形容書籍極多。",
+      "sourceTitle": "教育部《國語辭典簡編本》：汗牛充棟",
+      "sourceUrl": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=19701",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "reference-linked",
+      "puzzle": {
+        "mode": "text-proofreading",
+        "objective": "字形校勘與成語詞義核對",
+        "evidence": [
+          "成語固定用字與適用對象都要核對。",
+          "詞義不能只由單一字猜測；需與醫案的上下文一致。",
+          "除了詞義，也要核對成語慣用的對象。"
+        ],
+        "interactionHint": "對照原稿、詞義籤與抄手註解，再留下正確版本。"
+      },
+      "interaction": {
+        "kind": "proofread",
+        "instruction": "圈出一處成語適用對象錯誤的語句，再選正確修補。",
+        "segments": [
+          {
+            "id": "start",
+            "text": "醫書另置書庫。庫存記載："
+          },
+          {
+            "id": "misuse",
+            "text": "藥材汗牛充棟"
+          },
+          {
+            "id": "end",
+            "text": "，須分類保存。"
+          }
+        ],
+        "targetId": "misuse"
+      }
+    }
+  ]
+}

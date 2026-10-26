@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "snapshotVersion": "2026-10-26-v2-interactions",
+  "sourcePath": "src/data/questions.js",
+  "sourceSha256": "8dc8d717d85c7f19ca5688db1d8f5ffcae91181f953fbd2db5b4944e813e6f3c",
+  "chapter": {
+    "chapterId": "final",
+    "number": 12,
+    "title": "養心殿",
+    "topic": "語言與邏輯",
+    "concepts": [
+      "語言邏輯"
+    ],
+    "questionCount": 3,
+    "questionIds": [
+      "logic-false-dilemma",
+      "logic-causal-leap",
+      "logic-equivocation"
+    ],
+    "file": "docs/question-bank/12-final.json",
+    "difficulty": "medium",
+    "skills": [
+      "分析"
+    ],
+    "interactionKinds": [
+      "renderer-derived-from-choices"
+    ],
+    "interactionQuestionIds": [],
+    "interactionCount": 0,
+    "interactionPayloadLocation": "本關 JSON 快照 questions[].interaction",
+    "learningObjectives": [
+      "論證謬誤證據鏈",
+      "能在養心殿的語境中整合線索、比較誘答，並說明選擇理由。"
+    ],
+    "puzzle": {
+      "mode": "argument-chain",
+      "objective": "論證謬誤證據鏈",
+      "interactionHint": "把原話、缺漏前提與有效反駁連成證據鏈，再提出結論。",
+      "evidenceFields": "questions[].puzzle.evidence（字串陣列）",
+      "implementationStatus": "metadata-only-runtime-owned-by-main-agent"
+    },
+    "sources": [],
+    "sourceCoverage": {
+      "linked": 0,
+      "total": 3
+    },
+    "unlinkedQuestionIds": [
+      "logic-false-dilemma",
+      "logic-causal-leap",
+      "logic-equivocation"
+    ],
+    "reviewStatus": "draft-teacher-review"
+  },
+  "questions": [
+    {
+      "id": "logic-false-dilemma",
+      "chapterId": "final",
+      "concept": "語言邏輯",
+      "prompt": "皇帝說：「妳若不贊成我這項藏書方案，就一定是反對所有人讀書。」哪個回應最能指出問題？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "不同意一個方案，仍可能支持讀書，還有修改方案等選擇。"
+        },
+        {
+          "id": "b",
+          "text": "皇帝身分尊貴，所以推論必定正確。"
+        },
+        {
+          "id": "c",
+          "text": "只要把語氣放輕，推論就會自動成立。"
+        }
+      ],
+      "answerId": "a",
+      "hint": "檢查「贊成這項方案」與「支持讀書」是否真是只有兩種互斥選擇。",
+      "explanation": "原話把「贊成特定方案」與「反對所有讀書」硬分成僅有的兩端，忽略支持目標但建議其他方法的可能，是假兩難；權位與語氣不能補足推論。",
+      "correction": "假兩難把其實有其他可能的情況，說成只有兩種選擇。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "argument-chain",
+        "objective": "論證謬誤證據鏈",
+        "evidence": [
+          "支持目標不代表必須同意某一個特定方案。",
+          "時間先後不能代替因果證據；同字不同義也不能任意替換。",
+          "檢查「贊成這項方案」與「支持讀書」是否真是只有兩種互斥選擇。"
+        ],
+        "interactionHint": "把原話、缺漏前提與有效反駁連成證據鏈，再提出結論。"
+      }
+    },
+    {
+      "id": "logic-causal-leap",
+      "chapterId": "final",
+      "concept": "語言邏輯",
+      "prompt": "皇帝說：「昨夜換了新宮燈，今晨藏書受潮，可見一定是新宮燈造成受潮。」哪個反駁最有根據？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "先發生的事情，必然是後來事情的唯一原因。"
+        },
+        {
+          "id": "b",
+          "text": "兩件事先後發生，還不足以證明因果，應查漏雨、濕度等證據。"
+        },
+        {
+          "id": "c",
+          "text": "只要多說幾次，原因就能確定。"
+        }
+      ],
+      "answerId": "b",
+      "hint": "把「在這之後」與「因為這件事」分開。",
+      "explanation": "時間先後不等於因果成立，仍需查驗漏雨、濕度等其他可能因素。這裡缺乏證據便斷言新宮燈是原因，是草率建立因果關係。",
+      "correction": "先後發生不等於因果已被證明；因果判斷需要證據。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "argument-chain",
+        "objective": "論證謬誤證據鏈",
+        "evidence": [
+          "支持目標不代表必須同意某一個特定方案。",
+          "時間先後不能代替因果證據；同字不同義也不能任意替換。",
+          "把「在這之後」與「因為這件事」分開。"
+        ],
+        "interactionHint": "把原話、缺漏前提與有效反駁連成證據鏈，再提出結論。"
+      }
+    },
+    {
+      "id": "logic-equivocation",
+      "chapterId": "final",
+      "concept": "語言邏輯",
+      "prompt": "皇帝說：「人人都應守信。妳手裡拿的是一封信，所以妳應守著這封信整夜不睡。」哪個回應指出了關鍵？",
+      "choices": [
+        {
+          "id": "a",
+          "text": "同一個字的不同意思，可以不加區別地互相替換。"
+        },
+        {
+          "id": "b",
+          "text": "只要兩句都含「信」，結論就必然成立。"
+        },
+        {
+          "id": "c",
+          "text": "前句的「信」是信用，後句的「信」是書信，推論偷換了詞義。"
+        }
+      ],
+      "answerId": "c",
+      "hint": "分別解釋「守信」的信與「一封信」的信。",
+      "explanation": "「守信」指遵守承諾、重信用，「一封信」指書信。將同形字的不同詞義當成同一概念推論，構成詞義偷換；不是有效的理由。",
+      "correction": "論證中的關鍵詞必須保持相同意義，不能偷換詞義。",
+      "reviewStatus": "draft-teacher-review",
+      "difficulty": "medium",
+      "skill": "分析",
+      "sourceStatus": "teacher-review-needed",
+      "puzzle": {
+        "mode": "argument-chain",
+        "objective": "論證謬誤證據鏈",
+        "evidence": [
+          "支持目標不代表必須同意某一個特定方案。",
+          "時間先後不能代替因果證據；同字不同義也不能任意替換。",
+          "分別解釋「守信」的信與「一封信」的信。"
+        ],
+        "interactionHint": "把原話、缺漏前提與有效反駁連成證據鏈，再提出結論。"
+      }
+    }
+  ]
+}
