@@ -1,6 +1,6 @@
-import { chapters, ranks } from '../data/chapters.js';
-import { questions } from '../data/questions.js';
-import { puzzles } from '../data/puzzles.js';
+import { chapters, ranks } from '../data/chapters.js?v=7e7e8f105b06';
+import { questions } from '../data/questions.js?v=7e7e8f105b06';
+import { puzzles } from '../data/puzzles.js?v=7e7e8f105b06';
 export const strategies = {
   gentle: { label: '以柔克剛', damage: 15, score: 10, description: '答錯扣 15 氣血，答對得 10 文墨。' },
   direct: { label: '剛直批駁', damage: 30, score: 20, description: '答錯扣 30 氣血，答對得 20 文墨。' },
@@ -39,38 +39,10 @@ export function discoverClue(s, id) {
   if (s.phase !== 'explore' || s.puzzle.found.includes(id) || !puzzles[s.puzzle.chapterId].clues.some(c => c.id === id)) return s;
   return { ...s, puzzle: { ...s.puzzle, found: [...s.puzzle.found, id] } };
 }
-function canOperate(s) { return s.phase === 'explore' && !s.puzzle.solved && s.puzzle.found.length === puzzles[s.puzzle.chapterId].clues.length; }
-export function placePuzzle(s, slotId, itemId) {
-  if (!canOperate(s)) return s;
-  const p = puzzles[s.puzzle.chapterId];
-  if (!p.slots?.some(x => x.id === slotId) || !(itemId === null || p.items.some(x => x.id === itemId))) return s;
-  const placements = Object.fromEntries(Object.entries(s.puzzle.placements).filter(([key, value]) => key !== slotId && (itemId === null || value !== itemId)));
-  if (itemId !== null) placements[slotId] = itemId;
-  return { ...s, puzzle: { ...s.puzzle, placements, feedback: null } };
-}
-export function togglePuzzle(s, itemId) {
-  if (!canOperate(s)) return s;
-  const p = puzzles[s.puzzle.chapterId];
-  if (!['sequence','inspect'].includes(p.kind) || !p.items.some(x => x.id === itemId)) return s;
-  const key = p.kind === 'sequence' ? 'order' : 'selected', list = s.puzzle[key];
-  return { ...s, puzzle: { ...s.puzzle, [key]: list.includes(itemId) ? list.filter(id => id !== itemId) : [...list, itemId], feedback: null } };
-}
-export function rotatePuzzle(s, delta) {
-  if (!canOperate(s) || puzzles[s.puzzle.chapterId].kind !== 'dial' || ![-1,1].includes(delta)) return s;
-  return { ...s, puzzle: { ...s.puzzle, dial: (s.puzzle.dial + delta + 12) % 12, feedback: null } };
-}
-export function checkPuzzle(s, now = Date.now()) {
-  if (!canOperate(s)) return s;
-  const p = puzzles[s.puzzle.chapterId], v = s.puzzle;
-  const correct = p.slots ? p.slots.every(slot => v.placements[slot.id] === slot.answer) : p.kind === 'dial' ? String(v.dial) === p.solution[0] :
-    p.kind === 'sequence' ? JSON.stringify(v.order) === JSON.stringify(p.solution) : v.selected.length === p.solution.length && v.selected.every(id => p.solution.includes(id));
-  const tries = v.tries + 1;
-  return { ...s, score: s.score + (correct ? 5 : 0), puzzle: { ...v, tries, solved: correct, feedback: { correct,
-    message: correct ? p.explanation : '機關尚未解開。對照線索冊，確認說話角度、分類或先後條件，再調整。此處不扣氣血。' } },
-    puzzleLog: correct ? [...s.puzzleLog, { chapterId: v.chapterId, tries, at: now }] : s.puzzleLog };
-}
 export function startTrial(s, now = Date.now()) {
-  return s.phase === 'explore' && s.puzzle.solved ? beginQuestion(s, chapterQuestions(s.puzzle.chapterId)[0], now) : s;
+  if(s.phase!=='explore'||s.puzzle.found.length!==puzzles[s.puzzle.chapterId].clues.length)return s;
+  // Retain the saved readiness marker so existing v2 journeys remain readable.
+  return beginQuestion({...s,puzzle:{...s.puzzle,solved:true,feedback:null}},chapterQuestions(s.puzzle.chapterId)[0],now);
 }
 export function setStrategy(s, strategy) {
   return s.phase === 'map' && strategies[strategy] ? { ...s, strategy } : s;
@@ -172,4 +144,3 @@ export function report(s) {
       return { id, chapterId: q.chapterId, concept: q.concept, prompt: q.prompt, answer: q.choices.find(c => c.id === q.answerId).text, explanation: q.explanation };
     }), attempts: s.attempts, reviews: s.reviews, puzzleLog: s.puzzleLog };
 }
-

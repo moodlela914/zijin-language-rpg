@@ -1,5 +1,5 @@
 /** 貼紙人物探索：遊戲世界使用即時更新，與可 seek 的過場動畫分離。 */
-import { playCue } from './audio-player.js';
+import { playCue } from './audio-player.js?v=7e7e8f105b06';
 const held = new Set();
 let active = null, gyro = false, origin = null, tilt = { x: 0, y: 0 }, latest = null;
 let positions = {};

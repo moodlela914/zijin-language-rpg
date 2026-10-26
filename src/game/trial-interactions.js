@@ -1,5 +1,5 @@
-import { kindOf,modeNames,newDraft,readyTrial,evaluateTrial } from './trial-model.js';
-import { backgrounds,playerPortraits,propIcons } from '../data/assets.js';
+import { kindOf,modeNames,newDraft,readyTrial,evaluateTrial } from './trial-model.js?v=7e7e8f105b06';
+import { backgrounds,playerPortraits,propIcons } from '../data/assets.js?v=7e7e8f105b06';
 const drafts=new Map();let dispose=null;
 const e=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const button=(action,text,id='',attrs='')=>'<button data-trial="'+action+'" data-id="'+e(id)+'" '+attrs+'>'+text+'</button>';
@@ -20,7 +20,7 @@ export function mountTrial(root,q,s,{onSubmit,onOperate}){
   function markup(){
     let body='';
     if(k==='drag'){
-      body='<div class="word-tokens">'+q.choices.map(c=>button('pick-choice','<strong>'+label(c.text.split(/[：，]/)[0])+'</strong><small>'+e(c.text)+'</small>',c.id,'draggable="true" data-drag="'+c.id+'" class="word-token '+(d.pick===c.id?'selected':'')+'" '+disabled(c.id))).join('')+'</div>'+button('word-slot',d.choiceId?e(q.choices.find(c=>c.id===d.choiceId).text):'將得體的應答放入此處','', 'class="letter-drop" data-drop="word"');
+      body='<div class="word-tokens">'+q.choices.map(c=>button('pick-choice','<strong>'+label(c.text.split(/[：，]/)[0])+'</strong>'+(label(c.text.split(/[：，]/)[0])===e(c.text)?'':'<small>'+e(c.text)+'</small>'),c.id,'draggable="true" data-drag="'+c.id+'" class="word-token '+(d.pick===c.id?'selected':'')+'" '+disabled(c.id))).join('')+'</div>'+button('word-slot',d.choiceId?e(q.choices.find(c=>c.id===d.choiceId).text):'將得體的應答放入此處','', 'class="letter-drop" data-drop="word"');
     }else if(k==='prism'){
       body='<div class="prism-stage" aria-label="可旋轉的立體玉冊"><div class="jade-prism" style="transform:rotateY('+(-d.index*120)+'deg)">'+q.choices.map((c,i)=>'<div class="prism-face '+(s.eliminated.includes(c.id)?'excluded':'')+'" style="transform:rotateY('+(i*120)+'deg) translateZ(72px)"><small>玉冊 '+String.fromCharCode(65+i)+'</small><p>'+e(c.text)+'</p>'+(s.eliminated.includes(c.id)?'<em>已排除的判讀</em>':'')+'</div>').join('')+'</div></div><div class="prism-controls">'+button('rotate','↶ 向左旋轉','-1','class="quiet"')+'<span>已觀察 '+d.seen.length+' / 3 面</span>'+button('rotate','向右旋轉 ↷','1','class="quiet"')+'</div><p class="current-face">正面：'+e(q.choices[d.index].text)+'</p>';
     }else if(k==='shelf'){

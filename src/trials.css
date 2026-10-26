@@ -25,3 +25,21 @@ h1,h2,h3,h4,h5,h6,.eyebrow{text-align:center}
 .section-heading>:not(:first-child){grid-column:3;grid-row:1;justify-self:end}
 .section-heading>.small{max-width:none;text-align:center}
 .trial-heading{justify-content:center;flex-wrap:wrap;text-align:center}
+
+/* Readable trial layout: the text is never painted over the scene or its frame. */
+.scene-question-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(300px,1fr);gap:24px;align-items:stretch;margin:24px 0}
+.scene-question-layout .game-scene{width:100%;max-height:none;align-self:start;margin:0}
+.scene-question-layout .question-card{margin:0;min-width:0;min-height:100%;padding:28px;background:#1e4038;background-image:none;border:5px double #bda573;box-shadow:inset 0 0 0 8px #1e4038;overflow-wrap:anywhere}
+.question-card:after{display:none}
+.question-card .speaker{display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.7;letter-spacing:1px}
+.question-card .speaker small{margin:0;font-size:13px;line-height:1.6;letter-spacing:0}
+.question-card p{font-size:20px;line-height:1.95;font-weight:500;letter-spacing:.3px;margin:20px 0 0;color:#fff3d8}
+.clue-book>div{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:16px}
+.clue-book article{padding:22px}
+.clue-book article strong{font-size:19px;line-height:1.7;font-weight:600}
+.clue-book article p{font-size:18px;line-height:1.95;color:#284b40;margin-top:12px}
+.clue-reveal strong{font-size:18px}.clue-reveal p{font-size:18px;line-height:1.95}
+.exploration-ready{justify-content:center;padding:20px 0}.exploration-ready .small{font-size:14px}
+@media(max-width:1100px){.scene-question-layout{grid-template-columns:minmax(0,1fr);gap:18px}.scene-question-layout .game-scene{max-height:none}.scene-question-layout .question-card{min-height:0}.question-card p{font-size:19px}}
+@media(max-width:720px){.scene-question-layout{margin:18px 0;gap:14px}.scene-question-layout .question-card{padding:22px 20px}.question-card p{font-size:18px;line-height:1.95}.question-card .speaker{font-size:16px}.question-card .speaker small{font-size:12px}.clue-book article{padding:20px 18px}.clue-book article p{font-size:17px}.clue-book article strong{font-size:18px}.clue-reveal p{font-size:17px}}
+.clue-book article strong{display:block;text-align:center}
