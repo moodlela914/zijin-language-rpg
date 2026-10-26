@@ -8,12 +8,12 @@
 
 ## Tasks
 
-- [ ] 新增探索直接答題測試，確認未集齊線索不能進入、已集齊不需檢驗、不重複獎勵、存檔可讀。
-- [ ] 移除 exploreView 機關 UI 和 main 事件，更新 startTrial，保留題目內十二種互動。
-- [ ] 建立 scene-question-layout，題目框使用不被裝飾覆蓋的實色內層、預留邊距；線索卡內文 >=17px。
-- [ ] 題庫 agent 審查47題的故事任務、學生用語、誘答；穩定ID不變，重新歸檔與查核。
-- [ ] 產生97張 WebP 桌面／手機副本，建立索引及大小報告；限制預載至目前場景三張，過場使用壓縮圖。
-- [ ] 驗證桌面、平板、手機頁面，執行全測試／題庫檢查／素材路徑檢查，更新說明並發布 GitHub Pages。
+- [x] 新增探索直接答題測試，確認未集齊線索不能進入、已集齊不需檢驗、不重複獎勵、存檔可讀。
+- [x] 移除 exploreView 機關 UI 和 main 事件，更新 startTrial，保留題目內十二種互動。
+- [x] 建立 scene-question-layout，題目框使用不被裝飾覆蓋的實色內層、預留邊距；線索卡內文 >=17px。
+- [x] 題庫 agent 審查47題的故事任務、學生用語、誘答；穩定ID不變，重新歸檔與查核。
+- [x] 產生97張 WebP 桌面／手機副本，建立索引及大小報告；限制預載至目前場景三張，過場使用壓縮圖。
+- [x] 驗證桌面、平板、手機頁面，執行全測試／題庫檢查／素材路徑檢查，更新說明並發布 GitHub Pages。
 
 ## Review focus
 
@@ -22,3 +22,7 @@
 - 手機首次載入不預載人物所有表情或所有關卡。
 - 壓縮圖保留透明度與原圖一致性，UI花框不覆蓋文字。
 - 題庫文字變動不得破壞互動解答、檔案索引及存檔ID。
+
+## Verification results
+
+24 tests pass; 47-question archive and content checks pass. All 194 WebP variants decode, retain required transparency and match dimensions. Desktop/tablet/mobile layout checks show contained text and no horizontal overflow. GitHub Pages commit 7d148c4 built successfully; live boot screen, revised questions, two-column layout and optimized images verified.
